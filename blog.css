@@ -1,0 +1,139 @@
+:root {
+    --primary: #2a2a2a;
+    --secondary: #3a3a3a;
+    --accent: #038aff;
+    --text: #ffffff;
+    --nav-height: 60px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Monaco', monospace;
+    background: var(--primary);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.content {
+    padding-top: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Navigation Bar */
+.nav {
+    font-family: 'Cormorant', serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: space-between;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+/* Blog Section */
+#blog {
+    min-height: 75vh;
+    padding: 4rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text);
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.blog-post {
+    background-color: #080a0f;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(177, 177, 177, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(177, 177, 177, 0.2);
+}
+
+.blog-post h3 {
+    font-size: 1.5em;
+    color: #939393;
+    margin-bottom: 1rem;
+}
+
+.blog-post p {
+    color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Add loading skeleton animation */
+@keyframes loading {
+    0% { background-position: -200px 0 }
+    100% { background-position: 200px 0 }
+}
+
+.loading {
+    background: linear-gradient(90deg, #0a0a0a 25%, #1a1a1a 50%, #0a0a0a 75%);
+    background-size: 200px 100%;
+    animation: loading 1.5s infinite linear;
+    border-radius: 4px;
+    min-height: 1em;
+}
+
+.blog-post.loading {
+    height: 300px;
+}
