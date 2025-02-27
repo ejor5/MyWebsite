@@ -20,6 +20,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 16px; /* Default font size */
 }
 
 .content {
@@ -136,4 +137,23 @@ li a {
 
 .blog-post.loading {
     height: 300px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Smaller section title size */
+    }
+
+    .blog-post h3 {
+        font-size: 1.2rem; /* Smaller blog post title size */
+    }
+
+    .blog-post p {
+        font-size: 0.9rem; /* Smaller blog post paragraph size */
+    }
 }

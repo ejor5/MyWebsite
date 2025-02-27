@@ -26,6 +26,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
+    font-size: 16px; /* Default font size */
 }
 
 strong {
@@ -335,4 +336,36 @@ section#about, section#resume, section#projects, section#contact {
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     flex-direction: column; /* Stack content vertically */
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Smaller title size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller paragraph size */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Smaller section title size */
+    }
+
+    .resume-section h3,
+    .about-text p {
+        font-size: 0.9rem; /* Smaller text for resume and about sections */
+    }
+
+    .blog-button {
+        font-size: 14px; /* Smaller button font size */
+    }
+
+    .email-button {
+        font-size: 20px; /* Smaller email button font size */
+    }
 }
