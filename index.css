@@ -20,6 +20,12 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    background-image: url('./assets/SpaceBG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
 }
 
 strong {
@@ -174,18 +180,17 @@ section#about, section#resume, section#projects, section#contact {
 /* About */
 .about-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-text {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    text-align: center;
+    margin-right: 20px;
 }
 
 .about-image {
@@ -281,4 +286,53 @@ section#about, section#resume, section#projects, section#contact {
 .project-card ul li {
     margin-bottom: 10px;
     color: #d5d5d5;
+}
+
+/* Resume Section Styles */
+.resume-section {
+    background: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+    border-radius: 15px; /* Rounded corners */
+    padding: 4rem; /* Increased padding for spacing */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin: 2rem auto; /* Center the section with auto margins */
+    max-width: 800px; /* Set a maximum width for the section */
+}
+
+.resume-section h3 {
+    color: var(--accent); /* Accent color for headings */
+    border-bottom: 2px solid var(--accent); /* Underline for headings */
+    padding-bottom: 0.5rem; /* Padding below heading */
+    margin-bottom: 1rem; /* Margin below heading */
+}
+
+.resume-section ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 0; /* Remove padding */
+}
+
+.resume-section li {
+    background: rgba(255, 255, 255, 0.1); /* Light background for list items */
+    border-radius: 10px; /* Rounded corners for list items */
+    padding: 0.5rem; /* Padding for list items */
+    margin: 0.5rem 0; /* Margin for spacing between list items */
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+.resume-section li:hover {
+    background: rgba(255, 255, 255, 0.2); /* Change background on hover */
+}
+
+/* About Section Styles */
+#about {
+    background: rgba(0, 0, 0, 0.9); /* Dark background for consistency with other sections */
+    border-radius: 0; /* Remove rounded corners to fill the space */
+    padding: 4rem; /* Increased padding for spacing */
+    box-shadow: none; /* Remove shadow for a seamless look */
+    margin: 0; /* Remove margin to fill the entire space */
+    width: 100%; /* Set width to 100% */
+    height: 100vh; /* Set height to 100% of the viewport */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Stack content vertically */
 }
