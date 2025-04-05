@@ -15,10 +15,10 @@
 }
 
 body {
-    font-family: 'Monaco', monospace;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: var(--primary);
-    color: var(--text);
-    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
     overflow-x: hidden;
     background-image: url('./assets/SpaceBG.png');
     background-size: cover;
@@ -26,7 +26,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    font-size: 16px; /* Default font size */
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 strong {
@@ -115,26 +117,44 @@ li a {
     position: relative;
 }
 
+/* Add fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .hero-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+    max-width: 1200px;
     padding: 0 2rem;
-    font-family: 'Cormorant', serif;
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    animation: fadeIn 1s ease-in;
 }
 
-#home p {
+.hero-content h1 {
+    font-family: 'Cormorant', serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.hero-content p {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.5rem;
 }
 
 #home::after {
@@ -148,13 +168,21 @@ li a {
 }
 
 .blog-button {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inter', sans-serif;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: 1px solid rgba(255, 255, 255, 1);
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 20px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.blog-button:hover {
+    background-color: rgba(3, 138, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(3, 138, 255, 0.2);
 }
 
 /* Sections */
@@ -173,25 +201,53 @@ section#about, section#resume, section#projects, section#contact {
 }
 
 .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #fff;
+    letter-spacing: -0.02em;
 }
 
 /* About */
 .about-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
+    gap: 4rem;
 }
 
 .about-text {
     flex: 1;
-    text-align: center;
-    margin-right: 20px;
+    text-align: left;
+    max-width: 700px;
+}
+
+.about-text .section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #fff;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent);
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 .about-image {
@@ -199,43 +255,129 @@ section#about, section#resume, section#projects, section#contact {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 500px;
 }
 
 .tree-hang {
     max-width: 100%;
-    border: 10px solid rgb(9, 9, 28);
+    border: 10px solid rgba(9, 9, 28, 0.8);
     border-radius: 30px;
-    box-shadow: 0 10px 20px rgba(109, 109, 228, 0.447);
+    box-shadow: 0 20px 40px rgba(109, 109, 228, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Contact */
+.tree-hang:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(109, 109, 228, 0.3);
+}
+
+/* Contact section improvements */
+section#contact {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+section#contact .container {
+    max-width: 800px;
+    text-align: center;
+}
+
+section#contact .section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff, #038aff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.final-message {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
 .email-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 1rem;
 }
 
 .email-button {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgba(0, 22, 119, 0.834);
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #038aff 0%, #0356ff 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(99, 99, 99, 0.2);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(3, 138, 255, 0.2);
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.email-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
 .email-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(177, 177, 177, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(3, 138, 255, 0.3);
+}
+
+.email-button:hover::before {
+    transform: translateX(100%);
+}
+
+.email-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(3, 138, 255, 0.2);
+}
+
+/* Add a subtle animation to the contact section */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section#contact .container > * {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+section#contact .section-title {
+    animation-delay: 0.2s;
 }
 
 .final-message {
-    font-size: 25px;
+    animation-delay: 0.4s;
+}
+
+.email-container {
+    animation-delay: 0.6s;
 }
 
 /* Projects */
@@ -246,13 +388,14 @@ section#about, section#resume, section#projects, section#contact {
 }
 
 .project-card {
-    background-color: #080a0f;
+    background-color: rgba(13, 17, 23, 0.95);
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(177, 177, 177, 0.3);
-    padding: 20px;
+    padding: 2.5rem;
     max-width: 800px;
     margin: 20px;
     transition: transform 0.2s;
+    line-height: 1.7;
 }
 
 .project-card:hover {
@@ -267,75 +410,189 @@ section#about, section#resume, section#projects, section#contact {
 }
 
 .project-card h3 {
-    font-size: 1.5em;
-    color: #939393;
-    margin-bottom: 10px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.project-card h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 2rem 0 1rem;
 }
 
 .project-card p {
-    color: #f9f9f9;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-card ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin-bottom: 15px;
+    margin: 1.5rem 0;
 }
 
-.project-card ul li {
-    margin-bottom: 10px;
-    color: #d5d5d5;
+.project-card li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 1.25rem;
 }
 
-/* Resume Section Styles */
+.project-card strong {
+    color: #58a6ff;
+    font-weight: 600;
+}
+
+/* Resume Section Improvements */
 .resume-section {
-    background: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
-    border-radius: 15px; /* Rounded corners */
-    padding: 4rem; /* Increased padding for spacing */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    margin: 2rem auto; /* Center the section with auto margins */
-    max-width: 800px; /* Set a maximum width for the section */
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 3.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin: 2rem auto;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.resume-section .section-title {
+    text-align: left;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
 }
 
 .resume-section h3 {
-    color: var(--accent); /* Accent color for headings */
-    border-bottom: 2px solid var(--accent); /* Underline for headings */
-    padding-bottom: 0.5rem; /* Padding below heading */
-    margin-bottom: 1rem; /* Margin below heading */
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 3rem 0 1.5rem;
+    letter-spacing: -0.01em;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    width: fit-content;
+}
+
+.resume-section h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 2rem 0 1rem;
+}
+
+.resume-section p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 900px;
 }
 
 .resume-section ul {
-    list-style-type: none; /* Remove default list styling */
-    padding-left: 0; /* Remove padding */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
 }
 
 .resume-section li {
-    background: rgba(255, 255, 255, 0.1); /* Light background for list items */
-    border-radius: 10px; /* Rounded corners for list items */
-    padding: 0.5rem; /* Padding for list items */
-    margin: 0.5rem 0; /* Margin for spacing between list items */
-    transition: background 0.3s; /* Transition for hover effect */
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .resume-section li:hover {
-    background: rgba(255, 255, 255, 0.2); /* Change background on hover */
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--accent);
 }
 
-/* About Section Styles */
-#about {
-    background: rgba(0, 0, 0, 0.9); /* Dark background for consistency with other sections */
-    border-radius: 0; /* Remove rounded corners to fill the space */
-    padding: 4rem; /* Increased padding for spacing */
-    box-shadow: none; /* Remove shadow for a seamless look */
-    margin: 0; /* Remove margin to fill the entire space */
-    width: 100%; /* Set width to 100% */
-    height: 100vh; /* Set height to 100% of the viewport */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
-    flex-direction: column; /* Stack content vertically */
+/* Projects Section Improvements */
+.projects-grid {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.projects-grid .section-title {
+    text-align: left;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background-color: rgba(13, 17, 23, 0.95);
+    border-radius: 15px;
+    padding: 3rem;
+    width: 100%;
+    margin: 0 0 3rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    width: fit-content;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 900px;
+}
+
+.project-card ul {
+    margin: 2rem 0;
+    padding-left: 1rem;
+}
+
+.project-card li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.project-card li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Container width consistency */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Section spacing consistency */
+section {
+    padding: 6rem 2rem;
+}
+
+/* Add subtle section transitions */
+section > div {
+    opacity: 1;
+    transform: none;
+    animation: none;
 }
 
 /* Media Queries for Mobile */
@@ -367,5 +624,9 @@ section#about, section#resume, section#projects, section#contact {
 
     .email-button {
         font-size: 20px; /* Smaller email button font size */
+    }
+
+    .project-card {
+        padding: 2rem; /* Smaller padding for mobile */
     }
 }
