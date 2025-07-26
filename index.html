@@ -209,6 +209,52 @@
                         </a>
                     </div>
                     <!-- Add more projects -->
+                    <div class="project-container">
+                        <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank">
+                            <div class="project-card">
+                                <img class="code-image" src="./assets/ClubAutomation.png" alt="Club Automation Screenshot">
+                                <h3>AVAC Tennis Class Automation</h3>
+                                <p>
+                                    As a tennis scheduler at Almaden Valley Athletic Club (AVAC), I was constantly frustrated by the repetitive nature of monthly student enrollment. Each session required manually checking names, attendance, and navigating a clunky interface. So, I built a custom Python automation tool that streamlined the entire process—eliminating hours of manual work for myself and the rest of the staff.
+                                </p>
+                                <p>
+                                    This project began as a way to scrape class rosters and automatically enroll eligible students. Over time, I expanded the tool to incorporate attendance checking, CSV flagging, and intelligent enrollment prompts—adapting it based on real-world feedback from our tennis department.
+                                </p>
+                    
+                                <h4>🛠 Key Features & Technologies:</h4>
+                                <ul>
+                                    <li><strong>Python + Selenium:</strong> Used for browser automation, login handling, and navigating the Club Automation web interface.</li>
+                                    <li><strong>Pandas + CSV parsing:</strong> Reads and compares player lists and tennis inquiry logs to ensure accurate, context-aware enrollment.</li>
+                                    <li><strong>Real-time prompts:</strong> Students with low attendance (fewer than 3 sessions) or on the Tennis Inquiries spreadsheet are flagged for human review before enrollment.</li>
+                                    <li><strong>Automation pipeline:</strong> The tool automatically logs in, scrapes program data, processes enrollments, and prints a clean, human-readable summary of the entire session.</li>
+                                    <li><strong>Batch setup + environment handling:</strong> A `setup.bat` script creates a virtual environment, installs all dependencies, and securely stores user credentials.</li>
+                                </ul>
+                    
+                                <h4>💡 What This Project Demonstrates:</h4>
+                                <ul>
+                                    <li>Real-world automation of repetitive admin workflows</li>
+                                    <li>Web scraping and dynamic form handling</li>
+                                    <li>Working with CSV files and spreadsheets to support business logic</li>
+                                    <li>Designing tools with non-technical users in mind</li>
+                                    <li>Adaptability — expanding scope based on team needs</li>
+                                </ul>
+                    
+                                <h4>✅ Running the Program:</h4>
+                                <p><code>cd AVACTennisEnrollment<br>python main.py</code></p>
+                                <p>After running the program, you’ll be shown terminal messages like:</p>
+                                <ul>
+                                    <li>“Enroll” or “Do Not Enroll” prompts based on attendance</li>
+                                    <li>Flags for any student listed on the Tennis Inquiries CSV</li>
+                                    <li>Alerts for failed registrations or manual review</li>
+                                </ul>
+                    
+                                <p>
+                                    What started as a personal time-saver has turned into a vital internal tool. This project reflects my drive to solve real problems with code—and to constantly improve systems with business logic, user input, and automation.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    
                 </div>
             </div>
         </section>
