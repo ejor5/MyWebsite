@@ -4,15 +4,15 @@
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="description" content="Ethan Jordan's software engineering, Linux, networking, and security portfolio.">
     <title>Call Me EJ!</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 </head>
 <body>
     <nav class="nav">
         <div class="nav-container">
-            <div class="logo"><a href="#">Ethan Jordan</a></div>
+            <div class="logo"><a href="#home">Ethan Jordan</a></div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
@@ -28,9 +28,41 @@
         <section id="home">
             <div class="hero-content">
                 <h1>Ethan Jordan</h1>
-                <p>Software Developer | Offensive & Defensive Security | Information Technology</p>
-                <p>Programmed by Me</p>
-                <a href="blog.html"><button class="blog-button">Blog</button></a>
+                <p>CS Transfer to SJSU | Software Engineering | Linux & Security</p>
+                <p>Two Internships | CompTIA A+ Core 1 | Linux & Security Labs</p>
+                <a href="#proof" class="blog-button">Highlights</a>
+            </div>
+        </section>
+
+        <section id="proof">
+            <div class="container proof-section">
+                <h2 class="section-title">Highlights</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <h3>SJSU CS transfer</h3>
+                        <p>Transferring from Foothill College into San Jose State University's Computer Science program in Fall 2026.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Real software</h3>
+                        <p>Virtius gave me production-style experience with live scoring data, Next.js, TypeScript, GraphQL, and Playwright.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Automation</h3>
+                        <p>Built a Python/Selenium tool at AVAC that reduced repetitive enrollment steps and flagged cases that needed human review.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Linux</h3>
+                        <p>Used Kali, Arch, and Mint through live boots and full installs since freshman year of high school.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Networking</h3>
+                        <p>Pi-hole taught me DNS, DHCP, IPv4, IPv6, router limits, and why Xfinity gateways are annoying.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>IT/security base</h3>
+                        <p>CompTIA A+ Core 1, Nmap, Metasploit labs, Raspberry Pi projects, and a habit of testing before changing systems.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -38,13 +70,13 @@
             <div class="about-container">
                 <div class="about-text">
                     <h2 class="section-title">About Me</h2>
-                    <p>Hi, I'm Ethan Jordan, a dedicated student with a passion for technology and software development.</p>
-                    <p>Currently pursuing a B.S. or M.S. in Computer Science at Foothill College with a GPA of 4.00.</p>
-                    <p>Proficient in Advanced Python and Java, with a strong foundation in various computer science disciplines.</p>
-                    <p>2 years of real-world experience in customer service at CVS & Almaden Valley Athletic Club.</p>
+                    <p>Hi, I'm Ethan Jordan. I'm a computer science student transferring from Foothill College to San Jose State University in Fall 2026.</p>
+                    <p>I have two technical internships and hands-on projects in web apps, automation, Linux, networking, and security-minded debugging.</p>
+                    <p>I like work where the details matter: API behavior, test coverage, performance, data handling, and how systems fail in real life.</p>
+                    <p>I communicate clearly, learn fast, and build useful software instead of just talking about it.</p>
                 </div>
                 <div class="about-image">
-                    <img class="tree-hang" src="./assets/TreeHang.png" alt="Image">
+                    <img class="tree-hang" src="./assets/TreeHang.png" alt="Ethan Jordan outdoors">
                 </div>
             </div>
         </section>
@@ -53,88 +85,81 @@
             <div class="container resume-section">
                 <h2 class="section-title">Resume</h2>
                 <h3>Summary</h3>
-                <p>I am a social & eager computer scientist with a 4.0 GPA at Foothill College. I love everything to do with business, people, and especially computers. I have known my whole life that I wanted to work in computers and after 2-3 years in customer service, I am ready!</p>
-                
+                <p>Computer science student transferring from Foothill College to San Jose State University in Fall 2026 after a competitive CS transfer path. Two technical internships, CompTIA A+ Core 1, and project experience across TypeScript, Python, testing, automation, Linux, networking, and security-minded debugging.</p>
+
                 <h3>Skills</h3>
                 <ul>
-                    <li>Object Oriented Programming</li>
-                    <li>Web Development</li>
-                    <li>Customer Service</li>
-                    <li>Help Desk Support</li>
-                    <li>Information Technology</li>
-                    <li>Patience</li>
-                    <li>Active Listening</li>
-                    <li>Software Troubleshooting</li>
-                    <li>Problem Solving</li>
-                    <li>Computer Platforms</li>
-                    <li>Computer Architecture</li>
-                    <li>Computer Programming</li>
-                    <li>Java</li>
-                    <li>C++</li>
-                    <li>Python</li>
-                    <li>IT Support</li>
-                    <li>IT Project Management</li>
-                    <li>Technical Support</li>
+                    <li><strong>Languages:</strong> Python, Java, TypeScript, JavaScript, C++</li>
+                    <li><strong>Web:</strong> Next.js, React, Tailwind CSS, HTML, CSS</li>
+                    <li><strong>Testing:</strong> Playwright, regression testing, visual checks</li>
+                    <li><strong>Data & Automation:</strong> Pandas, SQLite, Selenium, CSV workflows</li>
+                    <li><strong>Systems:</strong> Kali Linux, Arch Linux, Linux Mint, Raspberry Pi, DNS, DHCP, IPv4, IPv6, RTSP</li>
+                    <li><strong>Security Mindset:</strong> Network scanning, request flow, data handling, edge cases, router limits, safe configuration changes</li>
+                    <li><strong>Tools:</strong> Git, GitHub, Nmap, Metasploit, VLC, yt-dlp, BeautifulSoup, Requests</li>
+                    <li><strong>Support:</strong> Technical troubleshooting, customer communication, scheduling systems</li>
                 </ul>
 
-                <h3>Work Experience</h3>
+                <h3>Internships & Experience</h3>
+                <h4>Virtius</h4>
+                <p><strong>Software Engineering Intern / Project Engineer</strong></p>
+                <ul>
+                    <li>Improved scores.virti.us, a live NCAA gymnastics meet viewer built with Next.js, React, TypeScript, Tailwind, and GraphQL.</li>
+                    <li>Worked on performance, scoring correctness, API data handling, client/server boundaries, and Playwright regression tests.</li>
+                    <li>Handled real product work with a designer/project manager and made changes that had to survive actual users and live data.</li>
+                </ul>
+
+                <h4>HeartBeam</h4>
+                <p><strong>Technical Intern</strong></p>
+                <ul>
+                    <li>Gained internship experience in a health-tech environment where accuracy, documentation, and careful technical work matter.</li>
+                    <li>Built early exposure to how software and technical decisions fit inside a real company, not just a class project.</li>
+                </ul>
+
                 <h4>Almaden Valley Athletic Club, San Jose, CA</h4>
                 <p><strong>Tennis Scheduler & Receptionist</strong> <em>June 2024-Present</em></p>
-                <p>Manage scheduling systems, handle high-volume phone and email inquiries, provide top-tier customer service, and troubleshoot scheduling conflicts—all while ensuring seamless coordination between members, staff, and coaches. This role demands strong technical proficiency, multitasking skills, and problem-solving abilities.</p>
+                <ul>
+                    <li>Manage scheduling systems, phone/email requests, and conflicts between members, staff, and coaches.</li>
+                    <li>Built a Python/Selenium automation tool to reduce repetitive tennis enrollment work and flag edge cases for staff review.</li>
+                </ul>
 
                 <h4>CVS Pharmacy 1314, San Jose, CA</h4>
                 <p><strong>Retail Associate</strong> <em>October 2022-July 2024</em></p>
-                <p>Customer service-focused position responsible for providing assistance to customers, managing transactions at the register, stocking shelves, maintaining store cleanliness, and supporting all departments within the store, including pharmacy, while ensuring a positive shopping experience by anticipating customer needs and actively resolving any issues that may arise. I was commonly the only associate working in the whole store.</p>
-
-                <h4>Walden West, Saratoga, CA</h4>
-                <p><strong>Camp Counselor</strong> <em>June 2022-June 2022</em></p>
-                <p>Leads and supervises campers, plan activities, and ensures safety for 5 days and 4 nights.</p>
-
-                <h4>Santa Clara County Parks, San Jose, CA</h4>
-                <p><strong>Volunteer</strong></p>
-
-                <h3>Education</h3>
-                <h4>Foothill College</h4>
-                <p><strong>Associate's</strong> <em>July 2024-Present</em></p>
-                <p>Area of study: Computer Science for Transfer</p>
-                <p>School Year: Second Year Community / Technical College</p>
-                <p>Cumulative GPA: 4.0</p>
-                <p>Currently enrolled in as many honors and computer science courses as possible. Also participating in the computer science club and the VR club, creating projects such as project Eiger: Streamline the process of signing up for classes. Also managing having two jobs, but flexible for internships.</p>
-
-                <h3>Courses</h3>
                 <ul>
-                    <li>Data Structures And Algorithms</li>
-                    <li>Advanced Data Structures in Java</li>
-                    <li>Advanced Python</li>
-                    <li>Honors Calculus</li>
-                    <li>Honors English</li>
-                    <li>Honors Public Speaking</li>
-                    <li>Intermediate Python</li>
-                    <li>Intermediate Object Oriented Java</li>
-                    <li>Data Structures</li>
-                    <li>Discrete Mathematics</li>
-                    <li>Honors Photography of American Cultures</li>
-                    <li>App Design</li>
-                    <li>AP Computer Science</li>
+                    <li>Handled customers, register work, stocking, cleaning, and cross-department support while often being the only associate on the floor.</li>
+                    <li>Learned to prioritize quickly, communicate clearly, and solve problems without waiting for perfect conditions.</li>
                 </ul>
 
-                <h3>Organizations</h3>
-                <h4>Santa Clara County Park Volunteers</h4>
-                <p><strong>Volunteer</strong> <em>June 2023-Present</em></p>
-                <p>Miscellaneous volunteer work.</p>
+                <h3>Education</h3>
+                <h4>San Jose State University</h4>
+                <p><strong>B.S. Computer Science</strong> <em>Incoming Transfer, Fall 2026</em></p>
+                <p>Accepted transfer from Foothill College into a competitive Computer Science program in Silicon Valley.</p>
 
-                <h4>National Honors Society</h4>
-                <p><strong>Honors Society Member</strong> <em>August 2022-Present</em></p>
-                <p>High school and College NHS member.</p>
+                <h4>Foothill College</h4>
+                <p><strong>Computer Science for Transfer</strong> <em>July 2024-Present</em></p>
+                <p>Focused on programming, data structures, algorithms, discrete math, calculus, and honors coursework.</p>
 
-                <h4>VR Club</h4>
-                <p><strong>Member</strong> <em>July 2025-Present</em></p>
+                <h3>Relevant Coursework</h3>
+                <ul>
+                    <li>Advanced Data Structures in Java</li>
+                    <li>Advanced Python</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Honors Calculus</li>
+                    <li>Intermediate Python</li>
+                    <li>Object-Oriented Java</li>
+                    <li>App Design</li>
+                    <li>Computer Architecture</li>
+                </ul>
 
-                <h4>Computer Science Club</h4>
-                <p><strong>Member</strong> <em>July 2022-Present</em></p>
-
-                <h3>Languages</h3>
-                <p>Native or bilingual proficiency: Spanish, English</p>
+                <h3>Certifications & Activities</h3>
+                <ul>
+                    <li>CompTIA A+ Core 1</li>
+                    <li>Computer Science Club</li>
+                    <li>VR Club</li>
+                    <li>National Honor Society</li>
+                    <li>Santa Clara County Parks Volunteer</li>
+                    <li>English and Spanish</li>
+                </ul>
             </div>
         </section>
 
@@ -142,33 +167,128 @@
             <div class="container">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
+                    <!-- Virtius Meet Viewer Project -->
                     <div class="project-container">
-                        <a href="https://github.com/ejor5/BPNeuralNetwork" target="_blank">
+                        <a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card">
+                                <img class="code-image" src="./assets/VMainPage.png" alt="Virtius scores main page">
+                                <h3>Virtius Meet Viewer</h3>
+                                <p>
+                                    I worked on the Virtius scores project as the main engineer for my branch, scores.virti.us. I used Next.js 15, React 19, TypeScript, and Tailwind CSS to improve the meet viewer for live NCAA gymnastics scoring.
+                                </p>
+                                <h4>What I Improved & Learned:</h4>
+                                <ul>
+                                    <li><strong>Next.js Work:</strong> Worked with App Router patterns, React components, TypeScript data, Tailwind UI, and real bugs inside an existing app.</li>
+                                    <li><strong>Performance:</strong> Improved load speed with better rendering choices, lazy loading, and cleaner data flow.</li>
+                                    <li><strong>GraphQL & Request Flow:</strong> Studied how virti.us moved live scoring data through GraphQL requests and used that to make better decisions.</li>
+                                    <li><strong>Scoring Accuracy:</strong> Helped solve real scoring problems like floating-point precision, dynamic 3/4-decimal display, exhibition athlete filtering, and edge-case ranking behavior.</li>
+                                    <li><strong>Security Mindset:</strong> Kept security in mind while working with API data, request flow, caching, and the boundary between the client and server.</li>
+                                    <li><strong>Testing Discipline:</strong> Worked with Playwright tests, visual comparisons, and regression checks so changes were backed by more than just clicking around and hoping.</li>
+                                </ul>
+                                <p>
+                                    The main lesson was how to work inside a real product: understand the codebase, talk through tradeoffs, improve performance, and still care about correctness and security.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Tennis Enrollment Project -->
+                    <div class="project-container">
+                        <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank" rel="noopener noreferrer">
+                            <div class="project-card">
+                                <img class="code-image" src="./assets/ClubAutomation.png" alt="Club Automation enrollment tool screenshot">
+                                <h3>AVAC Tennis Class Automation</h3>
+                                <p>
+                                    At AVAC, I saw how much time tennis staff spent on repetitive enrollment work. I built a Python tool to automate the boring parts and flag the cases that still need a person.
+                                </p>
+                                <p>
+                                    The project started with class rosters and enrollment. I added attendance checks, CSV comparison, and prompts for cases where the program should not guess.
+                                </p>
+                                <h4>How I Made It Work:</h4>
+                                <ul>
+                                    <li><strong>Python + Selenium:</strong> Automated login and enrollment steps in the Club Automation site.</li>
+                                    <li><strong>Pandas & CSVs:</strong> Compared player lists, attendance logs, and inquiry files.</li>
+                                    <li><strong>Human Review:</strong> Added prompts when the tool finds a case that needs staff judgment.</li>
+                                    <li><strong>Setup:</strong> Wrote a batch script so staff could run it without manually setting up the environment.</li>
+                                </ul>
+                                <p>
+                                    This was a good lesson in practical software. The tool only mattered because it fit the real workflow and handled edge cases instead of pretending they did not exist.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Linux Security Lab -->
+                    <div class="project-container">
+                        <a href="blog.html#linux-security-lab">
+                            <div class="project-card">
+                                <h3>Linux & Security Tool Lab</h3>
+                                <p>
+                                    I have been using Linux since freshman year of high school through live boots and full installs. I have used Kali, Arch, and Linux Mint, and I spent a lot of time learning how security tools behave in lab and authorized environments.
+                                </p>
+                                <h4>What I Practiced:</h4>
+                                <ul>
+                                    <li><strong>Linux Installs:</strong> Booted and installed different distributions, fixed driver/config issues, and learned how Linux systems are laid out.</li>
+                                    <li><strong>Kali Linux:</strong> Used Kali as a security-focused environment and focused on understanding what the tools were actually doing.</li>
+                                    <li><strong>Network Scanning:</strong> Practiced with Nmap to understand hosts, ports, services, and why exposed services matter.</li>
+                                    <li><strong>Metasploit Basics:</strong> Spent time learning how modules, payloads, and lab exploitation workflows are structured.</li>
+                                    <li><strong>System Comfort:</strong> Got comfortable with the terminal, packages, permissions, services, network settings, and troubleshooting broken installs.</li>
+                                    <li><strong>Security Mindset:</strong> Learned to think in terms of attack surface, misconfiguration, and verification instead of just running tools.</li>
+                                </ul>
+                                <p>
+                                    The useful part was not memorizing commands. It was learning how Linux, networks, and security tools fit together, and how to slow down enough to understand what a tool is actually showing me.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Raspberry Pi Pi-hole Project -->
+                    <div class="project-container">
+                        <a href="blog.html#pihole-xfinity">
+                            <div class="project-card">
+                                <h3>Raspberry Pi Pi-hole Network Lab</h3>
+                                <p>
+                                    I set up Pi-hole on a Raspberry Pi to learn how DNS, DHCP, IPv4, IPv6, and router control work on a real home network. The goal was network-wide ad blocking. The useful part was figuring out why the Xfinity gateway kept bypassing it.
+                                </p>
+                                <h4>What I Built & Learned:</h4>
+                                <ul>
+                                    <li><strong>Raspberry Pi Server Setup:</strong> Installed Pi-hole headlessly, reserved 10.0.0.50, set Cloudflare as upstream DNS, and tested it with nslookup.</li>
+                                    <li><strong>DNS Debugging:</strong> Queried Pi-hole directly, then checked the dashboard to prove requests were reaching the server.</li>
+                                    <li><strong>DHCP vs DNS:</strong> Learned the difference between resolving names and assigning network settings, and why controlling DHCP is what lets you control where devices send DNS traffic.</li>
+                                    <li><strong>Xfinity Router Limits:</strong> Found that the stock gateway would not reliably allow custom network-wide DNS, so devices kept falling back to Comcast DNS like cdns01.comcast.net.</li>
+                                    <li><strong>IPv6 Bypass:</strong> Tracked how Xfinity IPv6 DNS, including 2001:558:feed::1, could silently bypass Pi-hole even when IPv4 settings looked correct.</li>
+                                    <li><strong>Risky Change Recovery:</strong> Tested a Pi-hole DHCP takeover, hit router/DHCP conflicts and temporary network loss, then backed out and isolated the problem instead of guessing.</li>
+                                </ul>
+                                <p>
+                                    This taught me more because it did not go perfectly. I learned to test one layer at a time, separate a working service from a router problem, and think before changing settings that affect the whole network.
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project-container">
+                        <a href="https://github.com/ejor5/BPNeuralNetwork" target="_blank" rel="noopener noreferrer">
                         <div class="project-card">
                             <img class="code-image" src="./assets/TestResults.png" alt="BBPB Image">
                             <h3>Backward Propagation Neural Network</h3>
                             <p>
-                                I wanted to really understand how machine learning works, so I challenged myself to build a neural network from scratch using Python. This wasn’t just a class assignment—I spent a whole quarter digging into the math and code behind backpropagation, and by the end, I had a working model that could actually learn from data.
+                                    I built a neural network from scratch in Python because I wanted to understand what backpropagation was actually doing. I spent the quarter working through the math, writing the code, and debugging it until the model could learn from data.
                             </p>
                             <p>
                                 Along the way, I got hands-on with:
                             </p>
                             <ul>
                                 <li>
-                                    <strong>Feedforward and Backpropagation:</strong> I wrote the code to make predictions and then update the network’s weights using calculus and gradients. Debugging this was tough, but it taught me a lot about how real AI works.
+                                    <strong>Feedforward and Backpropagation:</strong> Wrote the prediction step and the weight update step using gradients. Debugging this was the hard part.
                                 </li>
                                 <li>
-                                    <strong>Activation Functions:</strong> I experimented with ReLU, Sigmoid, and Tanh to see how they affect learning, and learned how important these choices are for real-world results.
+                                    <strong>Activation Functions:</strong> Tested ReLU, Sigmoid, and Tanh to see how they changed learning.
                                 </li>
                                 <li>
-                                    <strong>Preventing Overfitting:</strong> I tried out regularization and dropout, which helped my model generalize better—something I know is crucial in both research and industry.
+                                    <strong>Preventing Overfitting:</strong> Tried regularization and dropout so the model would not only memorize the training data.
                                 </li>
                                 <li>
-                                    <strong>Matrix Math & Python Libraries:</strong> I got comfortable with NumPy and vectorized operations, which made my code much faster and more efficient.
+                                    <strong>Matrix Math & Python Libraries:</strong> Used NumPy and vectorized operations to make the code faster and cleaner.
                                 </li>
                             </ul>
                             <p>
-                                This project gave me a real appreciation for the challenges (and excitement) of building AI systems. I learned to break down complex problems, test my code, and keep improving until it worked. I’m excited to bring this kind of curiosity and persistence to future research or software teams.
+                                This project made machine learning feel less mysterious. It forced me to slow down, test each step, and understand why the model was or was not learning.
                             </p>
                         </div>
                         </a>
@@ -176,54 +296,28 @@
 
                     <!-- New Mattercam Project -->
                     <div class="project-container">
-                        <a href="https://github.com/ejor5/Matterhorn" target="_blank">
+                        <a href="https://github.com/ejor5/Matterhorn" target="_blank" rel="noopener noreferrer">
                             <div class="project-card">
                                 <img class="code-image" src="./assets/MattercamScreenshot.png" alt="Mattercam Screenshot">
                                 <h3>Mattercam Project</h3>
                                 <p>
-                                    I love theme parks and data, so I built a dashboard that streams live video from Disneyland and shows up-to-the-minute ride wait times—all in a fullscreen, modern interface. This was my way of combining my interests in UI design, automation, and a little bit of fun.
+                                    I built a dashboard that shows a Disneyland livestream and current ride wait times. It started as a Raspberry Pi idea, but I later moved it toward Windows because the Pi did not have enough memory for the full app.
                                 </p>
-                                <h4>🛠 What I Built & Learned:</h4>
+                                <h4>What I Built & Learned:</h4>
                                 <ul>
-                                    <li><strong>Custom Tkinter UI:</strong> I designed a clean, easy-to-read interface with color-coded ride times, so anyone (even my non-techy friends) could use it.</li>
-                                    <li><strong>Web Scraping:</strong> I used BeautifulSoup and Requests to pull live data from queue-times.com, which meant I had to figure out how to parse real-world, messy HTML.</li>
-                                    <li><strong>Live Video Streaming:</strong> I integrated a YouTube webcam feed using yt-dlp and VLC, which was a fun challenge in media handling and Python bindings.</li>
-                                    <li><strong>Real-Time Updates:</strong> The app refreshes data every minute and shows a timestamp, so you always know what’s happening in the park.</li>
+                                    <li><strong>Custom Tkinter UI:</strong> Built a simple fullscreen interface with color-coded ride times.</li>
+                                    <li><strong>Web Scraping:</strong> Used BeautifulSoup and Requests to pull wait-time data and parse messy HTML.</li>
+                                    <li><strong>Live Video Streaming:</strong> Used yt-dlp and VLC to load the webcam feed inside the app.</li>
+                                    <li><strong>Real-Time Updates:</strong> Refreshed the data every minute and showed the last update time.</li>
                                 </ul>
                                 <p>
-                                    This project taught me how to bring together different technologies and think about the user experience, not just the code. I also learned how to troubleshoot when things break (which they did, a lot!). I’m proud of how it turned out, and I’d love to keep building tools that make data more accessible and engaging.
+                                    This project taught me how to combine scraping, media playback, and UI code. A lot broke while I was building it, which made the debugging useful.
                                 </p>
                             </div>
                         </a>
                     </div>
-                    <!-- Tennis Enrollment Project -->
                     <div class="project-container">
-                        <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank">
-                            <div class="project-card">
-                                <img class="code-image" src="./assets/ClubAutomation.png" alt="Club Automation Screenshot">
-                                <h3>AVAC Tennis Class Automation</h3>
-                                <p>
-                                    Working as a tennis scheduler at AVAC, I saw firsthand how much time was wasted on repetitive enrollment tasks. Instead of just complaining, I decided to do something about it: I built a Python automation tool that now saves our staff hours every month.
-                                </p>
-                                <p>
-                                    The project started simple—just scraping class rosters and enrolling students—but I kept adding features based on what my team needed. Now, it checks attendance, flags students for review, and even helps with tricky cases using CSV files and prompts.
-                                </p>
-                                <h4>🛠 How I Made It Work:</h4>
-                                <ul>
-                                    <li><strong>Python + Selenium:</strong> Automated the browser to log in and handle the clunky Club Automation interface.</li>
-                                    <li><strong>Pandas & CSVs:</strong> Compared player lists and attendance logs to make sure no one slipped through the cracks.</li>
-                                    <li><strong>Real-Time Prompts:</strong> The tool asks for human input when something looks off, so we don’t make mistakes.</li>
-                                    <li><strong>Easy Setup:</strong> I wrote a batch script to set up the environment and keep credentials safe, so anyone on staff can use it.</li>
-                                </ul>
-                                <p>
-                                    What started as a personal time-saver is now a tool the whole department relies on. This project showed me how much impact software can have in the real world, and how important it is to listen to users and keep improving your work.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/GuessingGame/blob/master/BinaryTree.py" target="_blank">
+                        <a href="https://github.com/ejor5/GuessingGame/blob/master/BinaryTree.py" target="_blank" rel="noopener noreferrer">
                             <div class="project-card">
                                 <h3>BinaryTree Class (Python Data Structures)</h3>
                                 <p>
@@ -232,23 +326,23 @@
                                     <strong>Date:</strong> 11/01/2023
                                 </p>
                                 <p>
-                                    I wanted to really understand how data structures work under the hood, so I took on the challenge of implementing a binary search tree in Python. I wrote the code, tested edge cases, and even added an interactive menu so users could explore different tree traversals.
+                                    I implemented a binary search tree in Python to understand the data structure beyond just drawing it on paper. I wrote the operations, tested edge cases, and added a small menu to try the tree from the terminal.
                                 </p>
-                                <h4>🛠 What I Focused On:</h4>
+                                <h4>What I Focused On:</h4>
                                 <ul>
-                                    <li><strong>Core BST Operations:</strong> Insert, search, and delete—making sure everything worked smoothly, even for tricky cases like deleting the root.</li>
-                                    <li><strong>Tree Traversals:</strong> Built in-order, pre-order, and post-order methods, and learned how recursion and iteration can both be used.</li>
-                                    <li><strong>User Interaction:</strong> Added a simple text menu so anyone could try out the tree and see how the algorithms work in real time.</li>
+                                    <li><strong>Core BST Operations:</strong> Built insert, search, and delete, including cases like deleting the root.</li>
+                                    <li><strong>Tree Traversals:</strong> Added in-order, pre-order, and post-order traversal.</li>
+                                    <li><strong>User Interaction:</strong> Added a text menu so the tree could be tested without editing code.</li>
                                 </ul>
                                 <p>
-                                    This project helped me build a strong foundation in algorithms and Python class design. It also taught me to think about how to make technical concepts accessible to others—something I hope to keep doing in research or teaching roles.
+                                    This helped me understand recursion, class design, and why edge cases matter in basic algorithms.
                                 </p>
                             </div>
                         </a>
                     </div>
 
                     <div class="project-container">
-                        <a href="https://github.com/ejor5/ComputerInventoryProject" target="_blank">
+                        <a href="https://github.com/ejor5/ComputerInventoryProject" target="_blank" rel="noopener noreferrer">
                             <div class="project-card">
                                 <h3>Python Computer Inventory Manager</h3>
                                 <p>
@@ -256,17 +350,17 @@
                                     <strong>Date:</strong> 10/13/2024 (Updated 12/4/2024)
                                 </p>
                                 <p>
-                                    I built this command-line app to help keep track of computers for a small IT team. It started as a way to organize Linux and Windows machines, but quickly grew into a full inventory system with a database, input validation, and a user-friendly menu.
+                                    I built this command-line app to track computers for a small IT-style inventory. It stores Linux and Windows machines, saves them in a database, and checks input before accepting it.
                                 </p>
-                                <h4>🛠 What I Learned & Built:</h4>
+                                <h4>What I Learned & Built:</h4>
                                 <ul>
-                                    <li><strong>Python + SQLite3:</strong> I set up a persistent database so nothing gets lost, even if the program closes.</li>
-                                    <li><strong>OOP Design:</strong> Used class inheritance to handle different types of computers, which made the code much cleaner and easier to expand.</li>
-                                    <li><strong>Input Validation:</strong> Made sure only valid IP addresses could be entered, which saved a lot of headaches later.</li>
-                                    <li><strong>Interactive Menu:</strong> Built a simple interface so anyone could add, update, or remove computers without needing to know Python.</li>
+                                    <li><strong>Python + SQLite3:</strong> Stored inventory data in a persistent database.</li>
+                                    <li><strong>OOP Design:</strong> Used classes and inheritance for different computer types.</li>
+                                    <li><strong>Input Validation:</strong> Checked IP addresses before saving them.</li>
+                                    <li><strong>Interactive Menu:</strong> Built a terminal menu for adding, updating, and removing computers.</li>
                                 </ul>
                                 <p>
-                                    This project was a great way to practice combining OOP, databases, and real-world problem solving. It also showed me how much users appreciate clear instructions and reliable tools—something I want to keep focusing on as I grow as a developer.
+                                    This was a good practice project for OOP, databases, validation, and making a tool understandable for someone besides the person who wrote it.
                                 </p>
                             </div>
                         </a>
@@ -274,7 +368,7 @@
 
                     <!-- RTSP Camera App Project -->
                     <div class="project-container">
-                        <a href="https://github.com/ejor5/RTSPCameraApp" target="_blank">
+                        <a href="https://github.com/ejor5/RTSPCameraApp" target="_blank" rel="noopener noreferrer">
                             <div class="project-card">
                                 <h3>RTSP 4-Camera Viewer</h3>
                                 <p>
@@ -282,17 +376,17 @@
                                     <strong>Date:</strong> December 2024
                                 </p>
                                 <p>
-                                    I developed a professional multi-camera monitoring application that displays up to four RTSP camera feeds simultaneously in a clean, modern interface. This project combines my interest in video streaming technology with practical UI/UX design for security and surveillance applications.
+                                    I built a desktop app that shows up to four RTSP camera feeds at once. It was mostly about learning video streams, window behavior, and how to keep a monitoring tool usable.
                                 </p>
-                                <h4>🛠 Technical Implementation:</h4>
+                                <h4>Technical Implementation:</h4>
                                 <ul>
-                                    <li><strong>VLC Integration:</strong> Used python-vlc bindings to handle RTSP streams with optimized caching and network settings for stable, low-latency video feeds.</li>
-                                    <li><strong>Custom Tkinter UI:</strong> Built a borderless window with a custom title bar, draggable interface, and responsive 2x2 grid layout that adapts to different screen sizes.</li>
-                                    <li><strong>Advanced Window Management:</strong> Implemented fullscreen toggle, window dragging, and keyboard shortcuts (F11 for fullscreen, Escape to exit) for professional user experience.</li>
-                                    <li><strong>Stream Optimization:</strong> Configured VLC with specialized parameters for live streaming including network caching, clock synchronization, and audio/video optimizations.</li>
+                                    <li><strong>VLC Integration:</strong> Used python-vlc to load RTSP streams and tune caching settings.</li>
+                                    <li><strong>Custom Tkinter UI:</strong> Built a borderless window, custom title bar, draggable interface, and 2x2 feed layout.</li>
+                                    <li><strong>Window Controls:</strong> Added fullscreen, dragging, F11, and Escape behavior.</li>
+                                    <li><strong>Stream Settings:</strong> Adjusted VLC parameters for live camera feeds, including caching and clock sync.</li>
                                 </ul>
                                 <p>
-                                    This application demonstrates my ability to work with multimedia libraries, create professional desktop applications, and solve real-world problems in video surveillance and monitoring. The clean interface and smooth performance make it suitable for security operations, event monitoring, or any scenario requiring multiple camera feeds.
+                                    This project taught me how much small settings matter when video comes over a network. A camera app can look simple, but stream handling and timing make it interesting.
                                 </p>
                             </div>
                         </a>
@@ -304,7 +398,7 @@
         <section id="contact">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
-                <p class="final-message">Feel free to reach out to me for any tech or office-based opportunities.</p>
+                <p class="final-message">Reach out for software engineering, IT, cybersecurity, or technical internship opportunities.</p>
                 <div class="email-container">
                     <a href="mailto:ejor50k@gmail.com" class="email-button">Email Me</a>
                 </div>

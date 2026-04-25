@@ -4,10 +4,9 @@
     <link rel="stylesheet" href="blog.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <title>Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="blog.css">
@@ -22,7 +21,7 @@
                 <li role="none"><a href="index.html#resume" role="menuitem" aria-label="Resume section">Resume</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="blog.html">Blog - Click Posts for GitHub Links</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
     </nav>
@@ -31,66 +30,86 @@
             <div class="container">
                 <h2 class="section-title">Blog</h2>
                 <div class="blog-posts">
+                    <article class="blog-post" id="pihole-xfinity">
+                        <h3>Setting Up Pi-hole on Xfinity: What Actually Happened - 4/22/2026</h3>
+                        <p>I set up Pi-hole on a Raspberry Pi because I wanted network-wide ad blocking and a better understanding of how DNS traffic actually moves through a home network. The plan sounded simple: give the Pi a stable address, point the network at it for DNS, and let every device use Pi-hole automatically.</p>
+                        <p>I installed Pi-hole headlessly on the Raspberry Pi, reserved the static IP <code>10.0.0.50</code> through the router, and configured Cloudflare as the upstream DNS provider. Before touching the whole network, I tested the Pi directly with <code>nslookup google.com 10.0.0.50</code>. That worked, and the queries showed up in the Pi-hole dashboard, so I knew the Pi-hole service itself was not the problem.</p>
+                        <p>The real issue was the Xfinity gateway. The router did not give me reliable control over custom DNS for the whole network, so devices kept using Comcast DNS instead. I saw traffic still going through <code>cdns01.comcast.net</code>, and IPv6 made it even trickier because Xfinity was handing out DNS like <code>2001:558:feed::1</code>. That meant some devices could bypass Pi-hole without making it obvious from the normal IPv4 settings.</p>
+                        <p>I also tested whether Pi-hole could take over DHCP, because that would let it tell devices which DNS server to use. That taught me the difference between DNS and DHCP in a way a textbook never really does. DNS decides where name lookups go. DHCP decides who gives devices their network identity and settings. When the router and Pi-hole both tried to be in charge of DHCP, the network became unstable, some devices stopped getting usable addresses, and I lost internet completely for a bit.</p>
+                        <h4>What I Debugged</h4>
+                        <ul>
+                            <li>Confirmed Pi-hole worked by querying <code>10.0.0.50</code> directly instead of assuming the router was sending traffic there.</li>
+                            <li>Checked the Pi-hole dashboard to prove DNS queries were reaching the Raspberry Pi.</li>
+                            <li>Compared what I configured against what devices actually used, which exposed the Comcast DNS fallback.</li>
+                            <li>Separated DNS settings from DHCP control after realizing they solve different parts of the problem.</li>
+                            <li>Tracked IPv6 as a bypass path instead of only looking at IPv4 DNS settings.</li>
+                            <li>Worked around Pi-hole DHCP page glitches and reloads by focusing on the network behavior, not just what the UI seemed to say.</li>
+                        </ul>
+                        <p>Instead of randomly changing settings, I started isolating each layer. I tested Pi-hole directly, checked whether queries appeared in the dashboard, looked at which DNS servers devices were actually using, and separated a working Pi-hole install from the router limitations around it. The temporary workaround was per-device configuration: manually point devices at <code>10.0.0.50</code> for DNS and disable IPv6 where needed so traffic could not silently bypass the Pi-hole.</p>
+                        <p>The conclusion was pretty clear: full network-wide Pi-hole is not realistic on a stock Xfinity gateway unless I either put the gateway in bridge mode and use my own router, or configure devices one by one. That sounds like a failed setup, but it was honestly a better learning project because I had to understand the actual network instead of just following a guide.</p>
+                        <p>The biggest thing I learned was that you should not start configuring a network until you understand who controls each part of it. I came away with a much better understanding of DNS resolution, DHCP, MAC-based device identity, IPv4 vs IPv6 behavior, router limitations, and how to test safely before making changes that affect every device in the house.</p>
+                        <p>Next time, I would identify router limitations first, choose the architecture before touching global settings, and use either bridge mode with my own router or a deliberate per-device setup. The lesson was simple: understand the system before configuring the system.</p>
+                    </article>
                     <article class="blog-post">
-                        <a href="https://github.com/ejor5/MyWebsite" target="_blank">
+                        <a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">
+                            <img class="blog-image" src="./assets/VMainPage.png" alt="Virtius scores main page">
+                            <h3>What I Learned Improving Virtius Scores - 4/03/2026</h3>
+                            <p>Virtius was a big step for me. I did not build the whole project from zero, but I did take on a lot of the engineering work for my branch, scores.virti.us.</p>
+                            <p>I learned Next.js by working inside a real app, not by copying a tutorial. The stack was Next.js 15, React 19, TypeScript, and Tailwind. Every change had to fit the existing code and the actual product.</p>
+                            <p>I also studied how the old virti.us site moved live scoring data. I watched the GraphQL requests, looked at the request flow, and used that to make better decisions instead of guessing.</p>
+                            <p>Most of the work came down to speed, correctness, and trust. I worked on lazy loading, API data handling, score precision, 3-vs-4 decimal display, exhibition athlete handling, ranking edge cases, and Playwright tests.</p>
+                            <p>The main lesson was ownership. I had to understand the code, communicate with a designer/project manager, and make choices that helped the product instead of just making the code look nice.</p>
+                        </a>
+                    </article>
+                    <article class="blog-post" id="linux-security-lab">
+                        <h3>Learning Linux and Security Tools - 1/15/2026</h3>
+                        <p>I started using Linux freshman year of high school. At first it was mostly live boots, then full installs, then distro hopping because I wanted to understand how different systems felt when I actually had to use them.</p>
+                        <p>I have used Kali, Arch, and Linux Mint. Mint was the one I daily drove for a while because it was stable enough to actually get work done. Kali was useful for learning security tools, and Arch taught me more about how Linux is put together because it makes you touch more of the system yourself.</p>
+                        <p>The biggest value was getting comfortable when something broke. Boot issues, packages, drivers, permissions, network settings, desktop environments, and weird config problems all forced me to troubleshoot instead of panic. That matters because a lot of technical work is just staying calm long enough to find the real problem.</p>
+                        <p>I also spent a lot of hours learning tools like Nmap and Metasploit in lab and authorized environments. Nmap helped me understand hosts, ports, services, and why exposed services matter. Metasploit helped me understand how security testing is structured: modules, payloads, targets, and the difference between a vulnerability existing in theory and actually verifying behavior in a controlled setup.</p>
+                        <p>I do not think the tools are the impressive part by themselves. Anyone can run commands. The useful skill is understanding what the output means, what question you are trying to answer, and what risk you might create if you touch the wrong system.</p>
+                        <p>This experience gave me a stronger base for networking and cybersecurity. It made DNS, ports, services, permissions, shells, and misconfiguration feel real instead of abstract. It also taught me to respect boundaries: test in labs, document what changed, and do not run security tools against systems you do not own or have permission to test.</p>
+                    </article>
+                    <article class="blog-post">
+                        <a href="https://github.com/ejor5/MyWebsite" target="_blank" rel="noopener noreferrer">
                             <h3>Welcome to My Website Blog - 2/27/2025</h3>
-                            <p>Welcome to my website blog! I have been working on this website for a few months, and I have officially purchased the domain and got the website in publishing functionality! I'm excited to share my journey, projects, and insights about technology and programming with you. Stay tuned for more updates and posts!</p>
-                            <p>The creation of this website was a bit finnicky since I dreamt larger than I could afford. Initially this website had a video background of space as you see currently, but the cost for renting server space was too expensive for a college student. I looked into using an old computer to host my website, but with my background in security I understood the huge security risk that was and decided against it. GitHub pages offered limited but useful hosting, so that is what this is running on. I had initially built an interactive console that would be embedded into this website as a way to learn about me, but once again was limited by the constrictions of GitHub pages.</p>
+                            <p>I built this website so I had one place to show my projects and write about what I am learning. I bought the domain and published it after working on it for a few months.</p>
+                            <p>The first version was bigger than what I could reasonably host. I wanted a video background and an interactive console, but server costs were not worth it. I also thought about hosting it from an old computer, then decided against it because exposing a home machine to the internet is a bad idea unless you really know what you are doing. GitHub Pages was limited, but it was simple and safer.</p>
                         </a>
                     </article>
                     <article class="blog-post">
-                        <a href="https://github.com/ejor5/Matterhorn" target="_blank">
-                            <img src="./assets/BlogMattercamSC.png" alt="Image" style="max-width: 50%; height: auto; object-fit: contain;">
-                            <h3>Creation of Disneyland Live Stream App! 2/27/2025</h3>
-                            <p>I have been wanting to make a linux based application that runs on my raspberry pi 3 for a long time, and the 24 hour Disneyland live stream seemed like a great opportunity. It took me about 2 weeks to fully develop since I have been so busy with school, here it is! I came across many difficulties trying to access the correct live stream from Howard Johnson, since the webcam creates a new stream at three different points throughout the day. To solve this problem, I thought outside of the box and used the solution of going to their website and pulling the link directly from them.</p>
+                        <a href="https://github.com/ejor5/Matterhorn" target="_blank" rel="noopener noreferrer">
+                            <img class="blog-image" src="./assets/BlogMattercamSC.png" alt="Disneyland livestream dashboard screenshot">
+                            <h3>Disneyland Livestream App - 2/27/2025</h3>
+                            <p>I wanted to make a Linux app for my Raspberry Pi 3, and the 24-hour Disneyland livestream gave me a clear idea. I built a dashboard that showed the livestream and ride wait times.</p>
+                            <p>The annoying part was the webcam link. The Howard Johnson stream changed links during the day, so hardcoding one URL did not work. I fixed that by pulling the current link from their site instead.</p>
                             <h3>Update 4/11/2025</h3>
-                            <p>My raspberry pi really didn't have the RAM to run this application, so I went ahead an focused the application for Windows Based systems. You can run it now! Just click this post and it will take you to the GitHub. Download it and run DisneyDashboard.exe!</p>
+                            <p>The Raspberry Pi did not have enough RAM for the app to run well, so I moved the project toward Windows.</p>
                         </a>
                     </article>
                     <article class="blog-post">
-                        <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank">
-                            <img src="assets\ClubAutomation.png" alt="Image" style="max-width: 50%; height: auto; object-fit: contain;">
+                        <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank" rel="noopener noreferrer">
+                            <img class="blog-image" src="./assets/ClubAutomation.png" alt="Club Automation enrollment tool screenshot">
                             <h3>Almaden Valley Athletic Club Web Scheduler 3/30/2025</h3>
-                            <p>I work as a tennis scheduler at Almaden Valley Athletic club, and I have always hated painstakingly repeititve tasks. Each month, a tennis scheduler has to type in each student's name to enroll them. I decided to create a web scraping tool that would go through each class and each day, pull all names into a list, and sign them up for the next month automatically.</p>
+                            <p>I work as a tennis scheduler at Almaden Valley Athletic Club. Each month, staff had to repeat the same enrollment steps over and over. I built a web automation tool to pull class names and help enroll students for the next month.</p>
                             <h3>Running the Program 7/25/2025</h3>
-                            <p>I finally got the go-ahead for the AVAC Tennis Enrollment Project. It works wonderfully and I added new features. The main feature that I added was if a student's name was in the Tennis Inquiries CSV that I downloaded from our work computer, than the student would be flagged before enrollment, requiring user input from a Tennis Worker.</p>
+                            <p>After I got approval to use it, I added a review step. If a student's name appears in the Tennis Inquiries CSV, the tool flags it before enrollment and asks a staff member what to do. I wanted the program to save time without making blind decisions.</p>
                         </a>
                     </article>
                     <article class="blog-post">
-                        <a href="https://www.instagram.com/jake.gipson.estate/" target="_blank">
-                            <img src="assets\JGWebsite.png" alt="Image" style="max-width: 50%; height: auto; object-fit: contain;">
+                        <a href="https://www.instagram.com/jake.gipson.estate/" target="_blank" rel="noopener noreferrer">
+                            <img class="blog-image" src="./assets/JGWebsite.png" alt="Jake Gipson website screenshot">
                             <h3>Real Estate Internship 2022-2024</h3>
-                            <p>Real estate has been a huge journey for me. I was taken under the wing of Jake Gipson, an eager Silicon Valley realtor with 25+ years of experience, and taught the ins and outs of high-level business. This multi-year internship pushed me to adapt quickly, learn on the fly, and take on a wide range of roles — all of which required strong problem-solving skills and initiative.<br>
+                            <p>I interned with Jake Gipson, a Silicon Valley realtor with 25+ years of experience. I learned quickly because the work changed a lot, and I had to handle different kinds of tasks without much hand-holding.<br>
                                 I started with cold calls to generate leads, as most salespeople do. I made calls daily, doing my best to mirror the buyer's energy and keep them engaged. It taught me a lot about communication, confidence, and how to read people in real-time.<br>
                                 Eventually, I transitioned into the role of social media manager and content producer. I created and managed accounts on Instagram, Facebook, TikTok, YouTube, and LinkedIn under the Jake Gipson Team and Jake Gipson Estates brands. I also implemented Buffer to streamline our posting process, allowing us to schedule and automate content delivery across platforms.<br>
-                                During this time, I organized studio sessions where we filmed and produced relevant content tailored to current trends. While my creativity was sometimes limited by branding needs, I learned how to consistently produce and publish content that resonated with audiences. I realized how important it was to research trends, understand target demographics, and track performance metrics to optimize reach and engagement.<br>
-                                Through content creation, I picked up practical photography and real estate staging skills, which helped me better highlight listings in our posts. I also designed and built Jake Gipson’s website using Elementor and Kubio — a project that taught me a lot about UI/UX design, front-end development, and the importance of clear branding online.<br>
-                                This internship gave me real exposure to high-level business, marketing strategy, and technical tools. More importantly, it helped me grow into a more adaptable, creative, and resourceful person — someone who can take on new challenges, learn quickly, and make a real impact.
+                                During this time, I organized studio sessions and helped make content for social media. I learned that creative work still needs data: what people click, what they ignore, and what is actually worth posting again.<br>
+                                Through content creation, I picked up practical photography and real estate staging skills. I also designed and built Jake Gipson's website using Elementor and Kubio, which taught me more about UI, layout, and clear online branding.<br>
+                                This internship taught me how business, marketing, and technical tools connect. It also made me better at learning fast and figuring things out without waiting for perfect instructions.
                             </p>
                             
                         </a>
                     </article>
-                    <article class="blog-post">
-                        <a href="" target="_blank">
-                            <img src="assets\JGWebsite.png" alt="Image" style="max-width: 50%; height: auto; object-fit: contain;">
-                            <h3>Reflecting on a Year of Growth – 2024</h3>
-                            <p>
-                                I was just reflecting on all the projects I've worked on this past year, and it's honestly amazing how much I've learned and grown as a programmer. Looking back, my skills have gone up multiple notches, especially thanks to all the practice I've put in on LeetCode and the time I've spent creating AI projects.<br>
-                                Tackling LeetCode problems has really sharpened my problem-solving abilities and helped me think more efficiently about algorithms and data structures. It's been challenging at times, but seeing my progress has been super motivating.<br>
-                                On top of that, diving into AI has opened up a whole new world for me. Building and experimenting with different models, learning about machine learning concepts, and actually seeing my code make intelligent decisions has been both fun and rewarding.<br>
-                                All these experiences have made me a much more confident and capable developer. I'm excited to keep pushing myself, take on even bigger challenges, and see where my programming journey takes me next!
-                            </p>
-                        </a>
-                    </article>
-                    <!-- <article class="blog-post">
-                        <a href="https://github.com/ejor5/Matterhorn" target="_blank">
-                            <img src="./assets/BlogMattercamSC.png" alt="Image" style="max-width: 50%; height: auto; object-fit: contain;">
-                            <h3>Creation of Disneyland Live Stream App! 2/27/2025</h3>
-                            <p>I have been wanting to make a linux based application that runs on my raspberry pi 3 for a long time, and the 24 hour Disneyland live stream seemed like a great opportunity. It took me about 2 weeks to fully develop since I have been so busy with school, here it is! I came across many difficulties trying to access the correct live stream from Howard Johnson, since the webcam creates a new stream at three different points throughout the day. To solve this problem, I thought outside of the box and used the solution of going to their website and pulling the link directly from them.</p>
-                            <h3>Update 4/11/2025</h3>
-                            <p>My raspberry pi really didn't have the RAM to run this application, so I went ahead an focused the application for Windows Based systems. You can run it now! Just click this post and it will take you to the GitHub. Download it and run DisneyDashboard.exe!</p>
-                        </a>
-                    </article> -->
                 </div>
             </div>
         </section>

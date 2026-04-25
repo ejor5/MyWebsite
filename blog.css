@@ -58,16 +58,23 @@ body {
     color: white;
 }
 
-li {
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav li {
     list-style: none;
     display: inline-block;
 }
 
-li a {
+.nav li a {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    margin-right: 25px;
+    margin-right: 0;
 }
 
 /* Blog Section */
@@ -98,9 +105,10 @@ li a {
 
 .blog-post {
     background-color: #080a0f;
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 2rem;
-    box-shadow: 0 10px 20px rgba(177, 177, 177, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
     transition: transform 0.2s, box-shadow 0.2s;
     width: 100%;
 }
@@ -119,6 +127,26 @@ li a {
 .blog-post p {
     color: #f9f9f9;
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-image {
+    max-width: min(520px, 100%);
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.blog-post ul {
+    margin: 1rem 0 1rem 1.5rem;
+}
+
+.blog-post li {
+    color: #f9f9f9;
+    display: list-item;
+    list-style-type: disc;
+    margin: 0 0 0.6rem 0;
+    line-height: 1.5;
 }
 
 /* Add loading skeleton animation */
@@ -147,6 +175,23 @@ li a {
 
     .section-title {
         font-size: 1.5rem; /* Smaller section title size */
+    }
+
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .nav ul {
+        gap: 0.7rem;
+        justify-content: flex-end;
+    }
+
+    .nav li a {
+        font-size: 13px;
+    }
+
+    .blog-post {
+        padding: 1.2rem;
     }
 
     .blog-post h3 {
