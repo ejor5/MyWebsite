@@ -32,8 +32,8 @@ body {
 }
 
 strong {
-    color: #959595;
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.96);
+    font-weight: 600;
 }
 
 html {
@@ -134,6 +134,20 @@ html {
     }
 }
 
+@keyframes heroIntro {
+    from {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% + 18px));
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        filter: blur(0);
+    }
+}
+
 .hero-content {
     position: absolute;
     top: 50%;
@@ -143,7 +157,7 @@ html {
     width: 100%;
     max-width: 1200px;
     padding: 0 2rem;
-    animation: fadeIn 1s ease-in;
+    animation: heroIntro 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .hero-content h1 {
@@ -277,12 +291,6 @@ section#proof {
     border: 10px solid rgba(9, 9, 28, 0.8);
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(109, 109, 228, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tree-hang:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(109, 109, 228, 0.3);
 }
 
 /* Contact section improvements */
@@ -408,13 +416,15 @@ section#contact .section-title {
     padding: 2.5rem;
     max-width: 1500px;
     margin: 20px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     line-height: 1.7;
 }
 
-.project-card:hover {
+.project-container a:hover .project-card,
+.project-container a:focus-visible .project-card {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(177, 177, 177, 0.2);
+    border-color: rgba(88, 166, 255, 0.55);
 }
 
 .project-card img {
@@ -525,14 +535,7 @@ section#contact .section-title {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.9rem 1rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.resume-section li:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-2px);
-    border-color: var(--accent);
 }
 
 /* Projects Section Improvements */
@@ -588,29 +591,159 @@ section#contact .section-title {
 .proof-section {
     max-width: 1050px;
     width: 100%;
+    position: relative;
+    isolation: isolate;
+}
+
+.proof-section::before {
+    content: "";
+    position: absolute;
+    inset: -2.5rem -2rem;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(115deg, transparent 0%, rgba(88, 166, 255, 0.08) 50%, transparent 100%),
+        radial-gradient(circle at 20% 20%, rgba(88, 166, 255, 0.12), transparent 28%);
+    background-size: 160% 160%, 100% 100%;
+    filter: blur(14px);
+    opacity: 0.38;
+    animation: proofAmbientShift 18s ease-in-out infinite alternate;
 }
 
 .proof-section .section-title {
     text-align: left;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.65rem;
+}
+
+.section-intro {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin: 0 0 1.5rem;
+    max-width: 620px;
 }
 
 .highlights-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
+    isolation: isolate;
 }
 
 .highlight-card {
-    background: rgba(13, 17, 23, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 48%),
+        rgba(13, 17, 23, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.13);
     border-radius: 8px;
     padding: 1.25rem;
     min-height: 150px;
     list-style: none;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 0 28px rgba(88, 166, 255, 0.035),
+        0 14px 28px rgba(0, 0, 0, 0.18),
+        0 0 24px rgba(88, 166, 255, 0.055);
+}
+
+.highlight-card::before,
+.highlight-card::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.highlight-card::before {
+    z-index: -1;
+    background:
+        radial-gradient(circle at 8% 8%, rgba(125, 220, 255, 0.72), transparent 26%),
+        radial-gradient(circle at 94% 88%, rgba(88, 166, 255, 0.58), transparent 30%);
+    filter: blur(16px);
+    opacity: 0.42;
+}
+
+.highlight-card::after {
+    z-index: 0;
+    background:
+        linear-gradient(rgba(13, 17, 23, 0.96), rgba(13, 17, 23, 0.96)) padding-box,
+        linear-gradient(135deg, rgba(125, 220, 255, 0.78), rgba(255, 255, 255, 0.10) 34%, rgba(255, 255, 255, 0.08) 64%, rgba(88, 166, 255, 0.62)) border-box;
+    border: 1px solid transparent;
+    opacity: 0.9;
+}
+
+.highlight-card:nth-child(2)::before {
+    background:
+        radial-gradient(circle at 92% 10%, rgba(125, 220, 255, 0.66), transparent 25%),
+        radial-gradient(circle at 12% 86%, rgba(88, 166, 255, 0.50), transparent 30%);
+    opacity: 0.36;
+}
+
+.highlight-card:nth-child(2)::after {
+    background:
+        linear-gradient(rgba(13, 17, 23, 0.96), rgba(13, 17, 23, 0.96)) padding-box,
+        linear-gradient(225deg, rgba(125, 220, 255, 0.72), rgba(255, 255, 255, 0.10) 32%, rgba(255, 255, 255, 0.08) 66%, rgba(88, 166, 255, 0.56)) border-box;
+}
+
+.highlight-card:nth-child(3)::before {
+    background:
+        radial-gradient(circle at 50% -8%, rgba(125, 220, 255, 0.58), transparent 28%),
+        radial-gradient(circle at 88% 92%, rgba(88, 166, 255, 0.42), transparent 30%);
+    opacity: 0.34;
+}
+
+.highlight-card:nth-child(3)::after {
+    background:
+        linear-gradient(rgba(13, 17, 23, 0.96), rgba(13, 17, 23, 0.96)) padding-box,
+        linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(125, 220, 255, 0.66) 18%, rgba(255, 255, 255, 0.08) 58%, rgba(88, 166, 255, 0.50)) border-box;
+}
+
+.highlight-card:nth-child(4)::before {
+    background:
+        radial-gradient(circle at 12% 92%, rgba(88, 166, 255, 0.58), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(125, 220, 255, 0.52), transparent 26%);
+    opacity: 0.38;
+}
+
+.highlight-card:nth-child(4)::after {
+    background:
+        linear-gradient(rgba(13, 17, 23, 0.96), rgba(13, 17, 23, 0.96)) padding-box,
+        linear-gradient(45deg, rgba(88, 166, 255, 0.58), rgba(255, 255, 255, 0.08) 38%, rgba(255, 255, 255, 0.10) 68%, rgba(125, 220, 255, 0.62)) border-box;
+}
+
+.highlight-card:nth-child(5)::before {
+    background:
+        radial-gradient(circle at 6% 46%, rgba(125, 220, 255, 0.44), transparent 25%),
+        radial-gradient(circle at 96% 52%, rgba(88, 166, 255, 0.54), transparent 28%);
+    opacity: 0.32;
+}
+
+.highlight-card:nth-child(5)::after {
+    background:
+        linear-gradient(rgba(13, 17, 23, 0.96), rgba(13, 17, 23, 0.96)) padding-box,
+        linear-gradient(90deg, rgba(125, 220, 255, 0.58), rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.09) 64%, rgba(88, 166, 255, 0.64)) border-box;
+}
+
+.highlight-card:nth-child(6)::before {
+    background:
+        radial-gradient(circle at 26% 0%, rgba(125, 220, 255, 0.58), transparent 26%),
+        radial-gradient(circle at 76% 100%, rgba(88, 166, 255, 0.48), transparent 30%);
+    opacity: 0.36;
+}
+
+.highlight-card:nth-child(6)::after {
+    background:
+        linear-gradient(rgba(13, 17, 23, 0.96), rgba(13, 17, 23, 0.96)) padding-box,
+        linear-gradient(120deg, rgba(125, 220, 255, 0.66), rgba(255, 255, 255, 0.10) 30%, rgba(255, 255, 255, 0.08) 62%, rgba(88, 166, 255, 0.52)) border-box;
 }
 
 .highlight-card h3 {
+    position: relative;
+    z-index: 2;
     color: #ffffff;
     font-size: 1rem;
     font-weight: 700;
@@ -618,10 +751,30 @@ section#contact .section-title {
 }
 
 .highlight-card p {
+    position: relative;
+    z-index: 2;
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.98rem;
     line-height: 1.55;
     margin: 0;
+}
+
+@keyframes proofAmbientShift {
+    from {
+        background-position: 0% 50%, 50% 50%;
+        opacity: 0.28;
+    }
+
+    to {
+        background-position: 100% 50%, 50% 50%;
+        opacity: 0.42;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .proof-section::before {
+        animation: none;
+    }
 }
 
 /* Container width consistency */
@@ -642,6 +795,60 @@ section > div {
     opacity: 1;
     transform: none;
     animation: none;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(36px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    section#proof .section-title,
+    .highlight-card,
+    .about-container,
+    .resume-section,
+    .projects-grid .section-title,
+    .project-container,
+    section#contact .container {
+        animation: revealUp both;
+        animation-timeline: view();
+        animation-range: entry 4% cover 34%;
+    }
+
+    .highlight-card:nth-child(2),
+    .highlight-card:nth-child(5) {
+        animation-range: entry 8% cover 38%;
+    }
+
+    .highlight-card:nth-child(3),
+    .highlight-card:nth-child(6) {
+        animation-range: entry 12% cover 42%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    section#proof .section-title,
+    .highlight-card,
+    .about-container,
+    .resume-section,
+    .projects-grid .section-title,
+    .project-container,
+    section#contact .container {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
 }
 
 /* Media Queries for Mobile */

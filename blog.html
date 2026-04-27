@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-    <title>Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ethan Jordan Blog | Software, Linux & Security Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="blog.css">
-    <meta name="description" content="Ethan Jordan's personal blog about technology and programming">
+    <meta name="description" content="Ethan Jordan's notes on software projects, Linux, networking, cybersecurity labs, automation, and technical debugging.">
 </head>
 <body>
-    <nav class="nav" role="navigation" aria-label="Main navigation">
+    <nav class="nav" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo"><a href="index.html" aria-label="Return to homepage">Ethan Jordan</a></div>
-            <ul role="menubar">
-                <li role="none"><a href="index.html#about" role="menuitem" aria-label="About section">About</a></li>
-                <li role="none"><a href="index.html#resume" role="menuitem" aria-label="Resume section">Resume</a></li>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -31,7 +31,7 @@
                 <h2 class="section-title">Blog</h2>
                 <div class="blog-posts">
                     <article class="blog-post" id="pihole-xfinity">
-                        <h3>Setting Up Pi-hole on Xfinity: What Actually Happened - 4/22/2026</h3>
+                        <h3>Setting Up Pi-hole on Xfinity: What Actually Happened - April 22, 2026</h3>
                         <p>I set up Pi-hole on a Raspberry Pi because I wanted network-wide ad blocking and a better understanding of how DNS traffic actually moves through a home network. The plan sounded simple: give the Pi a stable address, point the network at it for DNS, and let every device use Pi-hole automatically.</p>
                         <p>I installed Pi-hole headlessly on the Raspberry Pi, reserved the static IP <code>10.0.0.50</code> through the router, and configured Cloudflare as the upstream DNS provider. Before touching the whole network, I tested the Pi directly with <code>nslookup google.com 10.0.0.50</code>. That worked, and the queries showed up in the Pi-hole dashboard, so I knew the Pi-hole service itself was not the problem.</p>
                         <p>The real issue was the Xfinity gateway. The router did not give me reliable control over custom DNS for the whole network, so devices kept using Comcast DNS instead. I saw traffic still going through <code>cdns01.comcast.net</code>, and IPv6 made it even trickier because Xfinity was handing out DNS like <code>2001:558:feed::1</code>. That meant some devices could bypass Pi-hole without making it obvious from the normal IPv4 settings.</p>
@@ -53,26 +53,26 @@
                     <article class="blog-post">
                         <a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">
                             <img class="blog-image" src="./assets/VMainPage.png" alt="Virtius scores main page">
-                            <h3>What I Learned Improving Virtius Scores - 4/03/2026</h3>
-                            <p>Virtius was a big step for me. I did not build the whole project from zero, but I did take on a lot of the engineering work for my branch, scores.virti.us.</p>
-                            <p>I learned Next.js by working inside a real app, not by copying a tutorial. The stack was Next.js 15, React 19, TypeScript, and Tailwind. Every change had to fit the existing code and the actual product.</p>
+                            <h3>What I Learned Improving Virtius Scores - April 3, 2026</h3>
+                            <p>Virtius gave me production-style software experience. I did not build the whole project from zero, but I did take on a lot of the engineering work for my branch, scores.virti.us.</p>
+                            <p>I learned Next.js by working inside a real app, not by copying a tutorial. The stack was Next.js 15, React 19, TypeScript, and Tailwind. Every change had to fit the existing code, live scoring data, and the actual product.</p>
                             <p>I also studied how the old virti.us site moved live scoring data. I watched the GraphQL requests, looked at the request flow, and used that to make better decisions instead of guessing.</p>
                             <p>Most of the work came down to speed, correctness, and trust. I worked on lazy loading, API data handling, score precision, 3-vs-4 decimal display, exhibition athlete handling, ranking edge cases, and Playwright tests.</p>
-                            <p>The main lesson was ownership. I had to understand the code, communicate with a designer/project manager, and make choices that helped the product instead of just making the code look nice.</p>
+                            <p>The main lesson was ownership. I had to understand the code, communicate clearly, and make choices that helped the product instead of just making the code look nice.</p>
                         </a>
                     </article>
                     <article class="blog-post" id="linux-security-lab">
-                        <h3>Learning Linux and Security Tools - 1/15/2026</h3>
+                        <h3>Learning Linux and Security Tools - January 15, 2026</h3>
                         <p>I started using Linux freshman year of high school. At first it was mostly live boots, then full installs, then distro hopping because I wanted to understand how different systems felt when I actually had to use them.</p>
                         <p>I have used Kali, Arch, and Linux Mint. Mint was the one I daily drove for a while because it was stable enough to actually get work done. Kali was useful for learning security tools, and Arch taught me more about how Linux is put together because it makes you touch more of the system yourself.</p>
                         <p>The biggest value was getting comfortable when something broke. Boot issues, packages, drivers, permissions, network settings, desktop environments, and weird config problems all forced me to troubleshoot instead of panic. That matters because a lot of technical work is just staying calm long enough to find the real problem.</p>
                         <p>I also spent a lot of hours learning tools like Nmap and Metasploit in lab and authorized environments. Nmap helped me understand hosts, ports, services, and why exposed services matter. Metasploit helped me understand how security testing is structured: modules, payloads, targets, and the difference between a vulnerability existing in theory and actually verifying behavior in a controlled setup.</p>
-                        <p>I do not think the tools are the impressive part by themselves. Anyone can run commands. The useful skill is understanding what the output means, what question you are trying to answer, and what risk you might create if you touch the wrong system.</p>
+                        <p>The tools are not impressive by themselves. Anyone can run commands. The useful skill is understanding what the output means, what question you are trying to answer, and what risk you might create if you touch the wrong system.</p>
                         <p>This experience gave me a stronger base for networking and cybersecurity. It made DNS, ports, services, permissions, shells, and misconfiguration feel real instead of abstract. It also taught me to respect boundaries: test in labs, document what changed, and do not run security tools against systems you do not own or have permission to test.</p>
                     </article>
                     <article class="blog-post">
                         <a href="https://github.com/ejor5/MyWebsite" target="_blank" rel="noopener noreferrer">
-                            <h3>Welcome to My Website Blog - 2/27/2025</h3>
+                            <h3>Welcome to My Website Blog - February 27, 2025</h3>
                             <p>I built this website so I had one place to show my projects and write about what I am learning. I bought the domain and published it after working on it for a few months.</p>
                             <p>The first version was bigger than what I could reasonably host. I wanted a video background and an interactive console, but server costs were not worth it. I also thought about hosting it from an old computer, then decided against it because exposing a home machine to the internet is a bad idea unless you really know what you are doing. GitHub Pages was limited, but it was simple and safer.</p>
                         </a>
@@ -80,19 +80,19 @@
                     <article class="blog-post">
                         <a href="https://github.com/ejor5/Matterhorn" target="_blank" rel="noopener noreferrer">
                             <img class="blog-image" src="./assets/BlogMattercamSC.png" alt="Disneyland livestream dashboard screenshot">
-                            <h3>Disneyland Livestream App - 2/27/2025</h3>
+                            <h3>Disneyland Livestream App - February 27, 2025</h3>
                             <p>I wanted to make a Linux app for my Raspberry Pi 3, and the 24-hour Disneyland livestream gave me a clear idea. I built a dashboard that showed the livestream and ride wait times.</p>
-                            <p>The annoying part was the webcam link. The Howard Johnson stream changed links during the day, so hardcoding one URL did not work. I fixed that by pulling the current link from their site instead.</p>
-                            <h3>Update 4/11/2025</h3>
+                            <p>The hard part was the webcam link. The Howard Johnson stream changed links during the day, so hardcoding one URL did not work. I fixed that by pulling the current link from their site instead.</p>
+                            <h3>Update - April 11, 2025</h3>
                             <p>The Raspberry Pi did not have enough RAM for the app to run well, so I moved the project toward Windows.</p>
                         </a>
                     </article>
                     <article class="blog-post">
                         <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank" rel="noopener noreferrer">
                             <img class="blog-image" src="./assets/ClubAutomation.png" alt="Club Automation enrollment tool screenshot">
-                            <h3>Almaden Valley Athletic Club Web Scheduler 3/30/2025</h3>
+                            <h3>Almaden Valley Athletic Club Web Scheduler - March 30, 2025</h3>
                             <p>I work as a tennis scheduler at Almaden Valley Athletic Club. Each month, staff had to repeat the same enrollment steps over and over. I built a web automation tool to pull class names and help enroll students for the next month.</p>
-                            <h3>Running the Program 7/25/2025</h3>
+                            <h3>Running the Program - July 25, 2025</h3>
                             <p>After I got approval to use it, I added a review step. If a student's name appears in the Tennis Inquiries CSV, the tool flags it before enrollment and asks a staff member what to do. I wanted the program to save time without making blind decisions.</p>
                         </a>
                     </article>
@@ -100,13 +100,11 @@
                         <a href="https://www.instagram.com/jake.gipson.estate/" target="_blank" rel="noopener noreferrer">
                             <img class="blog-image" src="./assets/JGWebsite.png" alt="Jake Gipson website screenshot">
                             <h3>Real Estate Internship 2022-2024</h3>
-                            <p>I interned with Jake Gipson, a Silicon Valley realtor with 25+ years of experience. I learned quickly because the work changed a lot, and I had to handle different kinds of tasks without much hand-holding.<br>
-                                I started with cold calls to generate leads, as most salespeople do. I made calls daily, doing my best to mirror the buyer's energy and keep them engaged. It taught me a lot about communication, confidence, and how to read people in real-time.<br>
-                                Eventually, I transitioned into the role of social media manager and content producer. I created and managed accounts on Instagram, Facebook, TikTok, YouTube, and LinkedIn under the Jake Gipson Team and Jake Gipson Estates brands. I also implemented Buffer to streamline our posting process, allowing us to schedule and automate content delivery across platforms.<br>
-                                During this time, I organized studio sessions and helped make content for social media. I learned that creative work still needs data: what people click, what they ignore, and what is actually worth posting again.<br>
-                                Through content creation, I picked up practical photography and real estate staging skills. I also designed and built Jake Gipson's website using Elementor and Kubio, which taught me more about UI, layout, and clear online branding.<br>
-                                This internship taught me how business, marketing, and technical tools connect. It also made me better at learning fast and figuring things out without waiting for perfect instructions.
-                            </p>
+                            <p>I interned with Jake Gipson, a Silicon Valley realtor with 25+ years of experience. The work changed a lot, so I had to learn quickly and handle different tasks without much hand-holding.</p>
+                            <p>I started with cold calls to generate leads. That taught me communication, confidence, and how to read people in real time.</p>
+                            <p>Eventually, I moved into social media management and content production. I created and managed accounts on Instagram, Facebook, TikTok, YouTube, and LinkedIn under the Jake Gipson Team and Jake Gipson Estates brands.</p>
+                            <p>I also used Buffer to organize scheduled posts across platforms, helped produce photo/video content, and learned that creative work still needs data: what people click, what they ignore, and what is worth doing again.</p>
+                            <p>I designed and edited website pages using Elementor and Kubio, which taught me more about UI, layout, and clear online branding. The internship made me better at learning fast and figuring things out without perfect instructions.</p>
                             
                         </a>
                     </article>
