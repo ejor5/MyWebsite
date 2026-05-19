@@ -157,6 +157,25 @@ html {
     text-align: center;
 }
 
+.hero-subtext {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem 1rem;
+    width: min(100%, 620px);
+    margin: 0.15rem auto 0;
+    padding: 0.55rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.hero-subtext span {
+    font-size: 0.86rem;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
 .hero-content p {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
@@ -676,6 +695,15 @@ section > div {
         font-size: 1.5rem;
     }
 
+    .hero-subtext {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+        width: min(100%, 260px);
+        margin-top: 0.45rem;
+        padding: 0.5rem 0;
+    }
+
+    .hero-subtext span,
     .hero-content p {
         font-size: 0.85rem;
     }
