@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css?v=conversion-flow-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-    <meta name="description" content="Ethan Jordan's software engineering, Linux, networking, and security portfolio.">
-    <title>Call Me EJ!</title>
+    <meta name="description" content="Ethan Jordan's software engineering, Linux, networking, and security portfolio for internships and early-career technical roles.">
+    <title>Ethan Jordan | Software Engineering & Security Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,9 +14,12 @@
         <div class="nav-container">
             <div class="logo"><a href="#home">Ethan Jordan</a></div>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
+                <li><a href="#proof">Proof</a></li>
+                <li><a href="#roles">Fit</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#prep">Labs</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
@@ -34,15 +37,19 @@
                     <span>Linux &amp; Security</span>
                     <span>Two Internships</span>
                     <span>CompTIA A+ Core 1</span>
-                    <span>Security Labs</span>
+                    <span>TryHackMe &amp; Security Labs</span>
                 </div>
-                <a href="#proof" class="blog-button">Highlights</a>
+                <p class="hero-lead">Early-career builder looking for software engineering, IT, cybersecurity, and solutions engineering internship opportunities.</p>
+                <div class="hero-actions" aria-label="Primary actions">
+                    <a href="#projects" class="blog-button primary-button">See Projects</a>
+                    <a href="mailto:ejor50k@gmail.com" class="blog-button secondary-button">Email Me</a>
+                </div>
             </div>
         </section>
 
-        <section id="proof">
+<section id="proof">
             <div class="container proof-section">
-                <h2 class="section-title">Highlights</h2>
+                <h2 class="section-title">Fast Proof</h2>
                 <div class="highlights-grid">
                     <div class="highlight-card">
                         <h3>SJSU CS transfer</h3>
@@ -65,124 +72,37 @@
                         <p>Pi-hole taught me DNS, DHCP, IPv4, IPv6, router limits, and why Xfinity gateways are annoying.</p>
                     </div>
                     <div class="highlight-card">
-                        <h3>IT/security base</h3>
-                        <p>CompTIA A+ Core 1, Nmap, Metasploit labs, Raspberry Pi projects, and a habit of testing before changing systems.</p>
+                        <h3>TryHackMe & labs</h3>
+                        <p>CompTIA A+ Core 1 progress, TryHackMe-style practice, Nmap, Metasploit basics, Raspberry Pi projects, and safe testing habits.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
-                    <p>Hi, I'm Ethan Jordan. I'm a computer science student transferring from Foothill College to San Jose State University in Fall 2026.</p>
-                    <p>I have paid internship experience and hands-on projects in web apps, automation, Linux, networking, and security-minded debugging.</p>
-                    <p>I like work where the details matter: API behavior, test coverage, performance, data handling, and how systems fail in real life.</p>
-                    <p>I communicate clearly, learn fast, and build useful software instead of just talking about it.</p>
-                </div>
-                <div class="about-image">
-                    <img class="tree-hang" src="./assets/TreeHang.png" alt="Ethan Jordan outdoors">
+<section id="roles">
+            <div class="container roles-section">
+                <h2 class="section-title">Role Fit</h2>
+                <div class="role-grid">
+                    <div class="role-card">
+                        <h3>Cybersecurity</h3>
+                        <p>Linux, networking, TryHackMe-style labs, Pi-hole troubleshooting, and a habit of verifying before changing systems.</p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Software Engineering</h3>
+                        <p>Virtius production-style work, AVAC automation, Playwright testing, and CS fundamentals projects.</p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Solutions Engineering</h3>
+                        <p>Customer-facing work, discovery practice, business workflow automation, and technical explanation.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="resume">
-            <div class="container resume-section">
-                <h2 class="section-title">Resume</h2>
-                <h3>Summary</h3>
-                <p>Computer science student transferring from Foothill College to San Jose State University in Fall 2026 after a competitive CS transfer path. Paid internship experience, CompTIA A+ Core 1, and projects across TypeScript, Python, testing, automation, Linux, networking, and security-minded debugging.</p>
-
-                <h3>Skills</h3>
-                <ul>
-                    <li><strong>Languages:</strong> Python, Java, TypeScript, JavaScript, C++</li>
-                    <li><strong>Web:</strong> Next.js, React, Tailwind CSS, HTML, CSS</li>
-                    <li><strong>Testing:</strong> Playwright, regression testing, visual checks</li>
-                    <li><strong>Data & Automation:</strong> Airtable, Pandas, SQLite, Selenium, CSV workflows</li>
-                    <li><strong>Systems:</strong> Kali Linux, Arch Linux, Linux Mint, Raspberry Pi, DNS, DHCP, IPv4, IPv6, RTSP</li>
-                    <li><strong>Security Mindset:</strong> Network scanning, request flow, data handling, edge cases, router limits, safe configuration changes</li>
-                    <li><strong>Tools:</strong> Git, GitHub, Nmap, Metasploit, VLC, yt-dlp, BeautifulSoup, Requests</li>
-                    <li><strong>Support:</strong> Technical troubleshooting, customer communication, scheduling systems</li>
-                </ul>
-
-                <h3>Internships & Experience</h3>
-                <h4>Virtius</h4>
-                <p><strong>Software Engineering Intern / Project Engineer</strong> <em>Paid, December 2025-Present</em></p>
-                <ul>
-                    <li>Improved scores.virti.us, a live NCAA gymnastics meet viewer built with Next.js, React, TypeScript, Tailwind, and GraphQL.</li>
-                    <li>Worked on performance, scoring correctness, API data handling, client/server boundaries, and Playwright regression tests.</li>
-                    <li>Handled real product work with a designer/project manager and made changes that had to survive actual users and live data.</li>
-                </ul>
-
-                <h4>HeartBeam</h4>
-                <p><strong>Technical Intern</strong> <em>Paid, April 2025-Present</em></p>
-                <ul>
-                    <li>Helped create a structured Airtable database for sales clients and pipeline tracking.</li>
-                    <li>Worked with the team to make UI, data model, and workflow decisions based on what the sales process needed.</li>
-                    <li>Balanced usability, data accuracy, and maintainability while turning scattered client and pipeline information into a clearer internal system.</li>
-                </ul>
-
-                <h4>Jake Gipson Real Estate</h4>
-                <p><strong>Marketing & Web Intern</strong> <em>Paid, 2022-2024</em></p>
-                <ul>
-                    <li>Managed and created content across Instagram, Facebook, TikTok, YouTube, and LinkedIn.</li>
-                    <li>Used Buffer to schedule posts and keep social media content organized across platforms.</li>
-                    <li>Helped produce photo and video content for real estate marketing.</li>
-                    <li>Built and edited website pages using Elementor and Kubio.</li>
-                    <li>Learned client-facing communication, branding, content analytics, and fast problem-solving inside a real business.</li>
-                </ul>
-
-                <h4>Almaden Valley Athletic Club, San Jose, CA</h4>
-                <p><strong>Tennis Scheduler & Receptionist</strong> <em>June 2024-Present</em></p>
-                <ul>
-                    <li>Manage scheduling systems, phone/email requests, and conflicts between members, staff, and coaches.</li>
-                    <li>Built a Python/Selenium automation tool to reduce repetitive tennis enrollment work and flag edge cases for staff review.</li>
-                </ul>
-
-                <h4>CVS Pharmacy 1314, San Jose, CA</h4>
-                <p><strong>Retail Associate</strong> <em>October 2022-July 2024</em></p>
-                <ul>
-                    <li>Handled customers, register work, stocking, cleaning, and cross-department support while often being the only associate on the floor.</li>
-                    <li>Learned to prioritize quickly, communicate clearly, and solve problems without waiting for perfect conditions.</li>
-                </ul>
-
-                <h3>Education</h3>
-                <h4>San Jose State University</h4>
-                <p><strong>B.S. Computer Science</strong> <em>Incoming Transfer, Fall 2026</em></p>
-                <p>Accepted transfer from Foothill College into a competitive Computer Science program in Silicon Valley.</p>
-
-                <h4>Foothill College</h4>
-                <p><strong>Computer Science for Transfer</strong> <em>July 2024-Present</em></p>
-                <p>Focused on programming, data structures, algorithms, discrete math, calculus, and honors coursework.</p>
-
-                <h3>Relevant Coursework</h3>
-                <ul>
-                    <li>Advanced Data Structures in Java</li>
-                    <li>Advanced Python</li>
-                    <li>Data Structures and Algorithms</li>
-                    <li>Discrete Mathematics</li>
-                    <li>Honors Calculus</li>
-                    <li>Intermediate Python</li>
-                    <li>Object-Oriented Java</li>
-                    <li>App Design</li>
-                    <li>Computer Architecture</li>
-                </ul>
-
-                <h3>Certifications & Activities</h3>
-                <ul>
-                    <li>CompTIA A+ Core 1</li>
-                    <li>Computer Science Club</li>
-                    <li>VR Club</li>
-                    <li>National Honor Society</li>
-                    <li>Santa Clara County Parks Volunteer</li>
-                    <li>English and Spanish</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
+<section id="projects">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
+                <p class="project-intro">The strongest proof for a recruiter is here: real product work, workflow automation, Linux/security labs, networking troubleshooting, and fundamentals projects.</p>
                 <div class="projects-grid">
                     <!-- Virtius Meet Viewer Project -->
                     <div class="project-container">
@@ -193,6 +113,7 @@
                                 <p>
                                     I worked on the Virtius scores project as the main engineer for my branch, scores.virti.us. I used Next.js 15, React 19, TypeScript, and Tailwind CSS to improve the meet viewer for live NCAA gymnastics scoring.
                                 </p>
+                                <div class="proof-points"><span>Problem: live scoring correctness</span><span>Evidence: Playwright + product constraints</span></div>
                                 <h4>What I Improved & Learned:</h4>
                                 <ul>
                                     <li><strong>Next.js Work:</strong> Worked with App Router patterns, React components, TypeScript data, Tailwind UI, and real bugs inside an existing app.</li>
@@ -217,6 +138,7 @@
                                 <p>
                                     At AVAC, I saw how much time tennis staff spent on repetitive enrollment work. I built a Python tool to automate the boring parts and flag the cases that still need a person.
                                 </p>
+                                <div class="proof-points"><span>Problem: repetitive staff workflow</span><span>Evidence: Selenium + review checkpoints</span></div>
                                 <p>
                                     The project started with class rosters and enrollment. I added attendance checks, CSV comparison, and prompts for cases where the program should not guess.
                                 </p>
@@ -241,6 +163,7 @@
                                 <p>
                                     I have been using Linux since freshman year of high school through live boots and full installs. I have used Kali, Arch, and Linux Mint, and I spent a lot of time learning how security tools behave in lab and authorized environments.
                                 </p>
+                                <div class="proof-points"><span>Problem: use tools safely</span><span>Evidence: Linux, Nmap, Metasploit basics</span></div>
                                 <h4>What I Practiced:</h4>
                                 <ul>
                                     <li><strong>Linux Installs:</strong> Booted and installed different distributions, fixed driver/config issues, and learned how Linux systems are laid out.</li>
@@ -264,6 +187,7 @@
                                 <p>
                                     I set up Pi-hole on a Raspberry Pi to learn how DNS, DHCP, IPv4, IPv6, and router control work on a real home network. The goal was network-wide ad blocking. The useful part was figuring out why the Xfinity gateway kept bypassing it.
                                 </p>
+                                <div class="proof-points"><span>Problem: DNS bypass</span><span>Evidence: Pi-hole, DHCP, IPv6 debugging</span></div>
                                 <h4>What I Built & Learned:</h4>
                                 <ul>
                                     <li><strong>Raspberry Pi Server Setup:</strong> Installed Pi-hole headlessly, reserved 10.0.0.50, set Cloudflare as upstream DNS, and tested it with nslookup.</li>
@@ -338,9 +262,7 @@
                             <div class="project-card">
                                 <h3>BinaryTree Class (Python Data Structures)</h3>
                                 <p>
-                                    <strong>Original Author:</strong> An Lam<br>
-                                    <strong>Edits and Implementation:</strong> Ethan Jordan<br>
-                                    <strong>Date:</strong> 11/01/2023
+                                    I implemented a binary search tree in Python to understand inserts, search, deletes, traversals, recursion, and edge cases.
                                 </p>
                                 <p>
                                     I implemented a binary search tree in Python to understand the data structure beyond just drawing it on paper. I wrote the operations, tested edge cases, and added a small menu to try the tree from the terminal.
@@ -363,8 +285,7 @@
                             <div class="project-card">
                                 <h3>Python Computer Inventory Manager</h3>
                                 <p>
-                                    <strong>Author:</strong> EJ<br>
-                                    <strong>Date:</strong> 10/13/2024 (Updated 12/4/2024)
+                                    I built a command-line inventory app for Linux and Windows machines using Python, SQLite, OOP, validation, and a terminal menu.
                                 </p>
                                 <p>
                                     I built this command-line app to track computers for a small IT-style inventory. It stores Linux and Windows machines, saves them in a database, and checks input before accepting it.
@@ -389,8 +310,7 @@
                             <div class="project-card">
                                 <h3>RTSP 4-Camera Viewer</h3>
                                 <p>
-                                    <strong>Author:</strong> Ethan Jordan<br>
-                                    <strong>Date:</strong> December 2024
+                                    I built a desktop app that shows up to four RTSP camera feeds at once while learning video streams, VLC, and custom window behavior.
                                 </p>
                                 <p>
                                     I built a desktop app that shows up to four RTSP camera feeds at once. It was mostly about learning video streams, window behavior, and how to keep a monitoring tool usable.
@@ -412,15 +332,187 @@
             </div>
         </section>
 
-        <section id="contact">
+<section id="resume">
+            <div class="container resume-section">
+                <h2 class="section-title">Resume</h2>
+                <h3>Summary</h3>
+                <p>Computer science student transferring from Foothill College to San Jose State University in Fall 2026 after a competitive CS transfer path. Paid internship experience, CompTIA A+ Core 1, and projects across TypeScript, Python, testing, automation, Linux, networking, and security-minded debugging.</p>
+
+                <h3>Skills</h3>
+                <ul>
+                    <li><strong>Languages:</strong> Python, Java, TypeScript, JavaScript, C++</li>
+                    <li><strong>Web:</strong> Next.js, React, Tailwind CSS, HTML, CSS</li>
+                    <li><strong>Testing:</strong> Playwright, regression testing, visual checks</li>
+                    <li><strong>Data & Automation:</strong> Airtable, Pandas, SQLite, Selenium, CSV workflows</li>
+                    <li><strong>Systems:</strong> Kali Linux, Arch Linux, Linux Mint, Raspberry Pi, DNS, DHCP, IPv4, IPv6, RTSP</li>
+                    <li><strong>Security Mindset:</strong> Network scanning, request flow, data handling, edge cases, router limits, safe configuration changes</li>
+                    <li><strong>Tools:</strong> Git, GitHub, TryHackMe, Nmap, Metasploit, VLC, yt-dlp, BeautifulSoup, Requests</li>
+                    <li><strong>Support:</strong> Technical troubleshooting, customer communication, scheduling systems</li>
+                </ul>
+
+                <h3>Internships & Experience</h3>
+                <h4>Virtius</h4>
+                <p><strong>Software Engineering Intern / Project Engineer</strong> <em>Paid, December 2025-Present</em></p>
+                <ul>
+                    <li>Improved scores.virti.us, a live NCAA gymnastics meet viewer built with Next.js, React, TypeScript, Tailwind, and GraphQL.</li>
+                    <li>Worked on performance, scoring correctness, API data handling, client/server boundaries, and Playwright regression tests.</li>
+                    <li>Handled real product work with a designer/project manager and made changes that had to survive actual users and live data.</li>
+                </ul>
+
+                <h4>HeartBeam</h4>
+                <p><strong>Technical Intern</strong> <em>Paid, April 2025-Present</em></p>
+                <ul>
+                    <li>Helped create a structured Airtable database for sales clients and pipeline tracking.</li>
+                    <li>Worked with the team to make UI, data model, and workflow decisions based on what the sales process needed.</li>
+                    <li>Balanced usability, data accuracy, and maintainability while turning scattered client and pipeline information into a clearer internal system.</li>
+                </ul>
+
+                <h4>Jake Gipson Real Estate</h4>
+                <p><strong>Marketing & Web Intern</strong> <em>Paid, 2022-2024</em></p>
+                <ul>
+                    <li>Managed and created content across Instagram, Facebook, TikTok, YouTube, and LinkedIn.</li>
+                    <li>Used Buffer to schedule posts and keep social media content organized across platforms.</li>
+                    <li>Helped produce photo and video content for real estate marketing.</li>
+                    <li>Built and edited website pages using Elementor and Kubio.</li>
+                    <li>Learned client-facing communication, branding, content analytics, and fast problem-solving inside a real business.</li>
+                </ul>
+
+                <h4>Almaden Valley Athletic Club, San Jose, CA</h4>
+                <p><strong>Tennis Scheduler & Receptionist</strong> <em>June 2024-Present</em></p>
+                <ul>
+                    <li>Manage scheduling systems, phone/email requests, and conflicts between members, staff, and coaches.</li>
+                    <li>Built a Python/Selenium automation tool to reduce repetitive tennis enrollment work and flag edge cases for staff review.</li>
+                </ul>
+
+                <h4>CVS Pharmacy 1314, San Jose, CA</h4>
+                <p><strong>Retail Associate</strong> <em>October 2022-July 2024</em></p>
+                <ul>
+                    <li>Handled customers, register work, stocking, cleaning, and cross-department support while often being the only associate on the floor.</li>
+                    <li>Learned to prioritize quickly, communicate clearly, and solve problems without waiting for perfect conditions.</li>
+                </ul>
+
+                <h3>Education</h3>
+                <h4>San Jose State University</h4>
+                <p><strong>B.S. Computer Science</strong> <em>Incoming Transfer, Fall 2026</em></p>
+                <p>Accepted transfer from Foothill College into a competitive Computer Science program in Silicon Valley.</p>
+
+                <h4>Foothill College</h4>
+                <p><strong>Computer Science for Transfer</strong> <em>July 2024-Present</em></p>
+                <p>Focused on programming, data structures, algorithms, discrete math, calculus, and honors coursework.</p>
+
+                <h3>Relevant Coursework</h3>
+                <ul>
+                    <li>Advanced Data Structures in Java</li>
+                    <li>Advanced Python</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Honors Calculus</li>
+                    <li>Intermediate Python</li>
+                    <li>Object-Oriented Java</li>
+                    <li>App Design</li>
+                    <li>Computer Architecture</li>
+                </ul>
+
+                <h3>Certifications & Activities</h3>
+                <ul>
+                    <li>CompTIA A+ Core 1</li>
+                    <li>TryHackMe and security lab practice</li>
+                    <li>Computer Science Club</li>
+                    <li>VR Club</li>
+                    <li>National Honor Society</li>
+                    <li>Santa Clara County Parks Volunteer</li>
+                    <li>English and Spanish</li>
+                </ul>
+            </div>
+        </section>
+
+<section id="deliverables">
+            <div class="container deliverables-section">
+                <h2 class="section-title">Case Study In Progress</h2>
+                <p class="prep-intro">A Summer 2026 Solutions Engineering case study for a fictional healthcare company. Each deliverable shows how I translate business needs into practical, testable security solutions.</p>
+                <div class="deliverables-grid">
+                    <div class="deliverable-card">
+                        <h3>Discovery and architecture</h3>
+                        <p>Customer discovery, business requirements, current-state architecture, and future-state security architecture.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h3>Security proof of concept</h3>
+                        <p>Wazuh/Sysmon proof of concept, phishing investigation, and two tested detections with evidence.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h3>Automation and cloud</h3>
+                        <p>A Python automation tool plus a secure AWS mini-project tied back to the healthcare scenario.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <h3>Executive and technical presentation</h3>
+                        <p>One executive presentation and one technical presentation explaining risk, design choices, evidence, and next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="prep">
+            <div class="container prep-section">
+                <h2 class="section-title">Reading & Labs</h2>
+                <p class="prep-intro">I am trying to make the preparation visible: books, labs, and small artifacts that turn learning into proof.</p>
+
+                <div class="prep-grid">
+                    <div class="prep-card">
+                        <h3>Books read</h3>
+                        <ul>
+                            <li><strong>Ultralearning:</strong> May 13-May 29</li>
+                            <li><strong>The Mom Test:</strong> April 7-April 20</li>
+                            <li><strong>Atomic Habits:</strong> May 29-June 7</li>
+                        </ul>
+                    </div>
+                    <div class="prep-card">
+                        <h3>Current focus</h3>
+                        <p><strong>Cybersecurity First Principles</strong> started May 29. I am rereading it slowly because cybersecurity is not memorization. It is pattern recognition built on fundamentals.</p>
+                    </div>
+                    <div class="prep-card">
+                        <h3>Solutions engineering list</h3>
+                        <p>Next: Mastering Technical Sales, Great Demo!, Six Habits, Made to Stick, The Phoenix Project, and Computer Networking as a lab reference.</p>
+                    </div>
+                    <div class="prep-card">
+                        <h3>TryHackMe & labs</h3>
+                        <p>Working through security practice with TryHackMe-style labs, Linux, Nmap, basic Metasploit workflows, Raspberry Pi networking, and safe troubleshooting.</p>
+                    </div>
+                    <div class="prep-card">
+                        <h3>Deliverable rule</h3>
+                        <p>No passive reading. Each book should produce something useful: discovery questions, a demo, an architecture note, an objection sheet, or a case study.</p>
+                    </div>
+                    <div class="prep-card">
+                        <h3>Employer proof</h3>
+                        <p>Strongest evidence: paid internships, production-style software work, real business automation, customer-facing experience, and documented debugging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>Hi, I'm Ethan Jordan. I'm a computer science student transferring from Foothill College to San Jose State University in Fall 2026.</p>
+                    <p>I have paid internship experience and hands-on projects in web apps, automation, Linux, networking, and security-minded debugging.</p>
+                    <p>I like work where the details matter: API behavior, test coverage, performance, data handling, and how systems fail in real life.</p>
+                    <p>I communicate clearly, learn fast, and build useful software instead of just talking about it.</p>
+                </div>
+                <div class="about-image">
+                    <img class="tree-hang" src="./assets/TreeHang.png" alt="Ethan Jordan outdoors">
+                </div>
+            </div>
+        </section>
+
+<section id="contact">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
                 <p class="final-message">Reach out for software engineering, IT, cybersecurity, or technical internship opportunities.</p>
                 <div class="email-container">
                     <a href="mailto:ejor50k@gmail.com" class="email-button">Email Me</a>
+                    <a href="https://github.com/ejor5" target="_blank" rel="noopener noreferrer" class="email-button secondary-contact">GitHub</a>
                 </div>
             </div>
-        </section>
-    </div>
+        </section></div>
 </body>
 </html>

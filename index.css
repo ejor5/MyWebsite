@@ -64,8 +64,10 @@ html {
 }
 
 .logo a {
+    display: inline-block;
     font-size: 30px;
     font-weight: 600;
+    line-height: 1;
     color: white;
 }
 
@@ -82,9 +84,11 @@ html {
 }
 
 .nav li a {
+    display: inline-block;
     color: white;
     font-size: 18px;
     font-weight: bold;
+    line-height: 1;
     margin-right: 0;
 }
 
@@ -176,6 +180,15 @@ html {
     text-align: center;
 }
 
+.hero-content .hero-lead {
+    width: min(100%, 760px);
+    margin: 1.1rem auto 0;
+    font-size: 1.08rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
 .hero-content p {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
@@ -193,6 +206,14 @@ html {
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
 }
 
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-top: 1.8rem;
+}
+
 .blog-button {
     display: inline-block;
     font-family: 'Inter', sans-serif;
@@ -202,8 +223,18 @@ html {
     padding: 12px 24px;
     font-size: 1.1rem;
     border-radius: 50px;
-    margin-top: 2rem;
+    margin-top: 0;
     transition: all 0.3s ease;
+}
+
+.primary-button {
+    background: linear-gradient(135deg, #038aff 0%, #0356ff 100%);
+    border-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 10px 20px rgba(3, 138, 255, 0.18);
+}
+
+.secondary-button {
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 .blog-button:hover {
@@ -218,7 +249,7 @@ section {
     position: relative;
 }
 
-section#about, section#proof, section#resume, section#projects, section#contact {
+section#about, section#proof, section#roles, section#resume, section#prep, section#deliverables, section#projects, section#contact {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,6 +267,19 @@ section#about, section#proof, section#resume, section#projects, section#contact 
 }
 
 section#proof {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+}
+
+section#prep {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+}
+
+section#roles,
+section#deliverables {
     min-height: auto;
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
@@ -338,6 +382,8 @@ section#contact .section-title {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
     padding-top: 1rem;
 }
 
@@ -643,6 +689,212 @@ section#contact .section-title {
     margin: 0;
 }
 
+.secondary-contact {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: none;
+}
+
+.secondary-contact:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Reading, labs, and compact proof */
+.prep-section {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.prep-section .section-title {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.prep-intro {
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.prep-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.prep-card {
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 1.2rem;
+    min-height: 160px;
+}
+
+.prep-card h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.prep-card p,
+.prep-card li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.prep-card ul {
+    padding-left: 1rem;
+}
+
+.roles-section,
+.deliverables-section {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.roles-section .section-title,
+.deliverables-section .section-title {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.role-grid,
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.deliverables-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.role-card,
+.deliverable-card {
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 1.2rem;
+    min-height: 150px;
+}
+
+.role-card h3,
+.deliverable-card h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.role-card p,
+.deliverable-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+/* Compact project cards */
+section#projects {
+    min-height: auto;
+    align-items: flex-start;
+}
+
+section#projects .container {
+    max-width: 1200px;
+}
+
+section#projects .section-title {
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+
+.project-intro {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+}
+
+.project-container {
+    display: block;
+}
+
+.project-container a {
+    display: block;
+    height: 100%;
+}
+
+.project-card {
+    height: 100%;
+    min-height: 360px;
+    max-height: 430px;
+    overflow: hidden;
+    padding: 1.15rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+}
+
+.project-card img {
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 0.9rem;
+}
+
+.project-card h3 {
+    font-size: 1.12rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+}
+
+.project-card p {
+    display: none;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+}
+
+.project-card p:first-of-type {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-card h4,
+.project-card ul {
+    display: none;
+}
+
+.proof-points {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: 0.8rem;
+}
+
+.proof-points span {
+    color: rgba(255, 255, 255, 0.82);
+    background: rgba(3, 138, 255, 0.12);
+    border: 1px solid rgba(3, 138, 255, 0.28);
+    border-radius: 999px;
+    padding: 0.32rem 0.55rem;
+    font-size: 0.78rem;
+    line-height: 1.25;
+}
+
 /* Container width consistency */
 .container {
     max-width: 1400px;
@@ -675,16 +927,29 @@ section > div {
 
     .nav ul {
         gap: 0.7rem;
-        justify-content: flex-end;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        max-width: calc(100vw - 110px);
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav li {
+        flex: 0 0 auto;
     }
 
     .logo a {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .nav li a {
-        font-size: 13px;
-        margin-right: 12px;
+        font-size: 12px;
+        margin-right: 0;
+        white-space: nowrap;
     }
 
     .hero-content {
@@ -704,7 +969,8 @@ section > div {
     }
 
     .hero-subtext span,
-    .hero-content p {
+    .hero-content p,
+    .hero-lead {
         font-size: 0.85rem;
     }
 
@@ -742,6 +1008,10 @@ section > div {
     .blog-button {
         font-size: 0.8rem;
         padding: 8px 16px;
+    }
+
+    .hero-actions {
+        gap: 0.55rem;
         margin-top: 1rem;
     }
 
@@ -794,7 +1064,10 @@ section > div {
 
     section#about,
     section#proof,
+    section#roles,
     section#resume,
+    section#prep,
+    section#deliverables,
     section#projects,
     section#contact {
         padding: 1.2rem;
@@ -807,6 +1080,24 @@ section > div {
     .highlights-grid {
         grid-template-columns: 1fr;
         gap: 0.75rem;
+    }
+
+    .prep-grid,
+    .role-grid,
+    .deliverables-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prep-card,
+    .role-card,
+    .deliverable-card {
+        min-height: auto;
+    }
+
+    .project-card {
+        min-height: auto;
+        max-height: none;
     }
 
     .highlight-card {
