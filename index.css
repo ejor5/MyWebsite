@@ -6,9 +6,8 @@
     --text: #f4f6f5;
     --muted: #a5b0b3;
     --line: rgba(255, 255, 255, 0.13);
-    --blue: #6b89ff;
-    --blue-bright: #8ea4ff;
-    --mint: #83cdbd;
+    --blue: #4169e1;
+    --blue-dark: #2f4fb3;
     --max: 1180px;
     --radius: 18px;
 }
@@ -53,7 +52,7 @@ a { color: inherit; }
 }
 nav { display: flex; gap: 30px; }
 nav a { color: var(--muted); font-size: 13px; font-weight: 700; text-decoration: none; }
-nav a:hover, nav a:focus-visible { color: var(--text); }
+nav a:hover, nav a:focus-visible { color: var(--blue); }
 
 .hero {
     position: relative; min-height: 790px; padding: 110px 0 92px; overflow: hidden;
@@ -74,7 +73,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); }
     gap: clamp(56px, 9vw, 120px); align-items: end;
 }
 .eyebrow, .card-kicker, .note-label {
-    margin: 0 0 18px; color: var(--mint); font-size: 11px; font-weight: 800;
+    margin: 0 0 18px; color: var(--blue); font-size: 11px; font-weight: 800;
     letter-spacing: .16em; line-height: 1.3; text-transform: uppercase;
 }
 h1, h2, h3, p { margin-top: 0; }
@@ -97,8 +96,8 @@ h1 {
     transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
 }
 .button:hover { transform: translateY(-2px); border-color: var(--text); }
-.button-primary { border-color: var(--blue); background: var(--blue); color: #070a10; }
-.button-primary:hover { background: var(--blue-bright); }
+.button-primary { border-color: var(--blue); background: var(--blue); color: var(--text); }
+.button-primary:hover { border-color: var(--blue-dark); background: var(--blue-dark); }
 .button-secondary { background: rgba(5,7,8,.36); color: var(--text); backdrop-filter: blur(10px); }
 
 .hero-portrait {
@@ -152,7 +151,7 @@ h1 {
 .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 8px 0 25px; padding: 0; list-style: none; }
 .tag-list li { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; color: #c0c8ca; font-size: 10px; font-weight: 800; }
 .card-links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-.card-links a, .text-link { color: var(--blue-bright); font-size: 13px; font-weight: 800; text-decoration: none; }
+.card-links a, .text-link { color: var(--blue); font-size: 13px; font-weight: 800; text-decoration: none; }
 .card-links a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -162,11 +161,11 @@ h1 {
 .project-card h3 { font-size: clamp(33px,3.5vw,44px); }
 .network-visual {
     position: relative; min-height: 285px; overflow: hidden; border-bottom: 1px solid var(--line);
-    background: radial-gradient(circle at 30% 20%, #173d38, transparent 43%), linear-gradient(140deg,#0d171a,#05090b);
+    background: radial-gradient(circle at 30% 20%, rgba(65,105,225,.38), transparent 43%), linear-gradient(140deg,#10172e,#05070d);
 }
 .network-visual::before { content: ""; position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px); background-size: 34px 34px; }
-.node { position: absolute; z-index: 2; display: grid; width: 74px; height: 74px; place-items: center; border: 1px solid rgba(255,255,255,.36); border-radius: 50%; background: #11282a; font-size: 10px; font-weight: 800; }
-.node-a { left: 10%; top: 36%; } .node-b { left: calc(50% - 37px); top: 18%; background: #314c9e; } .node-c { right: 10%; top: 54%; }
+.node { position: absolute; z-index: 2; display: grid; width: 74px; height: 74px; place-items: center; border: 1px solid rgba(255,255,255,.36); border-radius: 50%; background: #111a38; font-size: 10px; font-weight: 800; }
+.node-a { left: 10%; top: 36%; } .node-b { left: calc(50% - 37px); top: 18%; background: var(--blue-dark); } .node-c { right: 10%; top: 54%; }
 .line { position: absolute; z-index: 1; height: 1px; transform-origin: left center; background: rgba(255,255,255,.48); }
 .line-a { left: 20%; top: 48%; width: 34%; transform: rotate(-15deg); } .line-b { left: 56%; top: 42%; width: 30%; transform: rotate(27deg); }
 
@@ -177,7 +176,7 @@ h1 {
 .button-light { color: var(--text); }
 .timeline article { padding: 0 0 34px; margin-bottom: 34px; border-bottom: 1px solid var(--line); }
 .timeline article:last-child { margin-bottom: 0; border-bottom: 0; }
-.timeline-meta { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 12px; color: var(--mint); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.timeline-meta { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 12px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .timeline h3 { margin-bottom: 11px; font-family: "Cormorant", Georgia, serif; font-size: clamp(29px,3.5vw,39px); font-weight: 600; line-height: 1.05; }
 .timeline p { margin-bottom: 0; color: var(--muted); }
 
@@ -187,7 +186,7 @@ h1 {
 .principles-grid article { padding: 32px 32px 16px 0; border-right: 1px solid var(--line); }
 .principles-grid article + article { padding-left: 32px; }
 .principles-grid article:last-child { border-right: 0; }
-.principles-grid span { color: var(--blue-bright); font-family: "Cormorant", Georgia, serif; font-size: 23px; }
+.principles-grid span { color: var(--blue); font-family: "Cormorant", Georgia, serif; font-size: 23px; }
 .principles-grid h3 { margin: 40px 0 12px; font-size: 19px; }
 .principles-grid p { color: var(--muted); }
 
@@ -195,7 +194,7 @@ h1 {
 .notes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
 .notes-grid > a { min-height: 270px; padding: 27px; border: 1px solid var(--line); background: var(--panel); text-decoration: none; transition: transform 160ms ease,border-color 160ms ease; }
 .notes-grid > a:hover { transform: translateY(-3px); border-color: var(--blue); }
-.notes-grid span { color: var(--mint); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.notes-grid span { color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .notes-grid h3 { margin: 46px 0 12px; font-family: "Cormorant", Georgia, serif; font-size: 30px; font-weight: 600; line-height: 1.05; }
 .notes-grid p { color: var(--muted); font-size: 13px; }
 
