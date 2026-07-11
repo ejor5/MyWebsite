@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="blog.css?v=professional-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-    <title>Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="blog.css">
-    <meta name="description" content="Ethan Jordan's personal blog about technology and programming">
+    <title>Field Notes | Ethan Jordan</title>
+    <meta name="description" content="Engineering and systems notes from Ethan Jordan about product work, Linux, networking, automation, and security-minded debugging.">
+    <meta name="theme-color" content="#f4f1e8">
+    <link rel="canonical" href="https://ethanmjordan.com/blog.html">
 </head>
 <body>
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo"><a href="index.html" aria-label="Return to homepage">Ethan Jordan</a></div>
-            <ul role="menubar">
-                <li role="none"><a href="index.html#about" role="menuitem" aria-label="About section">About</a></li>
-                <li role="none"><a href="index.html#resume" role="menuitem" aria-label="Resume section">Resume</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
+            <div class="logo"><a href="index.html" aria-label="Return to homepage"><span aria-hidden="true">EJ</span><b>Ethan Jordan</b></a></div>
+            <ul>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="blog.html" aria-current="page">Notes</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
     </nav>
     <div class="content">
         <section id="blog">
             <div class="container">
-                <h2 class="section-title">Blog</h2>
+                <p class="eyebrow">Field notes</p>
+                <h1 class="section-title">What broke, what I tested, and what I learned.</h1>
+                <p class="blog-intro">Longer notes from real projects. I write these to make the reasoning visible—not just the finished result.</p>
                 <div class="blog-posts">
                     <article class="blog-post" id="pihole-xfinity">
                         <h3>Setting Up Pi-hole on Xfinity: What Actually Happened - 4/22/2026</h3>
@@ -50,9 +49,9 @@
                         <p>The biggest thing I learned was that you should not start configuring a network until you understand who controls each part of it. I came away with a much better understanding of DNS resolution, DHCP, MAC-based device identity, IPv4 vs IPv6 behavior, router limitations, and how to test safely before making changes that affect every device in the house.</p>
                         <p>Next time, I would identify router limitations first, choose the architecture before touching global settings, and use either bridge mode with my own router or a deliberate per-device setup. The lesson was simple: understand the system before configuring the system.</p>
                     </article>
-                    <article class="blog-post">
+                    <article class="blog-post" id="virtius">
                         <a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">
-                            <img class="blog-image" src="./assets/VMainPage.png" alt="Virtius scores main page">
+                            <img class="blog-image" src="./assets/VMainPage.png" width="2556" height="1371" loading="lazy" alt="Virtius scores main page">
                             <h3>What I Learned Improving Virtius Scores - 4/03/2026</h3>
                             <p>Virtius was a big step for me. I did not build the whole project from zero, but I did take on a lot of the engineering work for my branch, scores.virti.us.</p>
                             <p>I learned Next.js by working inside a real app, not by copying a tutorial. The stack was Next.js 15, React 19, TypeScript, and Tailwind. Every change had to fit the existing code and the actual product.</p>
@@ -79,7 +78,7 @@
                     </article>
                     <article class="blog-post">
                         <a href="https://github.com/ejor5/Matterhorn" target="_blank" rel="noopener noreferrer">
-                            <img class="blog-image" src="./assets/BlogMattercamSC.png" alt="Disneyland livestream dashboard screenshot">
+                            <img class="blog-image" src="./assets/BlogMattercamSC.png" width="2559" height="1439" loading="lazy" alt="Disneyland livestream dashboard screenshot">
                             <h3>Disneyland Livestream App - 2/27/2025</h3>
                             <p>I wanted to make a Linux app for my Raspberry Pi 3, and the 24-hour Disneyland livestream gave me a clear idea. I built a dashboard that showed the livestream and ride wait times.</p>
                             <p>The annoying part was the webcam link. The Howard Johnson stream changed links during the day, so hardcoding one URL did not work. I fixed that by pulling the current link from their site instead.</p>
@@ -89,7 +88,7 @@
                     </article>
                     <article class="blog-post">
                         <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank" rel="noopener noreferrer">
-                            <img class="blog-image" src="./assets/ClubAutomation.png" alt="Club Automation enrollment tool screenshot">
+                            <img class="blog-image" src="./assets/ClubAutomation.png" width="2559" height="1336" loading="lazy" alt="Club Automation enrollment tool screenshot">
                             <h3>Almaden Valley Athletic Club Web Scheduler 3/30/2025</h3>
                             <p>I work as a tennis scheduler at Almaden Valley Athletic Club. Each month, staff had to repeat the same enrollment steps over and over. I built a web automation tool to pull class names and help enroll students for the next month.</p>
                             <h3>Running the Program 7/25/2025</h3>
@@ -98,7 +97,7 @@
                     </article>
                     <article class="blog-post">
                         <a href="https://www.instagram.com/jake.gipson.estate/" target="_blank" rel="noopener noreferrer">
-                            <img class="blog-image" src="./assets/JGWebsite.png" alt="Jake Gipson website screenshot">
+                            <img class="blog-image" src="./assets/JGWebsite.png" width="2545" height="1313" loading="lazy" alt="Jake Gipson website screenshot">
                             <h3>Real Estate Internship 2022-2024</h3>
                             <p>I interned with Jake Gipson, a Silicon Valley realtor with 25+ years of experience. I learned quickly because the work changed a lot, and I had to handle different kinds of tasks without much hand-holding.<br>
                                 I started with cold calls to generate leads, as most salespeople do. I made calls daily, doing my best to mirror the buyer's energy and keep them engaged. It taught me a lot about communication, confidence, and how to read people in real-time.<br>
