@@ -1,518 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css?v=conversion-flow-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-    <meta name="description" content="Ethan Jordan's software engineering, Linux, networking, and security portfolio for internships and early-career technical roles.">
-    <title>Ethan Jordan | Software Engineering & Security Portfolio</title>
+    <meta name="description" content="Ethan EJ Jordan is a computer science student and software engineering intern building practical software, workflow automation, and security-minded systems projects.">
+    <meta name="theme-color" content="#050708">
+    <meta property="og:title" content="Ethan EJ Jordan | Software & Systems Portfolio">
+    <meta property="og:description" content="Practical software, workflow automation, and security-minded systems work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ethanmjordan.com/">
+    <meta property="og:image" content="https://ethanmjordan.com/assets/VMainPage.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://ethanmjordan.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=soft-blue-1">
+    <title>Ethan EJ Jordan | Software & Systems Portfolio</title>
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="logo"><a href="#home">Ethan Jordan</a></div>
-            <ul>
-                <li><a href="#proof">Proof</a></li>
-                <li><a href="#roles">Fit</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#prep">Labs</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#top" aria-label="Ethan EJ Jordan, home">
+                <span class="brand-mark" aria-hidden="true">EJ</span>
+                <span>Ethan “EJ” Jordan</span>
+            </a>
+            <nav aria-label="Primary navigation">
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="blog.html">Notes</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-
-    <div class="content">
-        <section id="home">
-            <div class="hero-content">
-                <h1>Ethan Jordan</h1>
-                <div class="hero-subtext" aria-label="Portfolio focus areas">
-                    <span>CS Transfer to SJSU</span>
-                    <span>Software Engineering</span>
-                    <span>Linux &amp; Security</span>
-                    <span>Two Internships</span>
-                    <span>CompTIA A+ Core 1</span>
-                    <span>TryHackMe &amp; Security Labs</span>
+    <main id="main-content">
+        <section class="hero" id="top">
+            <div class="shell hero-grid">
+                <div class="hero-copy">
+                    <h1>Ethan “EJ” Jordan</h1>
+                    <p class="hero-statement">Computer Science Student &amp; Junior Cybersecurity Practitioner</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#work">View selected work</a>
+                        <a class="button button-secondary" href="mailto:ejor50k@gmail.com">Email me</a>
+                    </div>
                 </div>
-                <p class="hero-lead">Early-career builder looking for software engineering, IT, cybersecurity, and solutions engineering internship opportunities.</p>
-                <div class="hero-actions" aria-label="Primary actions">
-                    <a href="#projects" class="blog-button primary-button">See Projects</a>
-                    <a href="mailto:ejor50k@gmail.com" class="blog-button secondary-button">Email Me</a>
-                </div>
+                <figure class="hero-portrait">
+                    <img src="assets/TreeHang.png" width="408" height="612" alt="Ethan Jordan outdoors beneath a tree">
+                    <figcaption><span>Ethan “EJ” Jordan</span><span>SJSU CS · Fall 2026</span></figcaption>
+                </figure>
             </div>
         </section>
 
-<section id="proof">
-            <div class="container proof-section">
-                <h2 class="section-title">Fast Proof</h2>
-                <div class="highlights-grid">
-                    <div class="highlight-card">
-                        <h3>SJSU CS transfer</h3>
-                        <p>Transferring from Foothill College into San Jose State University's Computer Science program in Fall 2026.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Real software</h3>
-                        <p>Virtius gave me production-style experience with live scoring data, Next.js, TypeScript, GraphQL, and Playwright.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Automation</h3>
-                        <p>Built a Python/Selenium tool at AVAC that reduced repetitive enrollment steps and flagged cases that needed human review.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Linux</h3>
-                        <p>Used Kali, Arch, and Mint through live boots and full installs since freshman year of high school.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Networking</h3>
-                        <p>Pi-hole taught me DNS, DHCP, IPv4, IPv6, router limits, and why Xfinity gateways are annoying.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>TryHackMe & labs</h3>
-                        <p>CompTIA A+ Core 1 progress, TryHackMe-style practice, Nmap, Metasploit basics, Raspberry Pi projects, and safe testing habits.</p>
+        <section class="proof-bar" aria-label="Quick credibility indicators">
+            <div class="shell proof-grid">
+                <div><strong>2 internships</strong><span>Virtius + HeartBeam</span></div>
+                <div><strong>SJSU CS</strong><span>Incoming Fall 2026</span></div>
+                <div><strong>Tools</strong><span>Python · TypeScript · Linux</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="work">
+            <div class="shell">
+                <div class="section-heading">
+                    <div>
+                        <h2>Three important projects.</h2>
                     </div>
                 </div>
-            </div>
-        </section>
 
-<section id="roles">
-            <div class="container roles-section">
-                <h2 class="section-title">Role Fit</h2>
-                <div class="role-grid">
-                    <div class="role-card">
-                        <h3>Cybersecurity</h3>
-                        <p>Linux, networking, TryHackMe-style labs, Pi-hole troubleshooting, and a habit of verifying before changing systems.</p>
+                <article class="feature-card">
+                    <div class="feature-media">
+                        <img src="assets/VMainPage.png" width="2556" height="1371" alt="Virtius live NCAA gymnastics meet viewer showing team scores" fetchpriority="high">
                     </div>
-                    <div class="role-card">
-                        <h3>Software Engineering</h3>
-                        <p>Virtius production-style work, AVAC automation, Playwright testing, and CS fundamentals projects.</p>
-                    </div>
-                    <div class="role-card">
-                        <h3>Solutions Engineering</h3>
-                        <p>Customer-facing work, discovery practice, business workflow automation, and technical explanation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<section id="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <p class="project-intro">The strongest proof for a recruiter is here: real product work, workflow automation, Linux/security labs, networking troubleshooting, and fundamentals projects.</p>
-                <div class="projects-grid">
-                    <!-- Virtius Meet Viewer Project -->
-                    <div class="project-container">
-                        <a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">
-                            <div class="project-card">
-                                <img class="code-image" src="./assets/VMainPage.png" alt="Virtius scores main page">
-                                <h3>Virtius Meet Viewer</h3>
-                                <p>
-                                    I worked on the Virtius scores project as the main engineer for my branch, scores.virti.us. I used Next.js 15, React 19, TypeScript, and Tailwind CSS to improve the meet viewer for live NCAA gymnastics scoring.
-                                </p>
-                                <div class="proof-points"><span>Problem: live scoring correctness</span><span>Evidence: Playwright + product constraints</span></div>
-                                <h4>What I Improved & Learned:</h4>
-                                <ul>
-                                    <li><strong>Next.js Work:</strong> Worked with App Router patterns, React components, TypeScript data, Tailwind UI, and real bugs inside an existing app.</li>
-                                    <li><strong>Performance:</strong> Improved load speed with better rendering choices, lazy loading, and cleaner data flow.</li>
-                                    <li><strong>GraphQL & Request Flow:</strong> Studied how virti.us moved live scoring data through GraphQL requests and used that to make better decisions.</li>
-                                    <li><strong>Scoring Accuracy:</strong> Helped solve real scoring problems like floating-point precision, dynamic 3/4-decimal display, exhibition athlete filtering, and edge-case ranking behavior.</li>
-                                    <li><strong>Security Mindset:</strong> Kept security in mind while working with API data, request flow, caching, and the boundary between the client and server.</li>
-                                    <li><strong>Testing Discipline:</strong> Worked with Playwright tests, visual comparisons, and regression checks so changes were backed by more than just clicking around and hoping.</li>
-                                </ul>
-                                <p>
-                                    The main lesson was how to work inside a real product: understand the codebase, talk through tradeoffs, improve performance, and still care about correctness and security.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Tennis Enrollment Project -->
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank" rel="noopener noreferrer">
-                            <div class="project-card">
-                                <img class="code-image" src="./assets/ClubAutomation.png" alt="Club Automation enrollment tool screenshot">
-                                <h3>AVAC Tennis Class Automation</h3>
-                                <p>
-                                    At AVAC, I saw how much time tennis staff spent on repetitive enrollment work. I built a Python tool to automate the boring parts and flag the cases that still need a person.
-                                </p>
-                                <div class="proof-points"><span>Problem: repetitive staff workflow</span><span>Evidence: Selenium + review checkpoints</span></div>
-                                <p>
-                                    The project started with class rosters and enrollment. I added attendance checks, CSV comparison, and prompts for cases where the program should not guess.
-                                </p>
-                                <h4>How I Made It Work:</h4>
-                                <ul>
-                                    <li><strong>Python + Selenium:</strong> Automated login and enrollment steps in the Club Automation site.</li>
-                                    <li><strong>Pandas & CSVs:</strong> Compared player lists, attendance logs, and inquiry files.</li>
-                                    <li><strong>Human Review:</strong> Added prompts when the tool finds a case that needs staff judgment.</li>
-                                    <li><strong>Setup:</strong> Wrote a batch script so staff could run it without manually setting up the environment.</li>
-                                </ul>
-                                <p>
-                                    This was a good lesson in practical software. The tool only mattered because it fit the real workflow and handled edge cases instead of pretending they did not exist.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Linux Security Lab -->
-                    <div class="project-container">
-                        <a href="blog.html#linux-security-lab">
-                            <div class="project-card">
-                                <h3>Linux & Security Tool Lab</h3>
-                                <p>
-                                    I have been using Linux since freshman year of high school through live boots and full installs. I have used Kali, Arch, and Linux Mint, and I spent a lot of time learning how security tools behave in lab and authorized environments.
-                                </p>
-                                <div class="proof-points"><span>Problem: use tools safely</span><span>Evidence: Linux, Nmap, Metasploit basics</span></div>
-                                <h4>What I Practiced:</h4>
-                                <ul>
-                                    <li><strong>Linux Installs:</strong> Booted and installed different distributions, fixed driver/config issues, and learned how Linux systems are laid out.</li>
-                                    <li><strong>Kali Linux:</strong> Used Kali as a security-focused environment and focused on understanding what the tools were actually doing.</li>
-                                    <li><strong>Network Scanning:</strong> Practiced with Nmap to understand hosts, ports, services, and why exposed services matter.</li>
-                                    <li><strong>Metasploit Basics:</strong> Spent time learning how modules, payloads, and lab exploitation workflows are structured.</li>
-                                    <li><strong>System Comfort:</strong> Got comfortable with the terminal, packages, permissions, services, network settings, and troubleshooting broken installs.</li>
-                                    <li><strong>Security Mindset:</strong> Learned to think in terms of attack surface, misconfiguration, and verification instead of just running tools.</li>
-                                </ul>
-                                <p>
-                                    The useful part was not memorizing commands. It was learning how Linux, networks, and security tools fit together, and how to slow down enough to understand what a tool is actually showing me.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Raspberry Pi Pi-hole Project -->
-                    <div class="project-container">
-                        <a href="blog.html#pihole-xfinity">
-                            <div class="project-card">
-                                <h3>Raspberry Pi Pi-hole Network Lab</h3>
-                                <p>
-                                    I set up Pi-hole on a Raspberry Pi to learn how DNS, DHCP, IPv4, IPv6, and router control work on a real home network. The goal was network-wide ad blocking. The useful part was figuring out why the Xfinity gateway kept bypassing it.
-                                </p>
-                                <div class="proof-points"><span>Problem: DNS bypass</span><span>Evidence: Pi-hole, DHCP, IPv6 debugging</span></div>
-                                <h4>What I Built & Learned:</h4>
-                                <ul>
-                                    <li><strong>Raspberry Pi Server Setup:</strong> Installed Pi-hole headlessly, reserved 10.0.0.50, set Cloudflare as upstream DNS, and tested it with nslookup.</li>
-                                    <li><strong>DNS Debugging:</strong> Queried Pi-hole directly, then checked the dashboard to prove requests were reaching the server.</li>
-                                    <li><strong>DHCP vs DNS:</strong> Learned the difference between resolving names and assigning network settings, and why controlling DHCP is what lets you control where devices send DNS traffic.</li>
-                                    <li><strong>Xfinity Router Limits:</strong> Found that the stock gateway would not reliably allow custom network-wide DNS, so devices kept falling back to Comcast DNS like cdns01.comcast.net.</li>
-                                    <li><strong>IPv6 Bypass:</strong> Tracked how Xfinity IPv6 DNS, including 2001:558:feed::1, could silently bypass Pi-hole even when IPv4 settings looked correct.</li>
-                                    <li><strong>Risky Change Recovery:</strong> Tested a Pi-hole DHCP takeover, hit router/DHCP conflicts and temporary network loss, then backed out and isolated the problem instead of guessing.</li>
-                                </ul>
-                                <p>
-                                    This taught me more because it did not go perfectly. I learned to test one layer at a time, separate a working service from a router problem, and think before changing settings that affect the whole network.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/BPNeuralNetwork" target="_blank" rel="noopener noreferrer">
-                        <div class="project-card">
-                            <img class="code-image" src="./assets/TestResults.png" alt="BBPB Image">
-                            <h3>Backward Propagation Neural Network</h3>
-                            <p>
-                                    I built a neural network from scratch in Python because I wanted to understand what backpropagation was actually doing. I spent the quarter working through the math, writing the code, and debugging it until the model could learn from data.
-                            </p>
-                            <p>
-                                Along the way, I got hands-on with:
-                            </p>
-                            <ul>
-                                <li>
-                                    <strong>Feedforward and Backpropagation:</strong> Wrote the prediction step and the weight update step using gradients. Debugging this was the hard part.
-                                </li>
-                                <li>
-                                    <strong>Activation Functions:</strong> Tested ReLU, Sigmoid, and Tanh to see how they changed learning.
-                                </li>
-                                <li>
-                                    <strong>Preventing Overfitting:</strong> Tried regularization and dropout so the model would not only memorize the training data.
-                                </li>
-                                <li>
-                                    <strong>Matrix Math & Python Libraries:</strong> Used NumPy and vectorized operations to make the code faster and cleaner.
-                                </li>
-                            </ul>
-                            <p>
-                                This project made machine learning feel less mysterious. It forced me to slow down, test each step, and understand why the model was or was not learning.
-                            </p>
-                        </div>
-                        </a>
-                    </div>
-
-                    <!-- New Mattercam Project -->
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/Matterhorn" target="_blank" rel="noopener noreferrer">
-                            <div class="project-card">
-                                <img class="code-image" src="./assets/MattercamScreenshot.png" alt="Mattercam Screenshot">
-                                <h3>Mattercam Project</h3>
-                                <p>
-                                    I built a dashboard that shows a Disneyland livestream and current ride wait times. It started as a Raspberry Pi idea, but I later moved it toward Windows because the Pi did not have enough memory for the full app.
-                                </p>
-                                <h4>What I Built & Learned:</h4>
-                                <ul>
-                                    <li><strong>Custom Tkinter UI:</strong> Built a simple fullscreen interface with color-coded ride times.</li>
-                                    <li><strong>Web Scraping:</strong> Used BeautifulSoup and Requests to pull wait-time data and parse messy HTML.</li>
-                                    <li><strong>Live Video Streaming:</strong> Used yt-dlp and VLC to load the webcam feed inside the app.</li>
-                                    <li><strong>Real-Time Updates:</strong> Refreshed the data every minute and showed the last update time.</li>
-                                </ul>
-                                <p>
-                                    This project taught me how to combine scraping, media playback, and UI code. A lot broke while I was building it, which made the debugging useful.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/GuessingGame/blob/master/BinaryTree.py" target="_blank" rel="noopener noreferrer">
-                            <div class="project-card">
-                                <h3>BinaryTree Class (Python Data Structures)</h3>
-                                <p>
-                                    I implemented a binary search tree in Python to understand inserts, search, deletes, traversals, recursion, and edge cases.
-                                </p>
-                                <p>
-                                    I implemented a binary search tree in Python to understand the data structure beyond just drawing it on paper. I wrote the operations, tested edge cases, and added a small menu to try the tree from the terminal.
-                                </p>
-                                <h4>What I Focused On:</h4>
-                                <ul>
-                                    <li><strong>Core BST Operations:</strong> Built insert, search, and delete, including cases like deleting the root.</li>
-                                    <li><strong>Tree Traversals:</strong> Added in-order, pre-order, and post-order traversal.</li>
-                                    <li><strong>User Interaction:</strong> Added a text menu so the tree could be tested without editing code.</li>
-                                </ul>
-                                <p>
-                                    This helped me understand recursion, class design, and why edge cases matter in basic algorithms.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/ComputerInventoryProject" target="_blank" rel="noopener noreferrer">
-                            <div class="project-card">
-                                <h3>Python Computer Inventory Manager</h3>
-                                <p>
-                                    I built a command-line inventory app for Linux and Windows machines using Python, SQLite, OOP, validation, and a terminal menu.
-                                </p>
-                                <p>
-                                    I built this command-line app to track computers for a small IT-style inventory. It stores Linux and Windows machines, saves them in a database, and checks input before accepting it.
-                                </p>
-                                <h4>What I Learned & Built:</h4>
-                                <ul>
-                                    <li><strong>Python + SQLite3:</strong> Stored inventory data in a persistent database.</li>
-                                    <li><strong>OOP Design:</strong> Used classes and inheritance for different computer types.</li>
-                                    <li><strong>Input Validation:</strong> Checked IP addresses before saving them.</li>
-                                    <li><strong>Interactive Menu:</strong> Built a terminal menu for adding, updating, and removing computers.</li>
-                                </ul>
-                                <p>
-                                    This was a good practice project for OOP, databases, validation, and making a tool understandable for someone besides the person who wrote it.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- RTSP Camera App Project -->
-                    <div class="project-container">
-                        <a href="https://github.com/ejor5/RTSPCameraApp" target="_blank" rel="noopener noreferrer">
-                            <div class="project-card">
-                                <h3>RTSP 4-Camera Viewer</h3>
-                                <p>
-                                    I built a desktop app that shows up to four RTSP camera feeds at once while learning video streams, VLC, and custom window behavior.
-                                </p>
-                                <p>
-                                    I built a desktop app that shows up to four RTSP camera feeds at once. It was mostly about learning video streams, window behavior, and how to keep a monitoring tool usable.
-                                </p>
-                                <h4>Technical Implementation:</h4>
-                                <ul>
-                                    <li><strong>VLC Integration:</strong> Used python-vlc to load RTSP streams and tune caching settings.</li>
-                                    <li><strong>Custom Tkinter UI:</strong> Built a borderless window, custom title bar, draggable interface, and 2x2 feed layout.</li>
-                                    <li><strong>Window Controls:</strong> Added fullscreen, dragging, F11, and Escape behavior.</li>
-                                    <li><strong>Stream Settings:</strong> Adjusted VLC parameters for live camera feeds, including caching and clock sync.</li>
-                                </ul>
-                                <p>
-                                    This project taught me how much small settings matter when video comes over a network. A camera app can look simple, but stream handling and timing make it interesting.
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<section id="resume">
-            <div class="container resume-section">
-                <h2 class="section-title">Resume</h2>
-                <h3>Summary</h3>
-                <p>Computer science student transferring from Foothill College to San Jose State University in Fall 2026 after a competitive CS transfer path. Paid internship experience, CompTIA A+ Core 1, and projects across TypeScript, Python, testing, automation, Linux, networking, and security-minded debugging.</p>
-
-                <h3>Skills</h3>
-                <ul>
-                    <li><strong>Languages:</strong> Python, Java, TypeScript, JavaScript, C++</li>
-                    <li><strong>Web:</strong> Next.js, React, Tailwind CSS, HTML, CSS</li>
-                    <li><strong>Testing:</strong> Playwright, regression testing, visual checks</li>
-                    <li><strong>Data & Automation:</strong> Airtable, Pandas, SQLite, Selenium, CSV workflows</li>
-                    <li><strong>Systems:</strong> Kali Linux, Arch Linux, Linux Mint, Raspberry Pi, DNS, DHCP, IPv4, IPv6, RTSP</li>
-                    <li><strong>Security Mindset:</strong> Network scanning, request flow, data handling, edge cases, router limits, safe configuration changes</li>
-                    <li><strong>Tools:</strong> Git, GitHub, TryHackMe, Nmap, Metasploit, VLC, yt-dlp, BeautifulSoup, Requests</li>
-                    <li><strong>Support:</strong> Technical troubleshooting, customer communication, scheduling systems</li>
-                </ul>
-
-                <h3>Internships & Experience</h3>
-                <h4>Virtius</h4>
-                <p><strong>Software Engineering Intern / Project Engineer</strong> <em>Paid, December 2025-Present</em></p>
-                <ul>
-                    <li>Improved scores.virti.us, a live NCAA gymnastics meet viewer built with Next.js, React, TypeScript, Tailwind, and GraphQL.</li>
-                    <li>Worked on performance, scoring correctness, API data handling, client/server boundaries, and Playwright regression tests.</li>
-                    <li>Handled real product work with a designer/project manager and made changes that had to survive actual users and live data.</li>
-                </ul>
-
-                <h4>HeartBeam</h4>
-                <p><strong>Technical Intern</strong> <em>Paid, April 2025-Present</em></p>
-                <ul>
-                    <li>Helped create a structured Airtable database for sales clients and pipeline tracking.</li>
-                    <li>Worked with the team to make UI, data model, and workflow decisions based on what the sales process needed.</li>
-                    <li>Balanced usability, data accuracy, and maintainability while turning scattered client and pipeline information into a clearer internal system.</li>
-                </ul>
-
-                <h4>Jake Gipson Real Estate</h4>
-                <p><strong>Marketing & Web Intern</strong> <em>Paid, 2022-2024</em></p>
-                <ul>
-                    <li>Managed and created content across Instagram, Facebook, TikTok, YouTube, and LinkedIn.</li>
-                    <li>Used Buffer to schedule posts and keep social media content organized across platforms.</li>
-                    <li>Helped produce photo and video content for real estate marketing.</li>
-                    <li>Built and edited website pages using Elementor and Kubio.</li>
-                    <li>Learned client-facing communication, branding, content analytics, and fast problem-solving inside a real business.</li>
-                </ul>
-
-                <h4>Almaden Valley Athletic Club, San Jose, CA</h4>
-                <p><strong>Tennis Scheduler & Receptionist</strong> <em>June 2024-Present</em></p>
-                <ul>
-                    <li>Manage scheduling systems, phone/email requests, and conflicts between members, staff, and coaches.</li>
-                    <li>Built a Python/Selenium automation tool to reduce repetitive tennis enrollment work and flag edge cases for staff review.</li>
-                </ul>
-
-                <h4>CVS Pharmacy 1314, San Jose, CA</h4>
-                <p><strong>Retail Associate</strong> <em>October 2022-July 2024</em></p>
-                <ul>
-                    <li>Handled customers, register work, stocking, cleaning, and cross-department support while often being the only associate on the floor.</li>
-                    <li>Learned to prioritize quickly, communicate clearly, and solve problems without waiting for perfect conditions.</li>
-                </ul>
-
-                <h3>Education</h3>
-                <h4>San Jose State University</h4>
-                <p><strong>B.S. Computer Science</strong> <em>Incoming Transfer, Fall 2026</em></p>
-                <p>Accepted transfer from Foothill College into a competitive Computer Science program in Silicon Valley.</p>
-
-                <h4>Foothill College</h4>
-                <p><strong>Computer Science for Transfer</strong> <em>July 2024-Present</em></p>
-                <p>Focused on programming, data structures, algorithms, discrete math, calculus, and honors coursework.</p>
-
-                <h3>Relevant Coursework</h3>
-                <ul>
-                    <li>Advanced Data Structures in Java</li>
-                    <li>Advanced Python</li>
-                    <li>Data Structures and Algorithms</li>
-                    <li>Discrete Mathematics</li>
-                    <li>Honors Calculus</li>
-                    <li>Intermediate Python</li>
-                    <li>Object-Oriented Java</li>
-                    <li>App Design</li>
-                    <li>Computer Architecture</li>
-                </ul>
-
-                <h3>Certifications & Activities</h3>
-                <ul>
-                    <li>CompTIA A+ Core 1</li>
-                    <li>TryHackMe and security lab practice</li>
-                    <li>Computer Science Club</li>
-                    <li>VR Club</li>
-                    <li>National Honor Society</li>
-                    <li>Santa Clara County Parks Volunteer</li>
-                    <li>English and Spanish</li>
-                </ul>
-            </div>
-        </section>
-
-<section id="deliverables">
-            <div class="container deliverables-section">
-                <h2 class="section-title">Case Study In Progress</h2>
-                <p class="prep-intro">A Summer 2026 Solutions Engineering case study for a fictional healthcare company. Each deliverable shows how I translate business needs into practical, testable security solutions.</p>
-                <div class="deliverables-grid">
-                    <div class="deliverable-card">
-                        <h3>Discovery and architecture</h3>
-                        <p>Customer discovery, business requirements, current-state architecture, and future-state security architecture.</p>
-                    </div>
-                    <div class="deliverable-card">
-                        <h3>Security proof of concept</h3>
-                        <p>Wazuh/Sysmon proof of concept, phishing investigation, and two tested detections with evidence.</p>
-                    </div>
-                    <div class="deliverable-card">
-                        <h3>Automation and cloud</h3>
-                        <p>A Python automation tool plus a secure AWS mini-project tied back to the healthcare scenario.</p>
-                    </div>
-                    <div class="deliverable-card">
-                        <h3>Executive and technical presentation</h3>
-                        <p>One executive presentation and one technical presentation explaining risk, design choices, evidence, and next steps.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<section id="prep">
-            <div class="container prep-section">
-                <h2 class="section-title">Reading & Labs</h2>
-                <p class="prep-intro">I am trying to make the preparation visible: books, labs, and small artifacts that turn learning into proof.</p>
-
-                <div class="prep-grid">
-                    <div class="prep-card">
-                        <h3>Books read</h3>
-                        <ul>
-                            <li><strong>Ultralearning:</strong> May 13-May 29</li>
-                            <li><strong>The Mom Test:</strong> April 7-April 20</li>
-                            <li><strong>Atomic Habits:</strong> May 29-June 7</li>
+                    <div class="feature-copy">
+                        <p class="card-kicker">Product engineering · Virtius</p>
+                        <h3>Virtius Meet Viewer</h3>
+                        <p>Improved performance, scoring edge cases, and regression coverage inside a live Next.js product.</p>
+                        <ul class="tag-list" aria-label="Technologies used">
+                            <li>Next.js</li><li>TypeScript</li><li>GraphQL</li><li>Playwright</li>
                         </ul>
+                        <div class="card-links">
+                            <a href="blog.html#virtius">Read the engineering notes <span aria-hidden="true">→</span></a>
+                            <a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">View the product <span aria-hidden="true">↗</span></a>
+                        </div>
                     </div>
-                    <div class="prep-card">
-                        <h3>Current focus</h3>
-                        <p><strong>Cybersecurity First Principles</strong> started May 29. I am rereading it slowly because cybersecurity is not memorization. It is pattern recognition built on fundamentals.</p>
-                    </div>
-                    <div class="prep-card">
-                        <h3>Solutions engineering list</h3>
-                        <p>Next: Mastering Technical Sales, Great Demo!, Six Habits, Made to Stick, The Phoenix Project, and Computer Networking as a lab reference.</p>
-                    </div>
-                    <div class="prep-card">
-                        <h3>TryHackMe & labs</h3>
-                        <p>Working through security practice with TryHackMe-style labs, Linux, Nmap, basic Metasploit workflows, Raspberry Pi networking, and safe troubleshooting.</p>
-                    </div>
-                    <div class="prep-card">
-                        <h3>Deliverable rule</h3>
-                        <p>No passive reading. Each book should produce something useful: discovery questions, a demo, an architecture note, an objection sheet, or a case study.</p>
-                    </div>
-                    <div class="prep-card">
-                        <h3>Employer proof</h3>
-                        <p>Strongest evidence: paid internships, production-style software work, real business automation, customer-facing experience, and documented debugging.</p>
-                    </div>
+                </article>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="assets/ClubAutomation.png" width="2559" height="1336" alt="Empty Club Automation tennis-program administration screen" loading="lazy">
+                        <div class="project-card-body">
+                            <p class="card-kicker">Workflow automation · AVAC</p>
+                            <h3>AVAC Tennis Enrollment Automation</h3>
+                            <p>Built a Python tool that handles repetitive enrollment work and stops when staff judgment is needed.</p>
+                            <ul class="tag-list" aria-label="Technologies used">
+                                <li>Python</li><li>Selenium</li><li>Pandas</li><li>CSV</li>
+                            </ul>
+                            <a class="text-link" href="https://github.com/ejor5/AVACTennisEnrollment" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card network-card">
+                        <div class="network-visual" aria-hidden="true">
+                            <span class="node node-a">Router</span>
+                            <span class="node node-b">Pi-hole</span>
+                            <span class="node node-c">Client</span>
+                            <i class="line line-a"></i>
+                            <i class="line line-b"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <p class="card-kicker">Networking lab · Raspberry Pi</p>
+                            <h3>Pi-hole Network Lab</h3>
+                            <p>Traced a failed Pi-hole setup to router-controlled DNS and an IPv6 bypass.</p>
+                            <ul class="tag-list" aria-label="Topics covered">
+                                <li>DNS</li><li>DHCP</li><li>IPv6</li><li>Linux</li>
+                            </ul>
+                            <a class="text-link" href="blog.html#pihole-xfinity">Read the lab notes <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-<section id="about">
-            <div class="about-container">
-                <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
-                    <p>Hi, I'm Ethan Jordan. I'm a computer science student transferring from Foothill College to San Jose State University in Fall 2026.</p>
-                    <p>I have paid internship experience and hands-on projects in web apps, automation, Linux, networking, and security-minded debugging.</p>
-                    <p>I like work where the details matter: API behavior, test coverage, performance, data handling, and how systems fail in real life.</p>
-                    <p>I communicate clearly, learn fast, and build useful software instead of just talking about it.</p>
+        <section class="section section-dark" id="experience">
+            <div class="shell experience-layout">
+                <div class="experience-intro">
+                    <h2>Experience</h2>
+                    <a class="button button-light" href="mailto:ejor50k@gmail.com?subject=Resume%20request">Request my résumé</a>
                 </div>
-                <div class="about-image">
-                    <img class="tree-hang" src="./assets/TreeHang.png" alt="Ethan Jordan outdoors">
+                <div class="timeline">
+                    <article>
+                        <div class="timeline-meta"><span>Virtius</span><time>Dec 2025–Present</time></div>
+                        <h3>Software Engineering Intern / Project Engineer</h3>
+                        <p>Live scoring product work across correctness, performance, and testing.</p>
+                    </article>
+                    <article>
+                        <div class="timeline-meta"><span>HeartBeam</span><time>Apr 2025–Present</time></div>
+                        <h3>Technical Intern</h3>
+                        <p>Built clearer Airtable workflows for sales and pipeline data.</p>
+                    </article>
+                    <article>
+                        <div class="timeline-meta"><span>Almaden Valley Athletic Club</span><time>Jun 2024–Present</time></div>
+                        <h3>Tennis Scheduler &amp; Receptionist</h3>
+                        <p>Scheduling, customer support, and staff-facing automation.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-<section id="contact">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p class="final-message">Reach out for software engineering, IT, cybersecurity, or technical internship opportunities.</p>
-                <div class="email-container">
-                    <a href="mailto:ejor50k@gmail.com" class="email-button">Email Me</a>
-                    <a href="https://github.com/ejor5" target="_blank" rel="noopener noreferrer" class="email-button secondary-contact">GitHub</a>
+        <section class="section notes-section" id="notes">
+            <div class="shell">
+                <div class="section-heading">
+                    <div>
+                        <h2>Notes</h2>
+                    </div>
+                    <a class="text-link" href="blog.html">View all notes <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="notes-grid">
+                    <a href="blog.html#pihole-xfinity"><span>Networking</span><h3>Pi-hole vs. Xfinity</h3><p>DNS, DHCP, and IPv6.</p></a>
+                    <a href="blog.html#virtius"><span>Engineering</span><h3>Improving Virtius Scores</h3><p>Live data and edge cases.</p></a>
+                    <a href="blog.html#linux-security-lab"><span>Systems</span><h3>Linux security tools</h3><p>Interpretation, boundaries, and risk.</p></a>
                 </div>
             </div>
-        </section></div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="shell contact-layout">
+                <div>
+                    <h2>Contact</h2>
+                </div>
+                <div class="contact-copy">
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="mailto:ejor50k@gmail.com">ejor50k@gmail.com</a>
+                        <a class="button button-secondary" href="https://github.com/ejor5" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="shell footer-inner">
+            <p>© 2026 Ethan “EJ” Jordan</p>
+            <p>Built as a record of real work.</p>
+        </div>
+    </footer>
 </body>
 </html>
