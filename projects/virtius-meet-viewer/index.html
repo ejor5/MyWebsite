@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Virtius Meet Viewer case study: performance, live scoring integrity, usability, GraphQL data flow, and Playwright verification for a production NCAA gymnastics product.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <link rel="canonical" href="https://ethanmjordan.com/projects/virtius-meet-viewer/">
+    <title>Virtius Meet Viewer — Ethan Jordan</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Virtius Meet Viewer — Ethan Jordan">
+    <meta property="og:description" content="Performance, score integrity, and usability work for a live NCAA gymnastics scoring product serving a seasonal audience of 150,000+.">
+    <meta property="og:url" content="https://ethanmjordan.com/projects/virtius-meet-viewer/">
+    <meta property="og:image" content="https://ethanmjordan.com/assets/social-card.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Virtius Meet Viewer — Ethan Jordan">
+    <meta name="twitter:description" content="Production work across performance, scoring integrity, usability, GraphQL, and Playwright.">
+    <meta name="twitter:image" content="https://ethanmjordan.com/assets/social-card.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css?v=refined-monochrome-1">
+</head>
+<body class="subpage">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><a class="site-brand" href="/">Ethan Jordan</a><nav class="site-nav" aria-label="Primary navigation"><a href="/projects/" aria-current="page">Work</a><a href="/resume/">Résumé</a><a href="/writing/">Notes</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></header>
+    <main class="page-shell" id="main">
+        <section class="case-hero">
+            <p class="eyebrow">Case study / Production software</p>
+            <h1>Virtius Meet <em>Viewer.</em></h1>
+            <p class="lede">Performance, score integrity, and usability work inside a live NCAA gymnastics product where match-window traffic and small scoring errors directly affect trust.</p>
+            <div class="case-meta"><div><span>Role</span><strong>Software engineering intern</strong></div><div><span>Audience</span><strong>Athletes and fans following live meets</strong></div><div><span>Product scale</span><strong>Seasonal audience of 150,000+</strong></div><div><span>Stack</span><strong>Next.js, React, TypeScript, GraphQL, Playwright</strong></div></div>
+            <div class="case-actions"><a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">View live system ↗</a><a href="/projects/">All work</a></div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">01 / Context</p><h2>Built around live-meet pressure</h2></header>
+            <div class="content-body">
+                <p>The live scoring product served a seasonal audience of more than 150,000, with usage concentrated around live meet windows. People relied on current scores, rankings, athlete inclusion, and clear presentation while competitions were underway.</p>
+                <p>This was established production software with live data and an existing audience—not a student recreation or isolated prototype. The audience figure describes the scale of the product, not traffic caused by my individual changes.</p>
+                <div class="scope-note"><strong>Contribution boundary</strong><p>I worked on the meet-viewer branch and its user-facing behavior. I did not build the entire Virtius platform, scoring operation, or underlying competition infrastructure.</p></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">02 / Contribution</p><h2>Three product priorities</h2></header>
+            <div class="content-body">
+                <div class="proof-strip">
+                    <div><span>Performance</span><strong>Load the live view better</strong><p>Improved loading behavior, API data handling, caching decisions, and client/server boundaries for match-driven use.</p></div>
+                    <div><span>Score integrity</span><strong>Protect the displayed result</strong><p>Handled precision, three-versus-four-decimal display, exhibition athletes, rankings, and related scoring edge cases.</p></div>
+                    <div><span>Usability and design</span><strong>Make results easier to follow</strong><p>Made presentation and interaction changes that improved how users read and navigate the live viewer.</p></div>
+                </div>
+                <figure class="proof-figure"><img src="/assets/VMainPage.png" alt="Virtius meet viewer showing current gymnastics scoring" width="2556" height="1371" loading="lazy" decoding="async"><figcaption><span>Production interface</span><span>Public live-system screenshot</span></figcaption></figure>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">03 / System</p><h2>Request to live result</h2></header>
+            <div class="content-body"><div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Meet and scoring data</strong><p>Competition, team, athlete, and score data enter the established product flow.</p></div><div class="flow-step"><span>02</span><strong>GraphQL and application layer</strong><p>Requests, caching, data boundaries, and rendering decisions shape viewer state.</p></div><div class="flow-step"><span>03</span><strong>Live meet interface</strong><p>Scores, precision, rankings, filters, and current results are presented to users.</p></div></div></div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">04 / Verification</p><h2>Changes had to survive live data</h2></header>
+            <div class="content-body">
+                <p>I studied the request flow used by the earlier Virtius experience rather than guessing at its contract. Playwright checks, visual comparisons, and expected scoring cases helped verify performance and interface changes without weakening score behavior.</p>
+                <div class="evidence-grid"><div class="evidence-panel"><strong>Public evidence</strong><p><a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">Live meet viewer ↗</a></p></div><div class="evidence-panel"><strong>Verification evidence</strong><p>Playwright checks, scoring display cases, and visual comparisons.</p></div></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">05 / Result</p><h2>A faster, clearer, more trustworthy viewer</h2></header>
+            <div class="content-body"><p>The work improved how the live product loaded, protected score presentation across edge cases, and made results easier to use. The strongest public proof is the product itself; exact causal traffic, conversion, and private engineering metrics are intentionally not claimed.</p></div>
+        </section>
+    </main>
+    <footer class="page-footer"><span>Case study / Virtius</span><nav aria-label="Footer navigation"><a href="/projects/avac-automation/">Next: AVAC</a><a href="/projects/">All work</a><a href="mailto:ejor50k@gmail.com">Contact</a></nav></footer>
+</body>
+</html>

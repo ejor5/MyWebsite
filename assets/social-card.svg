@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Ethan Jordan — Software, Systems, and Security</title>
+  <desc id="description">Refined monochrome portfolio card for Ethan Jordan.</desc>
+  <rect width="1200" height="630" fill="#191a18"/>
+  <rect x="28" y="28" width="1144" height="574" rx="28" fill="#232421" stroke="#464741"/>
+  <path d="M74 132h1052M74 504h1052" stroke="#464741"/>
+  <g fill="#9bb4cf" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="3">
+    <text x="76" y="92">PORTFOLIO / 2026</text>
+    <text x="76" y="558">SAN JOSE, CALIFORNIA</text>
+    <text x="844" y="558">SOFTWARE / SYSTEMS / SECURITY</text>
+  </g>
+  <g fill="#f7f7f3" font-family="Inter, Arial, sans-serif">
+    <text x="76" y="218" font-size="66" font-weight="500">Ethan Jordan</text>
+    <text x="76" y="304" font-size="54">I build, secure, and explain</text>
+    <text x="76" y="372" font-size="54">technical systems.</text>
+  </g>
+  <g transform="translate(1010 76)">
+    <rect width="92" height="92" rx="20" fill="#191a18" stroke="#9bb4cf"/>
+    <text x="46" y="59" fill="#9bb4cf" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" text-anchor="middle">EJ</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="18">
+    <rect x="76" y="422" width="184" height="44" rx="22" fill="#2d3438" stroke="#526575"/>
+    <text x="168" y="450" fill="#d6e2ed" text-anchor="middle">Production software</text>
+    <rect x="276" y="422" width="206" height="44" rx="22" fill="#2d3438" stroke="#526575"/>
+    <text x="379" y="450" fill="#d6e2ed" text-anchor="middle">Workflow automation</text>
+    <rect x="498" y="422" width="170" height="44" rx="22" fill="#2d3438" stroke="#526575"/>
+    <text x="583" y="450" fill="#d6e2ed" text-anchor="middle">Deployed systems</text>
+  </g>
+</svg>

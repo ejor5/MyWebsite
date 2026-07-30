@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ClosetCast case study: a purpose-built Electron kiosk coordinating five RTSP cameras, daily modes, private configuration, household information, and graceful recovery.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <link rel="canonical" href="https://ethanmjordan.com/projects/closetcast/">
+    <title>ClosetCast — Ethan Jordan</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ClosetCast — Ethan Jordan">
+    <meta property="og:description" content="A purpose-built household kiosk combining five cameras, daily modes, private configuration, and resilient service behavior.">
+    <meta property="og:url" content="https://ethanmjordan.com/projects/closetcast/">
+    <meta property="og:image" content="https://ethanmjordan.com/assets/social-card.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ClosetCast — Ethan Jordan">
+    <meta name="twitter:description" content="A deployed Electron kiosk shaped around real household routines, privacy boundaries, and failure recovery.">
+    <meta name="twitter:image" content="https://ethanmjordan.com/assets/social-card.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css?v=refined-monochrome-1">
+</head>
+<body class="subpage">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><a class="site-brand" href="/">Ethan Jordan</a><nav class="site-nav" aria-label="Primary navigation"><a href="/projects/" aria-current="page">Work</a><a href="/resume/">Résumé</a><a href="/writing/">Notes</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></header>
+    <main class="page-shell" id="main">
+        <section class="case-hero">
+            <p class="eyebrow">Case study / Personal deployment</p>
+            <h1><em>ClosetCast.</em></h1>
+            <p class="lede">A purpose-built household operating screen for an older Windows laptop: five RTSP cameras, media, weather, traffic, calendars, Yankees automation, and daily modes designed to keep working without constant attention.</p>
+            <div class="case-meta"><div><span>Role</span><strong>Individual builder and operator</strong></div><div><span>Audience</span><strong>Household ambient display</strong></div><div><span>Status</span><strong>Active daily system</strong></div><div><span>Stack</span><strong>Electron, Node.js, FFmpeg, PowerShell</strong></div></div>
+            <div class="case-actions"><a href="https://github.com/ejor5/ClosetCast" target="_blank" rel="noopener noreferrer">View repository ↗</a><a href="/projects/">All work</a></div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">01 / Context</p><h2>A household screen that has to keep working</h2></header>
+            <div class="content-body">
+                <p>ClosetCast started with a practical constraint: turn an old Windows laptop into a useful all-day dashboard customized to my home. The goal was not a generic smart-home demo. It was a calm, durable screen that could run every day without needing attention.</p>
+                <p>The hardest part was translating how I wanted the dashboard to behave into clear product rules. Morning mode needed weather, traffic, and calendar context. Normal mode needed to stay useful without becoming noisy. Yankees mode had to take over at the right time, and wind-down mode needed a different pace.</p>
+                <div class="scope-note"><strong>Contribution boundary</strong><p>I designed, built, configured, and operate the application. Camera hardware, Apple Calendar, Open-Meteo, media sources, and sports data remain external dependencies.</p></div>
+                <figure class="proof-figure"><img src="/assets/finalclosetcast-sanitized.png" alt="Current ClosetCast interface with camera feeds and personal information sanitized for security and privacy" width="1672" height="940" loading="lazy" decoding="async"><figcaption><span>Current version</span><span>Camera feeds and personal information intentionally sanitized for security and privacy</span></figcaption></figure>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">02 / System</p><h2>Simple stack, explicit security boundaries</h2></header>
+            <div class="content-body">
+                <p>The stack stays intentionally straightforward: Electron, plain HTML, CSS, JavaScript, JSON configuration, FFmpeg, and focused Node modules. That keeps the system understandable and maintainable on the older laptop it was built to use.</p>
+                <div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Private local configuration</strong><p>Lorex and Ring RTSP URLs, feature flags, and local paths stay outside git; a public example file documents the expected shape.</p></div><div class="flow-step"><span>02</span><strong>Independent services</strong><p>Camera bridging, calendars, weather, traffic, media, schedules, and time rules fail separately.</p></div><div class="flow-step"><span>03</span><strong>Kiosk renderer</strong><p>The interface coordinates modes and layouts while keeping unavailable services visible but contained.</p></div></div>
+                <div class="scope-note"><strong>Calendar privacy</strong><p>Calendar support uses user-provided <code>.ics</code> or <code>webcal://</code> feed URLs. The application does not store Apple ID credentials or depend on account passwords.</p></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">03 / Operation</p><h2>What runs every day</h2></header>
+            <div class="content-body"><ul><li>Five RTSP camera feeds—including Lorex cameras and a Ring doorbell—bridged through FFmpeg with focus, split, grid, and primary-camera layouts.</li><li>Morning, normal, Yankees, and wind-down modes that change the information and media shown throughout the day.</li><li>Weather, traffic, calendar events, local media, and configured YouTube ambiance with explicit unavailable states.</li><li>Schedule-driven Yankees behavior that detects the game window, opens the configured stream page, resolves matching links during prepare and live windows, and returns to the dashboard afterward.</li><li>Windows Task Scheduler support for wake behavior, scheduled relaunch, and a friendly setup entry point for the target laptop.</li><li>Local logs, private configuration, and an isolated test profile for troubleshooting without real household data or disruptive kiosk behavior.</li></ul></div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">04 / Verification</p><h2>Recovery is part of the interface</h2></header>
+            <div class="content-body">
+                <div class="decision-grid"><div class="decision-card"><strong>Feeds reconnect</strong><p>Exited RTSP processes wait and retry while the camera tile remains visible.</p></div><div class="decision-card"><strong>Data degrades safely</strong><p>Calendar data is cached, while failed weather, traffic, schedule, or media requests are logged without taking down the display.</p></div><div class="decision-card"><strong>Failures stay isolated</strong><p>A broken camera, media source, or Yankees lookup does not collapse the rest of the kiosk.</p></div><div class="decision-card"><strong>Tests avoid side effects</strong><p>The isolated profile disables fullscreen, sleep, autostart, wake tasks, and real private configuration.</p></div></div>
+                <p>The interface below is preserved as a version-history artifact. It shows the earlier ClosetCast 1.0/beta design, before the current layout and feature set shown above.</p>
+                <figure class="proof-figure"><img src="/assets/BlogMattercamSC.png" alt="ClosetCast 1.0 beta interface from before the current layout and expanded feature set" width="2559" height="1439" loading="lazy" decoding="async"><figcaption><span>ClosetCast 1.0 / beta</span><span>Earlier interface retained to show the product's evolution</span></figcaption></figure>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <header><p class="eyebrow">05 / Result</p><h2>From experiment to active household system</h2></header>
+            <div class="content-body">
+                <p>ClosetCast now runs as an operated display on the machine it was designed for, waking on schedule, presenting five camera feeds and the right household context for each part of the day, and degrading visibly when an external service is unavailable.</p>
+                <p>The biggest lesson was that implementation speed is not the same as product judgment. AI helped me generate and modify code, but I still had to define the architecture, daily behavior, security boundaries, failure modes, and tradeoffs that made the application useful instead of a pile of features.</p>
+                <div class="evidence-grid"><div class="evidence-panel"><strong>Repository</strong><p><a href="https://github.com/ejor5/ClosetCast" target="_blank" rel="noopener noreferrer">Source, setup, tests, and example configuration ↗</a></p></div><div class="evidence-panel"><strong>Operational evidence</strong><p>Active local configuration, scheduled tasks, logs, isolated test profiles, and documented recovery paths.</p></div></div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer"><span>Case study / ClosetCast</span><nav aria-label="Footer navigation"><a href="/writing/pihole-xfinity/">Next: Pi-hole note</a><a href="/projects/">All work</a><a href="mailto:ejor50k@gmail.com">Contact</a></nav></footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Contact: mailto:ejor50k@gmail.com
+Expires: 2027-07-31T23:59:59Z
+Canonical: https://ethanmjordan.com/.well-known/security.txt
+Preferred-Languages: en
