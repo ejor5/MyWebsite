@@ -359,6 +359,13 @@ figure {
     line-height: 0.95;
 }
 
+.work-technical-title {
+    max-width: 260px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.45;
+}
+
 .work-summary {
     max-width: 250px;
     color: var(--muted);
@@ -485,17 +492,23 @@ figure {
     right: 16px;
     bottom: 14px;
     left: 16px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    gap: 5px;
     color: #fff;
-    font-size: 9px;
 }
 
-.archive-card > p strong {
-    margin-left: auto;
-    padding: 0 5px;
+.archive-hook {
+    font-size: clamp(16px, 1.7vw, 25px);
+    letter-spacing: -0.035em;
+    line-height: 1;
+}
+
+.archive-technical {
     color: rgba(255, 255, 255, 0.45);
-    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-transform: uppercase;
 }
 
 .career-story {
@@ -1169,6 +1182,19 @@ a:focus-visible {
     line-height: 1.45;
 }
 
+.case-technical-title {
+    max-width: 860px;
+    margin-top: 24px;
+    color: var(--accent);
+    font-size: clamp(11px, 1.15vw, 15px);
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+}
+
+.case-technical-title + .lede {
+    margin-top: 18px;
+}
+
 .case-meta {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1353,6 +1379,14 @@ a:focus-visible {
     font-weight: 400;
     letter-spacing: -0.055em;
     line-height: 0.95;
+}
+
+.project-technical-title {
+    margin-top: 14px;
+    color: var(--accent) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.025em;
+    line-height: 1.5 !important;
 }
 
 .project-entry p {
@@ -2592,7 +2626,7 @@ a:focus-visible {
 
 .notes-feature {
     display: flex;
-    min-height: 330px;
+    min-height: 420px;
     padding: 30px;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.16);
@@ -2602,7 +2636,7 @@ a:focus-visible {
 
 .notes-feature-primary {
     grid-row: span 2;
-    min-height: 668px;
+    min-height: 848px;
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.06)),
         #202020;
@@ -2624,6 +2658,18 @@ a:focus-visible {
     font-weight: 400;
     letter-spacing: -0.055em;
     line-height: 0.95;
+}
+
+.notes-feature .note-technical-title,
+.notes-investigations .note-technical-title {
+    display: block;
+    max-width: 610px;
+    margin-bottom: 16px;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
 }
 
 .notes-feature:not(.notes-feature-primary) h3 {
@@ -2683,6 +2729,16 @@ a:focus-visible {
     line-height: 1;
 }
 
+.notes-ledger-list .note-technical-title {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.055em;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
+
 .notes-ledger-list > a:hover h3,
 .notes-ledger-list > a:focus-visible h3 {
     color: var(--accent);
@@ -2697,7 +2753,7 @@ a:focus-visible {
 
 .notes-investigations a {
     display: flex;
-    min-height: 320px;
+    min-height: 390px;
     padding: 30px;
     flex-direction: column;
     border: 1px solid var(--line);
@@ -2779,6 +2835,19 @@ a:focus-visible {
     color: #b6b6b6;
     font-size: 16px;
     line-height: 1.6;
+}
+
+.notes-article-head .article-technical-title {
+    max-width: 850px;
+    margin-top: 26px;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+}
+
+.notes-article-head .article-technical-title + p {
+    margin-top: 18px;
 }
 
 .notes-article-grid {
@@ -2956,7 +3025,7 @@ a:focus-visible {
     .notes-feature,
     .notes-feature-primary {
         grid-row: auto;
-        min-height: 330px;
+        min-height: 400px;
     }
 
     .notes-ledger-list > a {
