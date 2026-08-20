@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ethan Jordan is an incoming San José State University computer science student building practical cybersecurity, systems, and software experience for summer 2027 internships.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
+    <meta name="description" content="Ethan Jordan is a San José State University computer science student building practical cybersecurity, systems, and software experience for summer 2027 internships.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; frame-src 'none'; media-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <link rel="canonical" href="https://ethanmjordan.com/">
     <title>Ethan Jordan — Cybersecurity, Solutions, and Software</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -48,9 +48,9 @@
                 <div class="hero-actions">
                     <a href="/projects/">View case studies</a>
                     <a href="/resume/">Résumé</a>
-                    <a href="mailto:ejor50k@gmail.com">Contact</a>
+                    <a href="mailto:ethan.jordan.connect@gmail.com">Contact</a>
                 </div>
-                <p class="authorship-note"><strong>No AI slop.</strong> Everything here is written and reviewed by me.</p>
+                <p class="authorship-note"><strong>Evidence over hype.</strong> Every claim here is reviewed, scoped, and tied to work I can explain.</p>
             </div>
 
             <aside class="hero-meta" aria-label="Profile summary">
@@ -107,13 +107,13 @@
                         </div>
                         <div>
                             <p class="work-summary">A staff-ready application for enrollment, waitlist, and attendance work—built around safe matching, focused audits, and explicit human review.</p>
-                            <p class="usage-line">Used by tennis schedulers and staff / supervised monthly workflow</p>
+                            <p class="usage-line">Used by tennis schedulers and staff / supervised recurring workflow</p>
                             <p class="evidence-line">Evidence: 31 passing tests + privacy safeguards →</p>
                         </div>
                     </div>
                     <figure class="work-feature">
-                        <img src="/assets/ClubAutomation.png" alt="AVAC enrollment interface used by the automation workflow" width="1894" height="1024" loading="lazy" decoding="async">
-                        <figcaption>Operational workflow / sanitized interface</figcaption>
+                        <img src="/assets/avac-enrollment-social-card.png" alt="Illustrated AVAC enrollment assistant interface with synthetic roster and review states" width="1731" height="909" loading="lazy" decoding="async">
+                        <figcaption>System overview / synthetic interface</figcaption>
                     </figure>
                 </a>
 
@@ -121,18 +121,22 @@
                     <div class="work-info">
                         <div>
                             <span class="work-number">03 / Personal deployment</span>
-                            <h3>The Laptop That Runs the House</h3>
+                            <h3>Engineering a Resilient Kiosk</h3>
                             <p class="work-technical-title">ClosetCast / Electron, RTSP, FFmpeg, Windows automation</p>
                         </div>
                         <div>
-                            <p class="work-summary">A purpose-built Electron kiosk that coordinates five cameras, daily modes, household context, and resilient service recovery.</p>
-                            <p class="usage-line">Daily household display / older Windows laptop</p>
+                            <p class="work-summary">A configurable Electron kiosk that coordinates RTSP monitoring, data integrations, media, and resilient service recovery.</p>
+                            <p class="usage-line">Deployed Windows kiosk / operational data kept private</p>
                             <p class="evidence-line">Evidence: repository + deployment and test paths →</p>
                         </div>
                     </div>
-                    <figure class="work-feature">
-                        <img src="/assets/finalclosetcast-sanitized.png" alt="Current ClosetCast interface showing the latest five-camera layout, weather, traffic, calendar, and media features" width="1672" height="940" loading="lazy" decoding="async">
-                        <figcaption>Current version / camera feeds and personal information intentionally blurred for security and privacy</figcaption>
+                    <figure class="work-feature closetcast-feature">
+                        <div class="kiosk-schematic" role="img" aria-label="Sanitized ClosetCast system schematic with generic feeds and integrations">
+                            <div class="kiosk-status"><span>System state</span><strong>Services isolated</strong></div>
+                            <div class="kiosk-feeds"><span>Feed A</span><span>Feed B</span><span>Feed C</span></div>
+                            <div class="kiosk-integrations"><span>Weather</span><span>Calendar</span><span>Media</span><span>Recovery</span></div>
+                        </div>
+                        <figcaption>Sanitized system schematic / operational data omitted</figcaption>
                     </figure>
                 </a>
             </div>
@@ -160,12 +164,12 @@
 
             <div class="archive-grid archive-grid-three">
                 <a class="archive-card" href="/projects/wazuh-siem-lab/">
-                    <img src="/assets/wazuh-overview.png" alt="Wazuh dashboard from the home SOC lab" width="2551" height="1381" loading="lazy" decoding="async">
-                    <p><span class="archive-hook">I Built a SOC at Home</span><span class="archive-technical">Wazuh SIEM + Windows EventChannel alert triage</span></p>
+                    <img src="/assets/wazuh-overview.png" alt="Wazuh dashboard from a controlled SOC lab" width="2551" height="1381" loading="lazy" decoding="async">
+                    <p><span class="archive-hook">From Endpoint Event to Triage</span><span class="archive-technical">Wazuh SIEM + Windows EventChannel investigation</span></p>
                 </a>
-                <a class="archive-card" href="/writing/pihole-xfinity/">
-                    <img class="pihole-hardware-image" src="/assets/pihole-home-network.jpg" alt="Raspberry Pi running Pi-hole connected to the home network switch" width="2880" height="3840" loading="lazy" decoding="async">
-                    <p><span class="archive-hook">Why My Ad Blocker Failed</span><span class="archive-technical">Pi-hole DNS, DHCP, IPv4/IPv6 + Xfinity gateway lab</span></p>
+                <a class="archive-card network-archive-card" href="/writing/pihole-dns-investigation/">
+                    <div class="network-lab-visual" aria-hidden="true"><span>Client</span><i></i><span>Gateway</span><i></i><span>Pi-hole</span><i></i><span>Resolver</span></div>
+                    <p><span class="archive-hook">Diagnosing a DNS Filtering Failure</span><span class="archive-technical">Pi-hole, DHCP, IPv4/IPv6 + gateway-control investigation</span></p>
                 </a>
                 <a class="archive-card" href="/writing/linux-security-tools/">
                     <img src="/assets/Code.png" alt="Code editor and terminal screenshot" width="1438" height="1504" loading="lazy" decoding="async">
@@ -201,7 +205,7 @@
     <footer class="footer">
         <div class="footer-lead">
             <span>Security labs, production software, and technical systems explained in human terms.</span>
-            <a href="mailto:ejor50k@gmail.com">Let’s talk</a>
+            <a href="mailto:ethan.jordan.connect@gmail.com">Let’s talk</a>
         </div>
         <div class="footer-grid">
             <div><h2>Ethan Jordan</h2><p>Computer Science / Cybersecurity / Solutions</p></div>

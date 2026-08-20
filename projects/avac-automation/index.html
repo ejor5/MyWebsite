@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
     <meta name="description" content="AVAC Tennis Enrollment Assistant case study: how a browser-automation script became a tested Windows desktop application for supervised enrollment, waitlist, and attendance workflows.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; frame-src 'none'; media-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <link rel="canonical" href="https://ethanmjordan.com/projects/avac-automation/">
     <title>Automating the Tennis Desk | AVAC Enrollment Assistant — Ethan Jordan</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -36,9 +36,9 @@
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">01 / Context</p><h2>A real staff process, repeated monthly</h2></header>
+            <header><p class="eyebrow">01 / Context</p><h2>A real staff process, repeated consistently</h2></header>
             <div class="content-body">
-                <p>Tennis schedulers had to move through the same enrollment screens each month, compare rosters and attendance, and decide how to handle students with waitlist or special-enrollment conditions. The original script automated part of that path, but it still depended on command-line knowledge and assumed a narrow input format.</p>
+                <p>Tennis schedulers had to move through the same enrollment screens on a recurring basis, compare rosters and attendance, and decide how to handle waitlist or exception conditions. The original script automated part of that path, but it still depended on command-line knowledge and assumed a narrow input format.</p>
                 <p>The recent rebuild focused on the people operating the workflow. I added a guided interface, flexible imports, safer matching, focused audit modes, and explicit review points so staff can use the tool without giving up control of consequential decisions.</p>
                 <div class="scope-note"><strong>Contribution boundary</strong><p>I identified the workflow from my scheduling role and built the automation. AVAC’s enrollment platform, customer records, and underlying business rules remain outside this case study, and the production implementation is private.</p></div>
             </div>
@@ -47,8 +47,8 @@
         <section class="content-section">
             <header><p class="eyebrow">02 / Workflow</p><h2>Automate the repeatable path</h2></header>
             <div class="content-body">
-                <div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Paste or import names</strong><p>Staff can paste a list or import CSV, TXT, and PDF files through the desktop interface.</p></div><div class="flow-step"><span>02</span><strong>Select classes and a task</strong><p>The user chooses specific classes, the correct calendar month, and enrollment, waitlist, or attendance mode.</p></div><div class="flow-step"><span>03</span><strong>Automate with review points</strong><p>Selenium handles the repeatable path while ambiguous accounts, capacity limits, and exceptions remain visible to staff.</p></div></div>
-                <figure class="proof-figure"><img src="/assets/ClubAutomation.png" alt="Sanitized AVAC enrollment interface" width="1894" height="1024" loading="lazy" decoding="async"><figcaption><span>Workflow context</span><span>No customer names or credentials displayed</span></figcaption></figure>
+                <div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Paste or import names</strong><p>Staff can paste a list or import CSV, TXT, and PDF files through the desktop interface.</p></div><div class="flow-step"><span>02</span><strong>Select classes and a task</strong><p>The user chooses the required classes, review period, and enrollment, waitlist, or attendance mode.</p></div><div class="flow-step"><span>03</span><strong>Automate with review points</strong><p>Selenium handles the repeatable path while ambiguous accounts, capacity limits, and exceptions remain visible to staff.</p></div></div>
+                <figure class="proof-figure"><img src="/assets/avac-enrollment-social-card.png" alt="Illustrated AVAC enrollment assistant interface with synthetic roster and review states" width="1731" height="909" loading="lazy" decoding="async"><figcaption><span>System overview</span><span>Synthetic interface with no operational data</span></figcaption></figure>
             </div>
         </section>
 
@@ -56,7 +56,7 @@
             <header><p class="eyebrow">03 / Recent rebuild</p><h2>From internal script to staff-ready application</h2></header>
             <div class="content-body">
                 <p>The latest version changes both how the tool is used and how it behaves when the source data is messy or a decision is unsafe to automate.</p>
-                <ul><li>Added a guided desktop interface so staff do not need the command line.</li><li>Accepted names pasted directly or imported from CSV, TXT, and PDF files.</li><li>Added class selection plus separate enrollment, waitlist-audit, and attendance-audit modes.</li><li>Normalized and fuzzily matched differently formatted or slightly misspelled names.</li><li>Prompted the user when multiple accounts match instead of choosing one automatically.</li><li>Checked class capacity before attempting enrollment.</li><li>Flagged waitlisted students when a class has openings without changing enrollment data.</li><li>Flagged students with three or more consecutive absences for staff review.</li><li>Generated copy-ready contact details and editable waitlist email drafts.</li><li>Selected sessions by calendar month and prevented enrollment into outdated sessions.</li><li>Packaged the application as a portable Windows executable with no Python installation required.</li></ul>
+                <ul><li>Added a guided desktop interface so staff do not need the command line.</li><li>Accepted names pasted directly or imported from CSV, TXT, and PDF files.</li><li>Added class selection plus separate enrollment, waitlist-audit, and attendance-audit modes.</li><li>Normalized and fuzzily matched differently formatted or slightly misspelled names.</li><li>Prompted the user when multiple accounts match instead of choosing one automatically.</li><li>Checked class capacity before attempting enrollment.</li><li>Flagged waitlist and attendance exceptions for staff review without changing records automatically.</li><li>Generated editable communication drafts while keeping the final decision with staff.</li><li>Selected sessions by the requested review period and prevented actions against outdated sessions.</li><li>Packaged the application as a portable Windows executable with no Python installation required.</li></ul>
             </div>
         </section>
 
@@ -92,6 +92,6 @@
             </div>
         </section>
     </main>
-    <footer class="page-footer"><span>Case study / AVAC</span><nav aria-label="Footer navigation"><a href="/projects/closetcast/">Next: ClosetCast</a><a href="/projects/">All work</a><a href="mailto:ejor50k@gmail.com">Contact</a></nav></footer>
+    <footer class="page-footer"><span>Case study / AVAC</span><nav aria-label="Footer navigation"><a href="/projects/closetcast/">Next: ClosetCast</a><a href="/projects/">All work</a><a href="mailto:ethan.jordan.connect@gmail.com">Contact</a></nav></footer>
 </body>
 </html>

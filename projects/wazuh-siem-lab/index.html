@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Wazuh SIEM home-lab case study: deploying a manager in VirtualBox, connecting the HAL9000 Windows agent, and investigating controlled account events.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
+    <meta name="description" content="Wazuh SIEM case study: deploying a manager in VirtualBox, connecting a Windows test endpoint, and investigating controlled account events.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; frame-src 'none'; media-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <link rel="canonical" href="https://ethanmjordan.com/projects/wazuh-siem-lab/">
-    <title>I Built a SOC at Home | Wazuh SIEM Lab — Ethan Jordan</title>
+    <title>From Endpoint Event to Triage | Wazuh SIEM Lab — Ethan Jordan</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="I Built a SOC at Home | Wazuh SIEM Lab">
-    <meta property="og:description" content="A controlled home lab connecting Wazuh to a Windows endpoint and tracing account events into an evidence-led SOC investigation.">
+    <meta property="og:title" content="From Endpoint Event to Triage | Wazuh SIEM Lab">
+    <meta property="og:description" content="A controlled lab connecting Wazuh to a Windows endpoint and tracing account events into an evidence-led SOC investigation.">
     <meta property="og:url" content="https://ethanmjordan.com/projects/wazuh-siem-lab/">
     <meta property="og:image" content="https://ethanmjordan.com/assets/social-card.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="I Built a SOC at Home | Wazuh SIEM Lab">
-    <meta name="twitter:description" content="Windows event collection and basic alert triage in a controlled Wazuh home lab.">
+    <meta name="twitter:title" content="From Endpoint Event to Triage | Wazuh SIEM Lab">
+    <meta name="twitter:description" content="Windows event collection and basic alert triage in a controlled Wazuh lab.">
     <meta name="twitter:image" content="https://ethanmjordan.com/assets/social-card.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,42 +27,42 @@
     <header class="site-header"><a class="site-brand" href="/">Ethan Jordan</a><nav class="site-nav" aria-label="Primary navigation"><a href="/projects/" aria-current="page">Work</a><a href="/resume/">Résumé</a><a href="/writing/">Notes</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></header>
     <main class="page-shell" id="main">
         <section class="case-hero">
-            <p class="eyebrow">Case study / Controlled home SOC lab</p>
-            <h1>I Built a SOC <em>at Home.</em></h1>
-            <p class="case-technical-title">Wazuh SIEM + Windows EventChannel alert triage in VirtualBox / Endpoint: HAL9000</p>
+            <p class="eyebrow">Case study / Controlled SOC lab</p>
+            <h1>From Endpoint Event <em>to Triage.</em></h1>
+            <p class="case-technical-title">Wazuh SIEM + Windows EventChannel alert triage in VirtualBox</p>
             <p class="lede">A first endpoint-monitoring lab: deploy Wazuh in VirtualBox, connect a Windows agent, generate known account activity, and explain the resulting alerts without confusing a controlled test with a real incident.</p>
-            <div class="case-meta"><div><span>Role</span><strong>Individual lab builder and investigator</strong></div><div><span>Endpoint</span><strong>HAL9000 / Windows laptop</strong></div><div><span>Evidence</span><strong>Windows EventChannel account alerts</strong></div><div><span>Stack</span><strong>Wazuh, VirtualBox, Windows</strong></div></div>
+            <div class="case-meta"><div><span>Role</span><strong>Individual lab builder and investigator</strong></div><div><span>Endpoint</span><strong>Windows test system</strong></div><div><span>Evidence</span><strong>Windows EventChannel account alerts</strong></div><div><span>Stack</span><strong>Wazuh, VirtualBox, Windows</strong></div></div>
             <div class="case-actions"><a href="/projects/">All work</a><a href="/writing/linux-security-tools/">Related Linux practice</a></div>
         </section>
 
         <section class="content-section">
             <header><p class="eyebrow">01 / Environment</p><h2>One manager, one endpoint</h2></header>
             <div class="content-body">
-                <p>I installed the Wazuh manager in a VirtualBox environment and reached its dashboard over my local network. I then deployed the Wazuh agent to my Windows laptop, named HAL9000 in the lab, and confirmed that its service was running with the required administrator permissions.</p>
+                <p>I installed the Wazuh manager in a VirtualBox environment and confirmed dashboard access inside the lab. I then deployed the Wazuh agent to a Windows test endpoint and verified that its service was running with the required administrator permissions.</p>
                 <p>The objective was deliberately small: prove that a known action on the endpoint could become searchable security evidence, then practice the questions a SOC analyst should ask.</p>
-                <div class="scope-note"><strong>Contribution boundary</strong><p>This is an owned home lab with one Windows endpoint. It is not production monitoring, professional SOC experience, or evidence of an external attack.</p></div>
-                <figure class="proof-figure"><img src="/assets/wazuh-overview.png" alt="Wazuh dashboard after the manager was deployed in the home lab" width="2551" height="1381" loading="lazy" decoding="async"><figcaption><span>Lab manager</span><span>Wazuh running in the local VirtualBox environment</span></figcaption></figure>
+                <div class="scope-note"><strong>Contribution boundary</strong><p>This is an owned, controlled lab with one Windows test endpoint. It is not production monitoring, professional SOC experience, or evidence of an external attack.</p></div>
+                <figure class="proof-figure"><img src="/assets/wazuh-overview.png" alt="Wazuh dashboard after the manager was deployed in the controlled lab" width="2551" height="1381" loading="lazy" decoding="async"><figcaption><span>Lab manager</span><span>Wazuh running in an isolated VirtualBox environment</span></figcaption></figure>
             </div>
         </section>
 
         <section class="content-section">
             <header><p class="eyebrow">02 / Data path</p><h2>Action to searchable alert</h2></header>
-            <div class="content-body"><div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Controlled Windows action</strong><p>Create, enable, change, disable, and delete a local test account on HAL9000.</p></div><div class="flow-step"><span>02</span><strong>Endpoint event collection</strong><p>The running Wazuh agent forwards relevant Windows EventChannel data to the manager.</p></div><div class="flow-step"><span>03</span><strong>Wazuh search and triage</strong><p>Filter by host, timestamp, rule description, level, and rule ID to reconstruct what happened.</p></div></div></div>
+            <div class="content-body"><div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Controlled Windows action</strong><p>Create, enable, change, disable, and delete a local test account on the endpoint.</p></div><div class="flow-step"><span>02</span><strong>Endpoint event collection</strong><p>The running Wazuh agent forwards relevant Windows EventChannel data to the manager.</p></div><div class="flow-step"><span>03</span><strong>Wazuh search and triage</strong><p>Filter by endpoint, event sequence, rule description, level, and rule ID to reconstruct what happened.</p></div></div></div>
         </section>
 
         <section class="content-section">
             <header><p class="eyebrow">03 / Test</p><h2>Generate known account activity</h2></header>
             <div class="content-body content-body-scroll-safe">
-                <p>I created and later removed a local test user. Wazuh recorded the related account and group changes from HAL9000, including “User account enabled or created,” “User account changed,” and “User account disabled or deleted” entries.</p>
-                <p>Because I generated the activity myself, the event was expected and benign. The value of the exercise was learning to correlate the endpoint, time, event description, and surrounding changes instead of judging one alert in isolation.</p>
-                <figure class="proof-figure proof-figure-scroll"><img src="/assets/wazuh-hal9000-events.png" alt="Wazuh event table showing account and group changes from the HAL9000 agent" width="2559" height="400" loading="lazy" decoding="async"><figcaption><span>Collected evidence</span><span>Scroll horizontally on small screens to inspect the alerts</span></figcaption></figure>
+                <p>I created and later removed a local test user. Wazuh recorded the related account and group changes, including “User account enabled or created,” “User account changed,” and “User account disabled or deleted” entries.</p>
+                <p>Because I generated the activity myself, the event was expected and benign. The value of the exercise was learning to correlate the endpoint, event order, descriptions, and surrounding changes instead of judging one alert in isolation.</p>
+                <div class="evidence-grid"><div class="evidence-panel"><strong>Collection evidence</strong><p>Account and group-change events arrived under the expected test endpoint with the corresponding Wazuh rule descriptions and severities.</p></div><div class="evidence-panel"><strong>Privacy boundary</strong><p>Public evidence keeps the event types and investigation method while omitting machine names, timestamps, account names, and network details.</p></div></div>
             </div>
         </section>
 
         <section class="content-section">
             <header><p class="eyebrow">04 / Investigation</p><h2>Turn the event into questions</h2></header>
             <div class="content-body">
-                <div class="evidence-grid"><div class="evidence-panel"><strong>Observed event</strong><p>User account enabled or created on HAL9000 at June 10, 2026, 15:23:41.</p></div><div class="evidence-panel"><strong>Initial decision</strong><p>Expected and benign because the account was created for this controlled test.</p></div></div>
+                <div class="evidence-grid"><div class="evidence-panel"><strong>Observed event</strong><p>A local account was enabled or created on the Windows test endpoint during the controlled exercise.</p></div><div class="evidence-panel"><strong>Initial decision</strong><p>Expected and benign because the account was created for this controlled test.</p></div></div>
                 <div class="proof-strip"><div><span>Why a SOC cares</span><strong>Unexpected accounts can create persistence</strong><p>A new local user deserves context, especially if it receives elevated group membership.</p></div><div><span>What to correlate</span><strong>Actor, groups, and later logins</strong><p>Identify who created it, whether it joined Administrators, and whether authentication followed.</p></div><div><span>What evidence proves</span><strong>The collection path worked</strong><p>The endpoint action appeared under the correct host with related account and group events.</p></div></div>
             </div>
         </section>
@@ -80,6 +80,6 @@
             <div class="content-body"><p>The exercise established a working path from a Windows endpoint into Wazuh and a repeatable way to explain an alert: what happened, where, when, whether it was expected, why it matters, and what should be checked next.</p></div>
         </section>
     </main>
-    <footer class="page-footer"><span>Case study / Wazuh home lab</span><nav aria-label="Footer navigation"><a href="/writing/pihole-xfinity/">Next: Pi-hole</a><a href="/projects/">All work</a><a href="mailto:ejor50k@gmail.com">Contact</a></nav></footer>
+    <footer class="page-footer"><span>Case study / Wazuh lab</span><nav aria-label="Footer navigation"><a href="/writing/pihole-dns-investigation/">Next: Pi-hole</a><a href="/projects/">All work</a><a href="mailto:ethan.jordan.connect@gmail.com">Contact</a></nav></footer>
 </body>
 </html>
