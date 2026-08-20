@@ -1,0 +1,10 @@
+# Local security-audit clones and working copies
+/github-security-scan/
+/AVACTennisEnrollment-security-scan/
+
+# Local scratch space
+/tmp/
+
+# OS metadata
+.DS_Store
+Thumbs.db
