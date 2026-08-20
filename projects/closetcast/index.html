@@ -41,7 +41,7 @@
                 <p>ClosetCast started with a practical constraint: repurpose older Windows hardware as a durable information display. The goal was not a one-screen demo. It was an operated system that could coordinate several integrations without requiring constant intervention.</p>
                 <p>The hardest part was translating desired behavior into explicit product rules: when information should yield to media, how layouts should change, what remains visible during partial failure, and how the system should recover without hiding the problem.</p>
                 <div class="scope-note"><strong>Contribution boundary</strong><p>I designed, built, configured, and operate the application. Camera hardware, Apple Calendar, Open-Meteo, media sources, and sports data remain external dependencies.</p></div>
-                <figure class="proof-figure"><div class="kiosk-schematic kiosk-schematic-large" role="img" aria-label="Sanitized ClosetCast system schematic with generic feeds, integrations, and recovery state"><div class="kiosk-status"><span>System state</span><strong>Observable and recoverable</strong></div><div class="kiosk-feeds"><span>Feed A</span><span>Feed B</span><span>Feed C</span></div><div class="kiosk-integrations"><span>Weather</span><span>Calendar</span><span>Media</span><span>Recovery</span></div></div><figcaption><span>Current architecture</span><span>Operational values, locations, and source names intentionally omitted</span></figcaption></figure>
+                <figure class="proof-figure"><img src="/assets/finalclosetcast-sanitized.png" alt="Current ClosetCast interface with sensitive camera and personal details blurred" width="1672" height="940" loading="lazy" decoding="async"><figcaption><span>Current version</span><span>Sensitive camera and personal details intentionally blurred</span></figcaption></figure>
             </div>
         </section>
 
@@ -63,8 +63,6 @@
             <header><p class="eyebrow">04 / Verification</p><h2>Recovery is part of the interface</h2></header>
             <div class="content-body">
                 <div class="decision-grid"><div class="decision-card"><strong>Feeds reconnect</strong><p>Exited RTSP processes wait and retry while the affected tile remains visible.</p></div><div class="decision-card"><strong>Data degrades safely</strong><p>Cached data and explicit unavailable states keep failed integrations from taking down the display.</p></div><div class="decision-card"><strong>Failures stay isolated</strong><p>A broken stream, media source, or external lookup does not collapse the rest of the kiosk.</p></div><div class="decision-card"><strong>Tests avoid side effects</strong><p>The isolated profile disables disruptive display and operating-system behavior while replacing private configuration with fixtures.</p></div></div>
-                <p>The interface below is preserved as a version-history artifact. It shows the earlier ClosetCast 1.0/beta design, before the current layout and feature set shown above.</p>
-                <figure class="proof-figure"><img src="/assets/BlogMattercamSC.png" alt="ClosetCast 1.0 beta interface from before the current layout and expanded feature set" width="2559" height="1439" loading="lazy" decoding="async"><figcaption><span>ClosetCast 1.0 / beta</span><span>Earlier interface retained to show the product's evolution</span></figcaption></figure>
             </div>
         </section>
 

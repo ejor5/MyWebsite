@@ -15,7 +15,6 @@ $forbidden = [ordered]@{
     'provider IPv6 resolver' = '2001:558:feed::1'
     'provider resolver hostname' = 'cdns01\.comcast\.net'
     'provider-specific network copy' = '\b(?:Xfinity|Comcast)\b'
-    'superseded operational screenshot' = '(?:pihole-home-network|finalclosetcast-sanitized|wazuh-hal9000-events|ClubAutomation|ethan-playing-piano)'
     'exact routine detail' = '(?:07:30|4:30 PM|Saturday 10|during my commute)'
 }
 

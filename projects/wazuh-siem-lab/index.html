@@ -55,7 +55,8 @@
             <div class="content-body content-body-scroll-safe">
                 <p>I created and later removed a local test user. Wazuh recorded the related account and group changes, including “User account enabled or created,” “User account changed,” and “User account disabled or deleted” entries.</p>
                 <p>Because I generated the activity myself, the event was expected and benign. The value of the exercise was learning to correlate the endpoint, event order, descriptions, and surrounding changes instead of judging one alert in isolation.</p>
-                <div class="evidence-grid"><div class="evidence-panel"><strong>Collection evidence</strong><p>Account and group-change events arrived under the expected test endpoint with the corresponding Wazuh rule descriptions and severities.</p></div><div class="evidence-panel"><strong>Privacy boundary</strong><p>Public evidence keeps the event types and investigation method while omitting machine names, timestamps, account names, and network details.</p></div></div>
+                <div class="evidence-grid"><div class="evidence-panel"><strong>Collection evidence</strong><p>Account and group-change events arrived under the expected test endpoint with the corresponding Wazuh rule descriptions and severities.</p></div><div class="evidence-panel"><strong>Evidence boundary</strong><p>The screenshot is sanitized and excludes account credentials and internal network configuration.</p></div></div>
+                <figure class="proof-figure proof-figure-scroll"><img src="/assets/wazuh-account-events-sanitized.png" alt="Sanitized Wazuh event table showing controlled Windows account and group changes" width="2559" height="400" loading="lazy" decoding="async"><figcaption><span>Collected evidence</span><span>Sanitized event view; scroll horizontally on small screens</span></figcaption></figure>
             </div>
         </section>
 
