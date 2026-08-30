@@ -304,7 +304,7 @@ figure {
 .section-intro h2,
 .statement-section h2,
 .about-section h2 {
-    font-size: clamp(58px, 7.2vw, 104px);
+    font-size: clamp(39px, 4.8vw, 70px);
     font-weight: 400;
     letter-spacing: -0.068em;
     line-height: 0.88;
@@ -888,7 +888,7 @@ a:focus-visible {
     .section-intro h2,
     .statement-section h2,
     .about-section h2 {
-        font-size: clamp(52px, 16vw, 72px);
+        font-size: clamp(35px, 10.7vw, 48px);
     }
 
     .section-intro > a {
@@ -1182,7 +1182,7 @@ a:focus-visible {
 .page-hero h1,
 .case-hero h1 {
     max-width: 1000px;
-    font-size: clamp(58px, 8vw, 118px);
+    font-size: clamp(39px, 5.35vw, 79px);
     font-weight: 400;
     letter-spacing: -0.072em;
     line-height: 0.86;
@@ -1196,7 +1196,7 @@ a:focus-visible {
 
 .work-page .page-hero h1 {
     max-width: 760px;
-    font-size: clamp(40px, 5vw, 68px);
+    font-size: clamp(30px, 3.65vw, 48px);
     letter-spacing: -0.055em;
     line-height: 0.95;
 }
@@ -1606,7 +1606,7 @@ a:focus-visible {
 
 .resume-choice-copy h1 {
     font-family: "Instrument Serif", Georgia, serif;
-    font-size: clamp(52px, 7.5vw, 108px);
+    font-size: clamp(35px, 5vw, 72px);
     font-weight: 400;
     letter-spacing: -0.055em;
     line-height: 0.9;
@@ -1844,7 +1844,7 @@ a:focus-visible {
 
     .page-hero h1,
     .case-hero h1 {
-        font-size: clamp(50px, 16vw, 72px);
+        font-size: clamp(34px, 10.7vw, 48px);
     }
 
     .lede {
@@ -2310,7 +2310,7 @@ a:focus-visible {
 }
 
 .resume-page .page-hero h1 {
-    font-size: clamp(52px, 6.5vw, 92px);
+    font-size: clamp(35px, 4.35vw, 62px);
 }
 
 .resume-page .content-section > header {
@@ -2807,7 +2807,7 @@ a:focus-visible {
 }
 
 .notes-ledger-head h1 {
-    font-size: clamp(66px, 9vw, 132px);
+    font-size: clamp(44px, 6vw, 88px);
     font-weight: 400;
     letter-spacing: -0.072em;
     line-height: 0.82;
@@ -2865,7 +2865,7 @@ a:focus-visible {
 .notes-featured > header h2,
 .notes-ledger > header h2,
 .notes-investigations > header h2 {
-    font-size: clamp(42px, 5.5vw, 76px);
+    font-size: clamp(28px, 3.7vw, 51px);
     font-weight: 400;
     letter-spacing: -0.06em;
     line-height: 0.9;
@@ -3080,7 +3080,7 @@ a:focus-visible {
 
 .notes-article-head h1 {
     max-width: 1100px;
-    font-size: clamp(60px, 8.5vw, 126px);
+    font-size: clamp(40px, 5.7vw, 84px);
     font-weight: 400;
     letter-spacing: -0.07em;
     line-height: 0.86;
@@ -3262,7 +3262,7 @@ a:focus-visible {
     }
 
     .notes-ledger-head h1 {
-        font-size: clamp(62px, 20vw, 92px);
+        font-size: clamp(42px, 13.3vw, 62px);
     }
 
     .notes-ledger-meta {
@@ -3322,7 +3322,7 @@ a:focus-visible {
     }
 
     .notes-article-head h1 {
-        font-size: clamp(54px, 16vw, 78px);
+        font-size: clamp(36px, 10.7vw, 52px);
     }
 
     .cybersummer-head h1 {
@@ -3375,6 +3375,47 @@ a:focus-visible {
     font-weight: 400;
     letter-spacing: -0.025em;
     line-height: 1.55;
+}
+
+.contact-clean-page .content-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+    justify-items: center;
+    text-align: center;
+}
+
+.contact-clean-page .content-section > header {
+    display: grid;
+    justify-items: center;
+}
+
+.contact-clean-page .content-section > header .eyebrow {
+    margin-bottom: 18px;
+}
+
+.contact-clean-page .content-body {
+    width: min(100%, 900px);
+    max-width: 900px;
+}
+
+.contact-clean-page .card-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.contact-clean-page .evidence-panel {
+    display: grid;
+    min-height: 138px;
+    padding: 30px 24px;
+    align-content: center;
+    justify-items: center;
+    border-radius: 10px;
+}
+
+.contact-clean-page .evidence-panel p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .terminal-cursor {
@@ -3516,6 +3557,18 @@ a:focus-visible {
 
     .contact-statement {
         font-size: 18px;
+    }
+
+    .contact-clean-page .content-section {
+        gap: 34px;
+    }
+
+    .contact-clean-page .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-clean-page .evidence-panel {
+        min-height: 120px;
     }
 
     .learning-sequence {
