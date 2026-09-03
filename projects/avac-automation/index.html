@@ -30,7 +30,7 @@
             <p class="eyebrow">Case study / Workplace automation</p>
             <h1>Automating the <em>Tennis Desk.</em></h1>
             <p class="case-technical-title">AVAC Enrollment Assistant / Python, Selenium, Tkinter, and PyInstaller</p>
-            <p class="lede">I transformed an internal browser-automation script into a supervised Windows desktop application for enrollment, waitlist, and attendance work—making the workflow easier to use without automating away staff judgment.</p>
+            <p class="lede">I took an internal Selenium script that required command-line knowledge and turned it into a Windows app my coworkers could use—without letting it guess when the source data got messy.</p>
             <div class="case-meta"><div><span>Role</span><strong>Tennis scheduler and individual builder</strong></div><div><span>Audience</span><strong>Tennis schedulers and staff</strong></div><div><span>Product</span><strong>Portable Windows desktop app</strong></div><div><span>Stack</span><strong>Python, Selenium, Tkinter, PyInstaller</strong></div></div>
             <div class="case-actions"><a href="#recent-rebuild">See what changed ↓</a><a href="/projects/">All work</a></div>
         </section>
@@ -38,8 +38,8 @@
         <section class="content-section">
             <header><p class="eyebrow">01 / Context</p><h2>A real staff process, repeated consistently</h2></header>
             <div class="content-body">
-                <p>Tennis schedulers had to move through the same enrollment screens on a recurring basis, compare rosters and attendance, and decide how to handle waitlist or exception conditions. The original script automated part of that path, but it still depended on command-line knowledge and assumed a narrow input format.</p>
-                <p>The recent rebuild focused on the people operating the workflow. I added a guided interface, flexible imports, safer matching, focused audit modes, and explicit review points so staff can use the tool without giving up control of consequential decisions.</p>
+                <p>At the tennis desk, schedulers repeatedly move through the same enrollment screens, compare rosters and attendance, and handle waitlists and exceptions. The first script automated some clicks, but it expected one input format and someone comfortable with a terminal.</p>
+                <p>The rebuild added a guided interface, imports from the files staff already use, and review stops for ambiguous names, full classes, and attendance exceptions. Selenium handles the repetitive path. Staff keep the decisions.</p>
                 <div class="scope-note"><strong>Contribution boundary</strong><p>I identified the workflow from my scheduling role and built the automation. AVAC’s enrollment platform, customer records, and underlying business rules remain outside this case study, and the production implementation is private.</p></div>
             </div>
         </section>
@@ -53,42 +53,42 @@
         </section>
 
         <section class="content-section" id="recent-rebuild">
-            <header><p class="eyebrow">03 / Recent rebuild</p><h2>From internal script to staff-ready application</h2></header>
+            <header><p class="eyebrow">03 / Recent rebuild</p><h2>The source data did not cooperate</h2></header>
             <div class="content-body">
-                <p>The latest version changes both how the tool is used and how it behaves when the source data is messy or a decision is unsafe to automate.</p>
-                <ul><li>Added a guided desktop interface so staff do not need the command line.</li><li>Accepted names pasted directly or imported from CSV, TXT, and PDF files.</li><li>Added class selection plus separate enrollment, waitlist-audit, and attendance-audit modes.</li><li>Normalized and fuzzily matched differently formatted or slightly misspelled names.</li><li>Prompted the user when multiple accounts match instead of choosing one automatically.</li><li>Checked class capacity before attempting enrollment.</li><li>Flagged waitlist and attendance exceptions for staff review without changing records automatically.</li><li>Generated editable communication drafts while keeping the final decision with staff.</li><li>Selected sessions by the requested review period and prevented actions against outdated sessions.</li><li>Packaged the application as a portable Windows executable with no Python installation required.</li></ul>
+                <p>Names arrived pasted from messages or imported from CSV, TXT, and PDF files. They could be formatted differently, slightly misspelled, or match more than one account. That became the real engineering problem.</p>
+                <ul><li>Normalize and fuzzily match names, but stop for confirmation when more than one account fits.</li><li>Separate enrollment, waitlist-audit, and attendance-audit modes so each run has one clear job.</li><li>Check capacity and the requested review period before touching a class session.</li><li>Surface waitlist and attendance exceptions without changing records automatically.</li><li>Generate editable communication drafts instead of sending anything on the user’s behalf.</li><li>Package the tool as a portable Windows executable, with no Python installation required.</li></ul>
             </div>
         </section>
 
         <section class="content-section">
             <header><p class="eyebrow">04 / Verification</p><h2>31 automated tests protect the decisions</h2></header>
             <div class="content-body">
-                <p>The test suite covers input cleanup, session selection, name matching, capacity limits, ambiguous accounts, waitlist behavior, and attendance calculations. Browser-run results and staff review still provide the final operational check.</p>
+                <p>The 31-test suite covers input cleanup, session selection, name matching, capacity limits, ambiguous accounts, waitlists, and attendance calculations. A passing unit test still can’t promise that a third-party webpage has not changed overnight, so browser-run results and staff review remain the final check.</p>
                 <div class="proof-strip"><div><span>Automated coverage</span><strong>31 tests passing</strong><p>Core rules are checked independently of the live website.</p></div><div><span>Human review</span><strong>Ambiguity stops</strong><p>Multiple matches, waitlists, absences, and special cases are surfaced instead of guessed.</p></div><div><span>Capacity and time</span><strong>Unsafe actions blocked</strong><p>Full classes and outdated sessions are rejected before enrollment is attempted.</p></div></div>
             </div>
         </section>
 
         <section class="content-section" id="privacy-review">
-            <header><p class="eyebrow">05 / Privacy review</p><h2>Operational data stays outside version control</h2></header>
+            <header><p class="eyebrow">05 / Privacy review</p><h2>I found data where it should not have been</h2></header>
             <div class="content-body">
-                <p>This was an internal workflow-automation project built for authorized tennis staff. During a privacy review, I found that historical operational data had been retained in the repository’s Git history. I made the repository private, removed the data from active history, and initiated GitHub’s permanent removal process. The case study now uses only synthetic examples, and the production implementation remains private to protect member information.</p>
+                <p>During a privacy review, I found historical operational data in the repository’s Git history. Making the current files clean was not enough; Git remembers. I made the repository private, removed the data from active history, and started GitHub’s permanent-removal process. The public case study now uses sanitized images and synthetic examples, while the production code remains private.</p>
                 <div class="evidence-grid"><div class="evidence-panel"><strong>Privacy boundaries</strong><p>Treat staff workflows and member information as private by default, including historical revisions and generated artifacts.</p></div><div class="evidence-panel"><strong>Human review</strong><p>Keep staff in control whenever attendance, waitlists, special cases, or failures require judgment.</p></div><div class="evidence-panel"><strong>Environment-based credentials</strong><p>Load secrets from the runtime environment and provide only synthetic configuration examples.</p></div><div class="evidence-panel"><strong>Data lifecycle</strong><p>Keep operational exports, logs, rosters, and other real records outside version control.</p></div></div>
             </div>
         </section>
 
         <section class="content-section" id="what-i-learned">
-            <header><p class="eyebrow">06 / What I learned</p><h2>Reliable automation is a product-design problem</h2></header>
+            <header><p class="eyebrow">06 / What I learned</p><h2>The browser was the easy part</h2></header>
             <div class="content-body">
-                <p>This project taught me that reliable automation is about more than making browser actions happen. I had to translate a real operational process into clear software rules while preserving human judgment wherever a wrong decision could affect a student or staff member.</p>
-                <div class="evidence-grid"><div class="evidence-panel"><strong>Design for people</strong><p>Move complexity behind a guided interface and make review points clear to staff who did not build the tool.</p></div><div class="evidence-panel"><strong>Separate concerns</strong><p>Keep interface, business-rule, and browser-automation logic independent so each layer can be understood and tested.</p></div><div class="evidence-panel"><strong>Expect imperfect data</strong><p>Clean and reconcile names from PDFs, spreadsheets, text files, and web pages without hiding uncertainty.</p></div><div class="evidence-panel"><strong>Handle edge cases deliberately</strong><p>Treat duplicate accounts, capacity limits, waitlists, and attendance exceptions as primary product behavior.</p></div><div class="evidence-panel"><strong>Build resilient automation</strong><p>Account for changing and sometimes unpredictable web interfaces while keeping failures visible.</p></div><div class="evidence-panel"><strong>Ship the whole product</strong><p>Packaging, privacy, credentials, testing, and error reporting are core features—not cleanup after the code works.</p></div></div>
+                <p>Clicking through pages with Selenium was straightforward. Turning an unwritten staff process into rules—and deciding where the rules should stop—took most of the judgment.</p>
+                <div class="evidence-grid"><div class="evidence-panel"><strong>Keep uncertainty visible</strong><p>A fuzzy match can suggest an account. It should not silently choose one when the evidence is ambiguous.</p></div><div class="evidence-panel"><strong>Separate the moving parts</strong><p>The interface, business rules, and browser automation live independently so I can test logic without launching the site.</p></div><div class="evidence-panel"><strong>Packaging counts</strong><p>The tool was not useful to coworkers until it handled credentials, errors, privacy, and Windows distribution—not just browser clicks.</p></div></div>
             </div>
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">07 / Result</p><h2>A more capable tool that remains supervised</h2></header>
+            <header><p class="eyebrow">07 / Result</p><h2>A useful assistant, not an unsupervised operator</h2></header>
             <div class="content-body">
-                <p>The assistant now gives staff one accessible place to prepare inputs, choose the exact task, review exceptions, and complete routine work. The portable executable makes the workflow easier to share internally, while privacy boundaries and human-review checkpoints keep the automation appropriately limited.</p>
-                <p>Exact time saved, run counts, and error percentages are not documented here, so this case study does not claim them. The evidence is the working desktop workflow, its 31 passing tests, sanitized interface, and explicit manual-review paths.</p>
+                <p>Staff now have one Windows app for preparing inputs, choosing the task, and reviewing exceptions. The executable is easier to share internally, and the tool stops rather than improvises when it reaches a decision that belongs to a person.</p>
+                <p>I don’t have reliable time-saved or error-rate measurements, so I won’t pretend I do. What I do have is a working desktop workflow, 31 passing tests, a sanitized interface, and explicit manual-review paths.</p>
             </div>
         </section>
     </main>

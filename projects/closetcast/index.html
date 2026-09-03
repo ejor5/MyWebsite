@@ -6,15 +6,15 @@
     <meta name="description" content="ClosetCast case study: a configurable Electron kiosk coordinating RTSP monitoring, data integrations, private runtime configuration, and graceful recovery.">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; frame-src 'none'; media-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <link rel="canonical" href="https://ethanmjordan.com/projects/closetcast/">
-    <title>Engineering a Resilient Kiosk | ClosetCast — Ethan Jordan</title>
+    <title>Keeping an Old Windows Kiosk Alive | ClosetCast — Ethan Jordan</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Engineering a Resilient Kiosk | ClosetCast">
+    <meta property="og:title" content="Keeping an Old Windows Kiosk Alive | ClosetCast">
     <meta property="og:description" content="A configurable Electron kiosk combining RTSP monitoring, data integrations, private configuration, and resilient service behavior.">
     <meta property="og:url" content="https://ethanmjordan.com/projects/closetcast/">
     <meta property="og:image" content="https://ethanmjordan.com/assets/social-card.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Engineering a Resilient Kiosk | ClosetCast">
+    <meta name="twitter:title" content="Keeping an Old Windows Kiosk Alive | ClosetCast">
     <meta name="twitter:description" content="A deployed Electron kiosk shaped around privacy boundaries, failure isolation, and observable recovery.">
     <meta name="twitter:image" content="https://ethanmjordan.com/assets/social-card.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,9 +28,9 @@
     <main class="page-shell" id="main">
         <section class="case-hero">
             <p class="eyebrow">Case study / Personal deployment</p>
-            <h1>Engineering a Resilient <em>Kiosk.</em></h1>
+            <h1>Keeping an Old Windows <em>Kiosk Alive.</em></h1>
             <p class="case-technical-title">ClosetCast / Electron, Node.js, RTSP, FFmpeg, and PowerShell</p>
-            <p class="lede">A configurable Windows kiosk that combines RTSP monitoring, weather, calendar, media, and automation while isolating failures and keeping operational configuration out of source control.</p>
+            <p class="lede">I repurposed older Windows hardware into a display for cameras, calendars, weather, and media. Then I had to make sure one dead stream or API did not take the whole thing with it.</p>
             <div class="case-meta"><div><span>Role</span><strong>Individual builder and operator</strong></div><div><span>Deployment</span><strong>Local Windows kiosk</strong></div><div><span>Status</span><strong>Operated system</strong></div><div><span>Stack</span><strong>Electron, Node.js, FFmpeg, PowerShell</strong></div></div>
             <div class="case-actions"><a href="https://github.com/ejor5/ClosetCast" target="_blank" rel="noopener noreferrer">View repository &#x2197;&#xFE0E;</a><a href="/projects/">All work</a></div>
         </section>
@@ -38,25 +38,25 @@
         <section class="content-section">
             <header><p class="eyebrow">01 / Context</p><h2>A kiosk that has to keep working</h2></header>
             <div class="content-body">
-                <p>ClosetCast started with a practical constraint: repurpose older Windows hardware as a durable information display. The goal was not a one-screen demo. It was an operated system that could coordinate several integrations without requiring constant intervention.</p>
-                <p>The hardest part was translating desired behavior into explicit product rules: when information should yield to media, how layouts should change, what remains visible during partial failure, and how the system should recover without hiding the problem.</p>
+                <p>ClosetCast started because I had older Windows hardware and wanted a useful information display instead of another retired computer in a closet. A one-screen demo was easy. A kiosk that could run without constant babysitting was not.</p>
+                <p>I had to decide when dashboard information should yield to media, how camera layouts should change, what stays visible during a partial failure, and when the system should retry instead of quietly pretending everything is fine.</p>
                 <div class="scope-note"><strong>Contribution boundary</strong><p>I designed, built, configured, and operate the application. Camera hardware, Apple Calendar, Open-Meteo, media sources, and sports data remain external dependencies.</p></div>
                 <figure class="proof-figure"><img src="/assets/finalclosetcast-sanitized.png" alt="Current ClosetCast interface with sensitive camera and personal details blurred" width="1672" height="940" loading="lazy" decoding="async"><figcaption><span>Current version</span><span>Sensitive camera and personal details intentionally blurred</span></figcaption></figure>
             </div>
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">02 / System</p><h2>Simple stack, explicit security boundaries</h2></header>
+            <header><p class="eyebrow">02 / System</p><h2>Keep the stack boring and the boundaries clear</h2></header>
             <div class="content-body">
-                <p>The stack stays intentionally straightforward: Electron, plain HTML, CSS, JavaScript, JSON configuration, FFmpeg, and focused Node modules. That keeps the system understandable and maintainable on the target hardware.</p>
+                <p>The stack is deliberately plain: Electron, HTML, CSS, JavaScript, JSON configuration, FFmpeg, and a few focused Node modules. Old hardware is not the place to get clever for sport.</p>
                 <div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Private runtime configuration</strong><p>RTSP endpoints, feed URLs, feature flags, and local paths remain outside git; public examples use synthetic placeholders.</p></div><div class="flow-step"><span>02</span><strong>Independent services</strong><p>Stream bridging, calendar, weather, media, and mode services fail separately.</p></div><div class="flow-step"><span>03</span><strong>Kiosk renderer</strong><p>The interface coordinates layouts while keeping unavailable services visible but contained.</p></div></div>
                 <div class="scope-note"><strong>Data boundary</strong><p>Credentials, calendar feeds, locations, source labels, logs, and machine-specific paths are deployment data—not portfolio content.</p></div>
             </div>
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">03 / Capabilities</p><h2>Configurable behavior without public operations</h2></header>
-            <div class="content-body"><ul><li>Multiple configurable RTSP feeds bridged through FFmpeg with focus, split, grid, and primary-feed layouts.</li><li>User-defined display modes that change information density, layout, and media behavior.</li><li>Weather, calendar, local media, and configured web-media integrations with explicit unavailable states.</li><li>Event-aware media behavior that can prepare, activate, and return control to the dashboard through configurable rules.</li><li>Windows automation for supervised startup and recovery, with a guided setup entry point for the target machine.</li><li>Local logs, private configuration, and an isolated test profile for troubleshooting without real deployment data or disruptive kiosk behavior.</li></ul></div>
+            <header><p class="eyebrow">03 / Capabilities</p><h2>What the kiosk actually coordinates</h2></header>
+            <div class="content-body"><ul><li>Bridge several RTSP camera feeds through FFmpeg and arrange them in focus, split, grid, or primary-feed layouts.</li><li>Switch display modes to change information density, layout, and media behavior.</li><li>Show weather, calendar, local media, and configured web media—with an explicit unavailable state when a source fails.</li><li>Prepare media for an event, give it the screen at the configured time, and return control to the dashboard afterward.</li><li>Start and recover through supervised Windows automation on the target machine.</li><li>Use local logs and an isolated test profile to troubleshoot without real deployment data or disruptive kiosk behavior.</li></ul></div>
         </section>
 
         <section class="content-section">
@@ -67,10 +67,10 @@
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">05 / Result</p><h2>From experiment to operated system</h2></header>
+            <header><p class="eyebrow">05 / Result</p><h2>It runs, fails visibly, and recovers</h2></header>
             <div class="content-body">
-                <p>ClosetCast now runs as an operated display on its target hardware, coordinates configured sources, and degrades visibly when an external service is unavailable.</p>
-                <p>The biggest lesson was that implementation speed is not the same as product judgment. AI helped me generate and modify code, but I still had to define the architecture, behavior, security boundaries, failure modes, and tradeoffs that made the application useful instead of a pile of features.</p>
+                <p>ClosetCast now runs on its target machine. If a camera process exits, it waits and reconnects. If an external data source fails, the rest of the display stays up and shows that the source is unavailable.</p>
+                <p>AI helped me generate and modify code faster. It did not decide the architecture, security boundaries, failure behavior, or which features belonged on the screen. Those choices were the difference between a useful kiosk and a pile of integrations.</p>
                 <div class="evidence-grid"><div class="evidence-panel"><strong>Repository</strong><p><a href="https://github.com/ejor5/ClosetCast" target="_blank" rel="noopener noreferrer">Source, setup, tests, and example configuration &#x2197;&#xFE0E;</a></p></div><div class="evidence-panel"><strong>Operational evidence</strong><p>Private runtime configuration, recovery logs, isolated test profiles, and documented failure paths.</p></div></div>
             </div>
         </section>
