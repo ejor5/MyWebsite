@@ -4081,3 +4081,439 @@ a:focus-visible {
         margin-top: 34px;
     }
 }
+
+/* Unified project evidence hierarchy */
+.work-evidence,
+.project-evidence {
+    display: grid;
+    gap: 16px;
+    max-width: 640px;
+}
+
+.work-evidence p,
+.project-evidence p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.work-evidence p:last-child,
+.project-evidence p:last-child {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+.work-evidence strong,
+.project-evidence strong {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* Mobile typography pass: smaller display type, compact rhythm, readable evidence. */
+@media (max-width: 760px) {
+    :root {
+        --gutter: 22px;
+    }
+
+    body {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .monogram,
+    .site-brand {
+        font-size: 12px;
+    }
+
+    .topnav a,
+    .site-nav a {
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        max-width: 390px;
+        font-size: clamp(28px, 7.5vw, 34px);
+        letter-spacing: -0.055em;
+        line-height: 1;
+    }
+
+    .hero-eyebrow,
+    .folio-index,
+    .eyebrow,
+    .hero-footer,
+    .work-feature figcaption,
+    .piano-image figcaption,
+    .proof-figure figcaption,
+    .notes-proof figcaption {
+        font-size: 8px;
+    }
+
+    .hero-actions a,
+    .case-actions a,
+    .text-link,
+    .section-intro > a,
+    .about-copy > a {
+        font-size: 10px;
+    }
+
+    .section-intro h2,
+    .about-section h2 {
+        font-size: clamp(22px, 6.8vw, 28px);
+        line-height: 1.05;
+    }
+
+    .statement-section h2.statement-heading-long {
+        font-size: clamp(21px, 6.2vw, 26px);
+        line-height: 1.08;
+    }
+
+    .statement-section > .statement-kicker {
+        font-size: 12px;
+    }
+
+    .work-row {
+        gap: 20px;
+        padding: 30px 0;
+    }
+
+    .work-info {
+        display: block;
+    }
+
+    .work-info > div + div {
+        margin-top: 18px;
+    }
+
+    .work-info h3 {
+        margin-bottom: 8px;
+        font-size: clamp(20px, 5.8vw, 24px);
+        letter-spacing: -0.045em;
+        line-height: 1.08;
+    }
+
+    .work-number,
+    .work-type,
+    .work-technical-title,
+    .work-evidence p,
+    .project-technical-title,
+    .project-evidence p,
+    .project-entry .entry-links a {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+    }
+
+    .work-number {
+        margin-bottom: 12px;
+    }
+
+    .work-technical-title,
+    .project-technical-title {
+        margin-top: 8px;
+        color: var(--muted) !important;
+        letter-spacing: 0;
+    }
+
+    .work-evidence,
+    .project-evidence {
+        gap: 12px;
+    }
+
+    .work-evidence p:last-child,
+    .project-evidence p:last-child {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 9px;
+        padding-top: 11px;
+    }
+
+    .work-feature {
+        border-radius: 8px;
+    }
+
+    .archive-hook,
+    .career-story-copy strong {
+        font-size: clamp(15px, 4.6vw, 19px);
+    }
+
+    .archive-technical,
+    .career-story > span,
+    .career-story > small,
+    .about-image figcaption,
+    .footer p,
+    .footer nav,
+    .page-footer {
+        font-size: 8px;
+    }
+
+    .career-story-copy p,
+    .about-note,
+    .about-scholarship,
+    .statement-notes p,
+    .statement-notes p strong,
+    .statement-notes p small,
+    .authorship-note {
+        font-size: 10px;
+    }
+
+    .footer-lead > a {
+        font-size: clamp(24px, 7.2vw, 30px);
+    }
+
+    .footer h2 {
+        font-size: 11px;
+    }
+
+    .page-hero,
+    .case-hero {
+        min-height: 390px;
+        padding-top: 60px;
+        padding-bottom: 42px;
+    }
+
+    .page-hero h1,
+    .case-hero h1,
+    .resume-page .page-hero h1 {
+        max-width: 28ch;
+        font-size: clamp(22px, 6.7vw, 28px);
+        line-height: 1.05;
+    }
+
+    .work-page .page-hero h1 {
+        font-size: clamp(21px, 6.2vw, 26px);
+    }
+
+    .lede {
+        margin-top: 24px;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .case-technical-title,
+    .case-meta strong {
+        font-size: 10px;
+    }
+
+    .case-meta span,
+    .meta-label {
+        font-size: 8px;
+    }
+
+    .project-entry .meta-label {
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 1.5;
+        text-transform: none;
+    }
+
+    .content-section {
+        gap: 28px;
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    .content-section > header h2,
+    .content-section > h2 {
+        max-width: 24ch;
+        font-size: clamp(20px, 5.8vw, 25px);
+        line-height: 1.08;
+    }
+
+    .content-body p,
+    .content-body li,
+    .project-entry p,
+    .resume-item p,
+    .resume-item li {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .project-entry {
+        gap: 18px;
+        padding: 38px 0;
+    }
+
+    .project-entry h2,
+    .project-entry h3 {
+        margin-top: 9px;
+        max-width: 24ch;
+        font-size: clamp(20px, 5.8vw, 25px);
+        line-height: 1.08;
+    }
+
+    .project-entry-media {
+        margin-bottom: 18px;
+        border-radius: 8px;
+    }
+
+    .project-entry .entry-links {
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .resume-choice-hero {
+        min-height: calc(100svh - 80px);
+        padding: 56px 18px;
+    }
+
+    .resume-choice-copy h1 {
+        font-size: clamp(24px, 7.2vw, 31px);
+        line-height: 1.05;
+    }
+
+    .resume-choice-copy > p:last-child {
+        margin-top: 22px;
+        margin-bottom: 32px;
+        font-size: 12px;
+    }
+
+    .resume-track-option {
+        min-height: 52px;
+        font-size: 10px;
+    }
+
+    .resume-track-option span,
+    .resume-item .date,
+    .resume-back-link {
+        font-size: 8px;
+    }
+
+    .resume-section h2 {
+        font-size: 11px;
+    }
+
+    .resume-item h3 {
+        font-size: 15px;
+    }
+
+    .notes-ledger-head {
+        gap: 42px;
+        min-height: 520px;
+        padding-top: 58px;
+    }
+
+    .notes-ledger-head h1 {
+        max-width: 22ch;
+        font-size: clamp(24px, 7.2vw, 31px);
+        line-height: 1.05;
+    }
+
+    .notes-ledger-head > div:nth-child(2) > p,
+    .notes-feature p,
+    .notes-investigations p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .notes-featured > header h2,
+    .notes-ledger > header h2,
+    .notes-investigations > header h2 {
+        font-size: clamp(20px, 5.8vw, 25px);
+    }
+
+    .notes-feature,
+    .notes-feature-primary {
+        min-height: 330px;
+        padding: 22px;
+    }
+
+    .notes-feature h3,
+    .notes-feature:not(.notes-feature-primary) h3,
+    .notes-investigations h3 {
+        font-size: clamp(18px, 5.2vw, 23px);
+        line-height: 1.08;
+    }
+
+    .notes-feature .note-technical-title,
+    .notes-investigations .note-technical-title,
+    .notes-ledger-list .note-technical-title,
+    .notes-feature > span,
+    .notes-feature > strong,
+    .notes-investigations a > span,
+    .notes-investigations a > strong,
+    .notes-ledger-list > a > span,
+    .notes-ledger-list time,
+    .notes-ledger-list p {
+        font-size: 8px;
+    }
+
+    .notes-ledger-list h3 {
+        font-size: clamp(17px, 4.8vw, 21px);
+    }
+
+    .notes-investigations a {
+        min-height: 330px;
+        padding: 22px;
+    }
+
+    .notes-article-head h1 {
+        max-width: 24ch;
+        font-size: clamp(23px, 6.8vw, 29px);
+        line-height: 1.06;
+    }
+
+    .cybersummer-head h1 {
+        font-size: clamp(22px, 6.5vw, 28px);
+    }
+
+    .notes-article-head > p:last-child,
+    .notes-prose > p:first-child {
+        font-size: 15px;
+    }
+
+    .notes-prose p,
+    .notes-prose li {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .notes-prose h2 {
+        margin-top: 58px;
+        max-width: 24ch;
+        font-size: clamp(21px, 6.2vw, 27px);
+    }
+
+    .learning-sequence span,
+    .daily-rhythm li > span {
+        font-size: 8px;
+    }
+
+    .daily-rhythm strong {
+        font-size: 12px;
+    }
+
+    .ultralearner-line {
+        font-size: 14px !important;
+    }
+
+    .contact-statement {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .contact-clean-page .content-section > header h2 {
+        font-size: 22px;
+    }
+
+    .contact-clean-page .evidence-panel strong,
+    .contact-clean-page .evidence-panel p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+    .monogram,
+    .site-brand {
+        font-size: 11px;
+    }
+
+    .topnav a,
+    .site-nav a {
+        font-size: 8px;
+    }
+
+    .hero h1 {
+        font-size: clamp(27px, 8vw, 32px);
+    }
+}
