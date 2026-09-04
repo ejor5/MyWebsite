@@ -4133,6 +4133,39 @@ a:focus-visible {
         font-size: 9px;
     }
 
+    .hero-meta {
+        top: 70px;
+        right: 24px;
+        left: 24px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content;
+        gap: 10px;
+        align-items: start;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .hero-meta p {
+        min-width: 0;
+    }
+
+    .hero-meta p span {
+        margin-bottom: 3px;
+        font-size: 6px;
+    }
+
+    .hero-meta p strong,
+    .hero-meta > a {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .hero-meta > a {
+        align-self: end;
+        padding-top: 9px;
+        white-space: nowrap;
+    }
+
     .hero h1 {
         max-width: 390px;
         font-size: clamp(28px, 7.5vw, 34px);
@@ -4513,7 +4546,92 @@ a:focus-visible {
         font-size: 8px;
     }
 
+    .hero-meta {
+        top: 64px;
+        right: 18px;
+        left: 18px;
+        gap: 6px;
+    }
+
+    .hero-meta p strong,
+    .hero-meta > a {
+        font-size: 7px;
+    }
+
     .hero h1 {
         font-size: clamp(27px, 8vw, 32px);
+    }
+}
+
+/* Keep profile metadata compact and structurally consistent at every width. */
+.hero-meta p strong {
+    white-space: nowrap;
+}
+
+.hero-meta > a {
+    align-self: start;
+    margin-top: 13px;
+}
+
+@media (min-width: 761px) and (max-width: 1260px) {
+    .topbar {
+        left: clamp(32px, 5vw, 64px);
+        gap: clamp(24px, 3.5vw, 48px);
+    }
+
+    .topnav {
+        gap: clamp(16px, 2vw, 28px);
+    }
+
+    .hero-meta {
+        top: 80px;
+        right: clamp(28px, 4vw, 52px);
+        left: auto;
+        width: clamp(285px, 29vw, 360px);
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr) max-content;
+        gap: clamp(12px, 1.6vw, 22px);
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .hero-meta p span {
+        margin-bottom: 4px;
+        font-size: 7px;
+    }
+
+    .hero-meta p strong,
+    .hero-meta > a {
+        font-size: 9px;
+    }
+
+    .hero-meta > a {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-meta {
+        top: 56px;
+        right: 20px;
+        left: auto;
+        width: min(calc(100% - 40px), 330px);
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr) max-content;
+        gap: 10px;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .hero-meta > a {
+        margin-top: 8px;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-meta {
+        top: 52px;
+        right: 18px;
+        width: min(calc(100% - 36px), 300px);
+        gap: 7px;
     }
 }
