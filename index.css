@@ -1083,6 +1083,14 @@ a:focus-visible {
     gap: 24px;
 }
 
+.hero-availability {
+    max-width: 44ch;
+    margin: 18px 0 0;
+    color: rgba(247, 247, 243, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 .hero-actions a,
 .case-actions a,
 .text-link {
