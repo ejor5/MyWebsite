@@ -30,7 +30,7 @@
             <p class="eyebrow">Case study / Production software</p>
             <h1>When Every Score <em>Counts.</em></h1>
             <p class="case-technical-title">Virtius Meet Viewer / Next.js, React, TypeScript, GraphQL, and Playwright</p>
-            <p class="lede">Performance, score integrity, and usability work inside a live NCAA gymnastics product where match-window traffic and small scoring errors directly affect trust.</p>
+            <p class="lede">I worked on the part of a live gymnastics meet that nobody wants to notice: loading the scores quickly and displaying every athlete, ranking, and decimal correctly.</p>
             <div class="case-meta"><div><span>Role</span><strong>Software engineering intern</strong></div><div><span>Audience</span><strong>Athletes and fans following live meets</strong></div><div><span>Product scale</span><strong>Seasonal audience of 150,000+</strong></div><div><span>Stack</span><strong>Next.js, React, TypeScript, GraphQL, Playwright</strong></div></div>
             <div class="case-actions"><a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">View live system &#x2197;&#xFE0E;</a><a href="/projects/">All work</a></div>
         </section>
@@ -38,40 +38,40 @@
         <section class="content-section">
             <header><p class="eyebrow">01 / Context</p><h2>Built around live-meet pressure</h2></header>
             <div class="content-body">
-                <p>The live scoring product served a seasonal audience of more than 150,000, with usage concentrated around live meet windows. People relied on current scores, rankings, athlete inclusion, and clear presentation while competitions were underway.</p>
-                <p>This was established production software with live data and an existing audience—not a student recreation or isolated prototype. The audience figure describes the scale of the product, not traffic caused by my individual changes.</p>
+                <p>The Meet Viewer serves a seasonal audience of more than 150,000, with traffic concentrated around live meets. Scores, rankings, and athlete status have to stay readable while the underlying data keeps changing.</p>
+                <p>I joined an established product with an existing request flow and scoring rules. My job was to understand those rules before changing the interface around them.</p>
                 <div class="scope-note"><strong>Contribution boundary</strong><p>I worked on the meet-viewer branch and its user-facing behavior. I did not build the entire Virtius platform, scoring operation, or underlying competition infrastructure.</p></div>
             </div>
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">02 / Contribution</p><h2>Three product priorities</h2></header>
+            <header><p class="eyebrow">02 / Contribution</p><h2>Load it faster. Keep the score right.</h2></header>
             <div class="content-body">
                 <div class="proof-strip">
-                    <div><span>Performance</span><strong>Load the live view better</strong><p>Improved loading behavior, API data handling, caching decisions, and client/server boundaries for match-driven use.</p></div>
-                    <div><span>Score integrity</span><strong>Protect the displayed result</strong><p>Handled precision, three-versus-four-decimal display, exhibition athletes, rankings, and related scoring edge cases.</p></div>
-                    <div><span>Usability and design</span><strong>Make results easier to follow</strong><p>Made presentation and interaction changes that improved how users read and navigate the live viewer.</p></div>
+                    <div><span>Loading</span><strong>Trace the data path</strong><p>I worked through API handling, caching, and client/server boundaries so the live view did less unnecessary work.</p></div>
+                    <div><span>Scoring</span><strong>Respect the ugly edge cases</strong><p>Three- versus four-decimal scores, exhibition athletes, and rankings all affected what the viewer should show.</p></div>
+                    <div><span>Interface</span><strong>Keep a changing meet readable</strong><p>I adjusted presentation and interactions so users could follow current results without losing the competition’s context.</p></div>
                 </div>
                 <figure class="proof-figure"><img src="/assets/VMainPage.png" alt="Virtius meet viewer showing current gymnastics scoring" width="2556" height="1371" loading="lazy" decoding="async"><figcaption><span>Production interface</span><span>Public live-system screenshot</span></figcaption></figure>
             </div>
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">03 / System</p><h2>Request to live result</h2></header>
-            <div class="content-body"><div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Meet and scoring data</strong><p>Competition, team, athlete, and score data enter the established product flow.</p></div><div class="flow-step"><span>02</span><strong>GraphQL and application layer</strong><p>Requests, caching, data boundaries, and rendering decisions shape viewer state.</p></div><div class="flow-step"><span>03</span><strong>Live meet interface</strong><p>Scores, precision, rankings, filters, and current results are presented to users.</p></div></div></div>
+            <header><p class="eyebrow">03 / System</p><h2>From GraphQL response to live result</h2></header>
+            <div class="content-body"><div class="flow-diagram"><div class="flow-step"><span>01</span><strong>Meet data changes</strong><p>Competition, team, athlete, and score data update while the meet is underway.</p></div><div class="flow-step"><span>02</span><strong>The application resolves state</strong><p>GraphQL requests, caching, and client/server boundaries determine what reaches the viewer.</p></div><div class="flow-step"><span>03</span><strong>The interface applies scoring rules</strong><p>Precision, rankings, filters, and exhibition status shape what the user sees.</p></div></div></div>
         </section>
 
         <section class="content-section">
             <header><p class="eyebrow">04 / Verification</p><h2>Changes had to survive live data</h2></header>
             <div class="content-body">
-                <p>I studied the request flow used by the earlier Virtius experience rather than guessing at its contract. Playwright checks, visual comparisons, and expected scoring cases helped verify performance and interface changes without weakening score behavior.</p>
+                <p>The earlier Virtius experience became my best documentation for the request contract. I traced that flow first, then used Playwright checks, visual comparisons, and known scoring cases to catch changes that looked fine with one meet and failed with another.</p>
                 <div class="evidence-grid"><div class="evidence-panel"><strong>Public evidence</strong><p><a href="https://scores.virti.us/?s=zWM-h2f5hl" target="_blank" rel="noopener noreferrer">Live meet viewer &#x2197;&#xFE0E;</a></p></div><div class="evidence-panel"><strong>Verification evidence</strong><p>Playwright checks, scoring display cases, and visual comparisons.</p></div></div>
             </div>
         </section>
 
         <section class="content-section">
-            <header><p class="eyebrow">05 / Result</p><h2>A faster, clearer, more trustworthy viewer</h2></header>
-            <div class="content-body"><p>The work improved how the live product loaded, protected score presentation across edge cases, and made results easier to use. The strongest public proof is the product itself; exact causal traffic, conversion, and private engineering metrics are intentionally not claimed.</p></div>
+            <header><p class="eyebrow">05 / Result</p><h2>The product is live. The private metrics stay private.</h2></header>
+            <div class="content-body"><p>My changes covered loading and data-handling paths, scoring display cases, and interface behavior in the production viewer. The system itself is public; internal performance measurements and company engineering data are not, so I’m not turning either into a made-up percentage.</p></div>
         </section>
     </main>
     <footer class="page-footer"><span>Case study / Virtius</span><nav aria-label="Footer navigation"><a href="/projects/avac-automation/">Next: AVAC</a><a href="/projects/">All work</a><a href="mailto:ethan.jordan.connect@gmail.com">Contact</a></nav></footer>
