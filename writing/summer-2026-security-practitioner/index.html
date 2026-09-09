@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
-    <meta name="description" content="CyberSummer: how Ethan Jordan began building the habits, evidence, and judgment of a cybersecurity engineer through direct practice, security labs, software tools, and professional work.">
+    <meta name="description" content="CyberSummer 2026: completed TryHackMe Pre-Security training, direct Windows and Sysmon telemetry inspection, Wazuh account-event triage, and DNS investigation.">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; frame-src 'none'; media-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
     <link rel="canonical" href="https://ethanmjordan.com/writing/summer-2026-security-practitioner/">
-    <title>The Summer I Started Thinking Like a Security Engineer — Ethan Jordan</title>
+    <title>CyberSummer: Foundations, Telemetry, and Investigation — Ethan Jordan</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.css?v=20260820">
+    <link rel="stylesheet" href="/index.css?v=20260908-thm-image">
 </head>
 <body class="subpage note-article-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -24,22 +24,47 @@
             <header class="notes-article-head cybersummer-head">
                 <a href="/writing/">← All notes</a>
                 <p class="eyebrow">Career story / Summer 2026</p>
-                <h1>The Summer I Started Thinking Like a <em>Security Engineer.</em></h1>
-                <p class="article-technical-title">CyberSummer / practitioner habits, labs, and evidence</p>
-                <p>The summer I stopped training only as a student and started building the habits, evidence, and judgment of a great cybersecurity engineer.</p>
+                <h1>CyberSummer: from foundations to <em>investigation.</em></h1>
+                <p class="article-technical-title">Summer 2026 / training and hands-on investigations</p>
+                <p>This summer, I began treating security as a set of questions I could investigate: what happened, what evidence supports it, what assumptions am I making, and what would prove me wrong?</p>
             </header>
             <div class="notes-article-grid">
                 <aside>
-                    <p>Building career equity</p>
-                    <strong>Foundations strengthened</strong>
-                    <strong>Wazuh + Sysmon</strong>
-                    <strong>Evidence over consumption</strong>
+                    <p>Training and practice</p>
+                    <strong>Pre-Security completed</strong>
+                    <strong>Windows telemetry</strong>
+                    <strong>Network investigation</strong>
                 </aside>
                 <div class="notes-prose cybersummer-prose">
-                    <h2>Building career equity</h2>
-                    <p>This summer, I shifted my mindset from becoming an excellent student to becoming a habitual cybersecurity practitioner. I realized that career growth comes from more than completing courses or earning grades. It comes from repeatedly building, testing, investigating, and producing evidence of real ability.</p>
-                    <p>I completed TryHackMe’s Pre-Security path to strengthen my foundations in Linux, networking, operating systems, and web technologies. I then applied those foundations by building a Wazuh and Sysmon security-monitoring lab, where I worked with real Windows endpoint telemetry and practiced connecting individual events to attacker behavior, detection, and incident response.</p>
-                    <p>The most important change was in my habits. Instead of measuring progress by information consumed, I began measuring it by skills demonstrated, systems built, problems investigated, and results explained. That is how I am building career equity: turning consistent effort into practical ability, documented work, and proof that I can adapt.</p>
+                    <h2 id="security-foundations">Understand the system before trying to secure it</h2>
+                    <p>I completed TryHackMe’s Pre-Security path in Summer 2026. It helped me connect the pieces underneath a security alert: the computer running the software, the operating system recording activity, and the network carrying the traffic.</p>
+                    <p>The seven modules covered:</p>
+                    <ul>
+                        <li><strong>Introduction to Cyber Security:</strong> how offensive and defensive security differ, and the kinds of work people do in each.</li>
+                        <li><strong>Computer Fundamentals:</strong> the hardware inside a computer and how those basics extend to cloud computing.</li>
+                        <li><strong>Operating Systems Basics:</strong> working with Windows and Linux through both graphical interfaces and the command line.</li>
+                        <li><strong>Software Basics:</strong> how software handles data, with introductory exercises in Python, JavaScript, and SQL.</li>
+                        <li><strong>Network Fundamentals:</strong> how computers communicate and the weaknesses that can affect those connections.</li>
+                        <li><strong>How the Web Works:</strong> what happens behind a website and how its underlying parts work together.</li>
+                        <li><strong>Attacks and Defenses:</strong> how attackers and defenders approach a system, how data is protected, and how attacks and defenses work in practice.</li>
+                    </ul>
+                    <p>I used those foundations in my own labs. With Pi-hole, I had to work out which DNS resolver a device was actually using. With Windows and Wazuh, I had to connect an action on the machine to the event it produced. Those were useful ways to find out whether I understood the system well enough to explain what I was seeing.</p>
+                    <figure class="training-completion">
+                        <a href="/assets/tryhackme-pre-security-completion.png"><img src="/assets/tryhackme-pre-security-completion.png" alt="TryHackMe activity for ejor5 confirming completion of the Pre Security path and three of its modules" width="976" height="981" loading="lazy" decoding="async"></a>
+                        <figcaption>My TryHackMe Pre-Security completion record. Open the image to view it full size.</figcaption>
+                    </figure>
+                    <h2>Inspect the telemetry directly</h2>
+                    <p>I installed Sysmon on my Windows machine and inspected its telemetry in Windows Event Viewer. I also examined native Windows Security logs and queried them with PowerShell.</p>
+                    <p>Separately, in my <a href="/projects/wazuh-siem-lab/">Wazuh lab</a>, I connected a Windows agent, generated known account activity, and traced the corresponding Windows EventChannel alerts. That demonstrated collection, search, and basic triage. My direct Sysmon practice does not establish a completed Sysmon-to-Wazuh ingestion or detection pipeline.</p>
+                    <p>My <a href="/writing/pihole-dns-investigation/">Pi-hole investigation</a> applied the same approach to DNS filtering, DHCP, IPv4/IPv6, and the network’s routing and gateway configuration.</p>
+                    <h2>Ask what the evidence supports</h2>
+                    <p>My Wazuh study became more specific: could it reliably detect suspicious PowerShell execution? What telemetry would support that detection, what assumptions would it make, and what could cause a false positive or false negative? These were investigation questions, not claims that I had built or validated those detections.</p>
+                    <p>I practiced separating the raw event, the tool’s interpretation, my inference, and the final conclusion. The useful loop was to identify the telemetry, gather evidence, inspect the alert, verify the underlying activity, and consider alternative explanations before deciding what the evidence supported.</p>
+                    <h2>Keep up with what’s changing</h2>
+                    <p>Security has become something I follow outside my labs, too. As of September 2026, I’ve listened to more than 75 episodes of CyberWire Daily and plan to keep it in my routine. I also watch NetworkChuck and other technical creators, and listen to Darknet Diaries to explore security stories and unfamiliar technology in more depth.</p>
+                    <p>The pace is part of the appeal: new vulnerabilities and attack techniques give me more questions to investigate. I want to understand what changed, which systems it affects, and what a defender would need to check. <a href="/writing/security-keeps-moving/">More on how I stay current →</a></p>
+                    <h2>Next steps</h2>
+                    <p>I plan to continue TryHackMe security training through Winter 2026–27. For Wazuh, the next milestone is to ingest a Sysmon process-creation event and correlate it with a Windows account event in a documented investigation.</p>
                 </div>
             </div>
         </article>

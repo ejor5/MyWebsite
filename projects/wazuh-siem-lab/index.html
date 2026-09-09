@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.css?v=20260820">
+    <link rel="stylesheet" href="/index.css?v=20260908">
 </head>
 <body class="subpage">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -71,7 +71,8 @@
         <section class="content-section">
             <header><p class="eyebrow">05 / Boundaries</p><h2>What I did—and what I haven’t done yet</h2></header>
             <div class="content-body">
-                <p>I deployed Wazuh, connected the agent, generated account activity, searched the resulting events, and made a basic triage decision. I have not yet built a Sysmon pipeline, written custom detections, mapped the activity to MITRE ATT&amp;CK, or produced a full incident report.</p>
+                <p>I deployed Wazuh, connected the agent, generated account activity, searched the resulting events, and made a basic triage decision. I have not yet built a Sysmon-to-Wazuh ingestion or detection pipeline, written custom detections, mapped the activity to MITRE ATT&amp;CK, or produced a full incident report.</p>
+                <p>During <a href="/writing/summer-2026-security-practitioner/">CyberSummer</a>, I separately installed Sysmon and inspected its telemetry directly in Windows Event Viewer. That practice is distinct from the Windows EventChannel collection demonstrated here.</p>
                 <p>Next, I want to ingest a Sysmon process-creation event, reproduce the setup from memory, and correlate it with a Windows account event in one structured investigation.</p>
             </div>
         </section>
