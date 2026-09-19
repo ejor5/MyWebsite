@@ -4361,6 +4361,7 @@ a:focus-visible {
     }
 
     .career-story-copy p,
+    .hero-availability,
     .about-note,
     .about-scholarship,
     .statement-notes p,
@@ -4368,6 +4369,10 @@ a:focus-visible {
     .statement-notes p small,
     .authorship-note {
         font-size: 10px;
+    }
+
+    .security-result {
+        font-size: 12px;
     }
 
     .footer-lead > a {
